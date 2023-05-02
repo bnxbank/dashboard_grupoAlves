@@ -11,16 +11,26 @@
     <div class="container">
         <div class="coluna-esquerda">
             <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
-            <h5>Menu</h5>
-            <h3>Dashboard</h3>
-            <h3>Course</h3>
-            <h3>Profile</h3>
+          <h5>Menu</h5>
+<h3>
+    <img src="{{ url_for('static', filename='images/Dashboard.png') }}" alt="Dashboard.png" style="width: 24px; height: 24px;">
+    Dashboard
+</h3>
+<h3>
+    <img src="{{ url_for('static', filename='images/Curso.png') }}" alt="Curso.png" style="width: 24px; height: 24px;">
+    Course
+</h3>
+<h3>
+    <img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil.png" style="width: 24px; height: 24px;">
+    Profile
+</h3>
+
         </div>
         <div class="coluna-2">
             <h2>Tatico Fechamento Comercial</h2>
             <p>relatório de dados do Tatico</p>
             <div class="coluna-3">
-                <div id="curve_chart" style="width: 900px; height: 500px"></div>
+                <div id="curve_chart" style="width: 1200px; height: 500px"></div>
             </div>
         </div>
     </div>
@@ -31,18 +41,27 @@
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                ['Year', 'Sales', 'Expenses'],
-                ['2004',  1000,      400],
-                ['2005',  1170,      460],
-                ['2006',  660,       1120],
-                ['2007',  1030,      540]
+                ['Year', 'Sales', 'Expenses', 'Ret'],
+                ['2023',  200000,      400, 300],
+                ['2022',  91170,      460, 400],
+                ['2006',  660,       1120, 200],
+                ['2007',  1030,      540, 300]
             ]);
 
-            var options = {
-                title: 'Company Performance',
-                curveType: 'function',
-                legend: { position: 'bottom' }
-            };
+    var options = {
+        title: 'Company Performance',
+        curveType: 'function',
+            legend: { position: 'bottom' },
+                annotations: {
+                alwaysOutside: true,
+                textStyle: {
+                fontSize: 12,
+                color: '#000',
+                auraColor: 'none'
+            }
+        }
+    };
+
 
             var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 

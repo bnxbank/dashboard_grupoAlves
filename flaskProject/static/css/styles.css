@@ -19,7 +19,8 @@ body {
 
 /* Estilos da coluna esquerda */
 .coluna-esquerda {
-    flex: 1;
+    flex: 0;
+    padding-left: 16px;
 }
 
 /* Estilos da coluna 2 */
@@ -33,7 +34,13 @@ body {
     padding-top: 16px;
     background-color: #424242; /* Adicionando cor de fundo à coluna 3 */
     border-radius: 10px; /* Adicionando bordas arredondadas */
+    display: flex; /* Adicionado */
+    flex-direction: column; /* Adicionado */
+    align-items: center; /* Adicionado */
+    justify-content: center; /* Adicionado */
+    padding-bottom: 16px;
 }
+
 
 /* Estilos do card */
 .card {
