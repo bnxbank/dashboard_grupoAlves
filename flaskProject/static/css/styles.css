@@ -1,9 +1,3 @@
-/* Estilos do gráfico */
-#curve_chart {
-    margin: 0 auto;
-    display: block;
-}
-
 /* Estilos básicos */
 body {
     font-family: Arial, sans-serif;
@@ -15,48 +9,35 @@ body {
 .container {
     display: flex;
     flex-wrap: wrap;
+    gap: 10px; /* Espaçamento entre as colunas */
 }
 
 /* Estilos da coluna esquerda */
 .coluna-esquerda {
     flex: 0;
-    padding-left: 16px;
 }
 
-/* Estilos da coluna 2 */
-.coluna-2 {
-    flex: 3; /* Ajuste este valor para controlar a largura da coluna 2 */
-    background-color: #E6E6E6; /* Adicionando cor de fundo à coluna 2 */
-}
-
-/* Estilos da coluna 3 */
-.coluna-3 {
-    padding-top: 16px;
-    background-color: #424242; /* Adicionando cor de fundo à coluna 3 */
+/* Estilos da coluna-direita */
+.coluna-direita {
+    flex: 3; /* Ajuste este valor para controlar a largura da coluna-direita */
+    background-color: #E6E6E6; /* Adicionando cor de fundo à coluna-direita */
+    padding: 10px; /* Adicionando espaço interno */
     border-radius: 10px; /* Adicionando bordas arredondadas */
-    display: flex; /* Adicionado */
-    flex-direction: column; /* Adicionado */
-    align-items: center; /* Adicionado */
-    justify-content: center; /* Adicionado */
-    padding-bottom: 16px;
 }
 
+/* Estilos da coluna-dentroDireita */
+.coluna-dentroDireita {
+    background-color: #424242; /* Adicionando cor de fundo à coluna-dentroDireita */
+    border-radius: 6px; /* Adicionando bordas arredondadas */
 
-/* Estilos do card */
-.card {
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin: 1rem;
-    padding: 1rem;
-    text-align: center;
-    width: 200px;
 }
 
-.card h2 {
-    margin-bottom: 0.5rem;
+.chart-container {
+  margin: 1px;
 }
 
-.card p {
-    font-size: 1.5rem;
+/* Estilos do gráfico */
+#curve_chart {
+    margin: 0 auto;
+    display: block;
 }
