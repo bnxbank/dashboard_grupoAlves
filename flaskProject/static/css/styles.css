@@ -1,0 +1,42 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos do container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espaçamento entre as colunas */
+}
+
+/* Estilos da coluna esquerda */
+.coluna-esquerda {
+    flex: 0;
+}
+
+/* Estilos da coluna-direita */
+.coluna-direita {
+    flex: 3; /* Ajuste este valor para controlar a largura da coluna-direita */
+    background-color: #E6E6E6; /* Adicionando cor de fundo à coluna-direita */
+    padding: 10px; /* Adicionando espaço interno */
+    border-radius: 10px; /* Adicionando bordas arredondadas */
+}
+
+/* Estilos da coluna-dentroDireita */
+.coluna-dentroDireita {
+    background-color: #424242; /* Adicionando cor de fundo à coluna-dentroDireita */
+    border-radius: 6px; /* Adicionando bordas arredondadas */
+}
+
+.chart-container {
+  margin: 1px;
+}
+
+/* Estilos do gráfico */
+#curve_chart {
+    margin: 0 auto;
+    display: block;
+}
