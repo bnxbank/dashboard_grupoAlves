@@ -41,3 +41,43 @@ body {
     display: block;
 }
 
+/*.chart-year {*/
+/*    position: absolute;*/
+/*    left: 150px;*/
+/*    font-size: 24px;*/
+/*    font-weight: bold;*/
+/*    transform: rotate(-90deg);*/
+/*    transform-origin: center;*/
+/*}*/
+
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Estilos para telas pequenas (até 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  /* Outros estilos específicos para telas pequenas */
+}
+
+/* Estilos para telas médias (até 768px) */
+@media (max-width: 768px) {
+  /* Estilos específicos para telas médias */
+}
+
+/* Estilos para telas grandes (acima de 768px) */
+@media (min-width: 769px) {
+  /* Estilos específicos para telas grandes */
+}

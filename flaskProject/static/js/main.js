@@ -94,24 +94,19 @@ function drawIndividualChart(chartIndex, columnTitle, dataSet, idSuffix) {
         '#000080',
     ];
 
+   
+
    var options = {
-    title: columnTitle,
+
     curveType: 'function',
     colors: [chartColors[chartIndex % chartColors.length]],
     pointSize: 5,
-    width: '59%%', // Atualizar a largura aqui
-    height: 60, // Atualizar a altura aqui
+    width: '100%',
+    height: 70,
     legend: {position: 'none'},
+    vAxis: {textPosition: 'none'}, // Adicione esta linha para ocultar os números no eixo y
 };
-    // var options = {
-    //     title: columnTitle,
-    //     curveType: 'function',
-    //     colors: [chartColors[chartIndex % chartColors.length]],
-    //     pointSize: 5,
-    //     width: '15%',
-    //     height: 60,
-    //     legend: {position: 'none'},
-    // };
+    
 
 
 
