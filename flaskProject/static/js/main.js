@@ -94,15 +94,26 @@ function drawIndividualChart(chartIndex, columnTitle, dataSet, idSuffix) {
         '#000080',
     ];
 
-    var options = {
-        title: columnTitle,
-        curveType: 'function',
-        colors: [chartColors[chartIndex % chartColors.length]],
-        pointSize: 5,
-        width: '15%',
-        height: 60,
-        legend: {position: 'none'},
-    };
+   var options = {
+    title: columnTitle,
+    curveType: 'function',
+    colors: [chartColors[chartIndex % chartColors.length]],
+    pointSize: 5,
+    width: '59%%', // Atualizar a largura aqui
+    height: 60, // Atualizar a altura aqui
+    legend: {position: 'none'},
+};
+    // var options = {
+    //     title: columnTitle,
+    //     curveType: 'function',
+    //     colors: [chartColors[chartIndex % chartColors.length]],
+    //     pointSize: 5,
+    //     width: '15%',
+    //     height: 60,
+    //     legend: {position: 'none'},
+    // };
+
+
 
     var chart = new google.visualization.LineChart(
         document.getElementById('chart' + chartIndex + idSuffix)

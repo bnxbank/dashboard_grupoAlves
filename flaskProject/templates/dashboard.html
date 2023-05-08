@@ -1,13 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gráficos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.25">
+    <title>Tatico Grafico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
 </head>
 <body>
-    {% for graph in graphs %}
-        <div>{{ graph|safe }}</div>
-    {% endfor %}
+<div class="container">
+    <div class="coluna-esquerda">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        <a href="">Menu</a>
+        <h3>
+            <img src="{{ url_for('static', filename='images/Dashboard.png') }}" alt="Dashboard.png"
+                 style="width: 24px; height: 24px;">
+            <a href="">Dashboard</a>
+        </h3>
+        <h3>
+            <img src="{{ url_for('static', filename='images/Curso.png') }}" alt="Curso.png"
+                 style="width: 24px; height: 24px;">
+            <a href="">Course</a>
+        </h3>
+        <h3>
+            <img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil.png"
+                 style="width: 24px; height: 24px;">
+            <a href="">Profile</a>
+        </h3>
+
+    </div>
+    <div class="coluna-direita">
+        <h2>Tatico Fechamento Comercial</h2>
+        <p>relatório de dados do Tatico</p>
+        <div class="conteiner-charts">
+            <div class="coluna-dentroDireita" id="chartContainer">
+                <h1>Dados de 2023</h1>
+                <div id="chart1" class="chart-div"></div>
+                <div id="chart2" class="chart-div"></div>
+                <div id="chart3" class="chart-div"></div>
+                <div id="chart4" class="chart-div"></div>
+                <div id="chart5" class="chart-div"></div>
+                <div id="chart6" class="chart-div"></div>
+                <div id="chart7" class="chart-div"></div>
+                <div id="chart8" class="chart-div"></div>
+                <div id="chart9" class="chart-divultima"></div>
+
+                <h2>Dados de 2022</h2>
+                <!-- Divs para os gráficos de 2022 -->
+            </div>
+            <div id="charts2022">
+                <!-- Elementos HTML para gráficos de 2022 -->
+                <div id="chart12022" class="chart-div"></div>
+                <div id="chart22022" class="chart-div"></div>
+                <div id="chart32022" class="chart-div"></div>
+                <div id="chart42022" class="chart-div"></div>
+                <div id="chart52022" class="chart-div"></div>
+                <div id="chart62022" class="chart-div"></div>
+                <div id="chart72022" class="chart-div"></div>
+                <div id="chart82022" class="chart-div"></div>
+                <div id="chart92022" class="chart-divultima"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

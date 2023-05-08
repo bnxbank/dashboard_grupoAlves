@@ -28,11 +28,11 @@ body {
 /* Estilos da coluna-dentroDireita */
 .coluna-dentroDireita {
     background-color: #424242; /* Adicionando cor de fundo à coluna-dentroDireita */
-    border-radius: 6px; /* Adicionando bordas arredondadas */
+    border-radius: 10px; /* Adicionando bordas arredondadas */
 }
 
 .chart-container {
-  margin: 1px;
+  margin: 10px;
 }
 
 /* Estilos do gráfico */
@@ -40,3 +40,4 @@ body {
     margin: 0 auto;
     display: block;
 }
+
