@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+
 }
 
 /* Estilos do container */
@@ -37,47 +38,36 @@ body {
 
 /* Estilos do gráfico */
 #curve_chart {
-    margin: 0 auto;
-    display: block;
+
+}
+.chart-div {
+    height: 65px;
+}
+.chart-div-top {
+
+    height: 68px;
+}
+.chart-div-last {
+    height: 109px;
 }
 
-/*.chart-year {*/
-/*    position: absolute;*/
-/*    left: 150px;*/
-/*    font-size: 24px;*/
-/*    font-weight: bold;*/
-/*    transform: rotate(-90deg);*/
-/*    transform-origin: center;*/
-/*}*/
 
-/* Estilos gerais */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+ /*table*/
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 20px;
+td {
+  border: 1px solid #000;
+  text-align: center;
+  padding: 10px;
 }
 
-/* Estilos para telas pequenas (até 480px) */
-@media (max-width: 480px) {
-  .container {
-    padding: 10px;
-  }
-
-  /* Outros estilos específicos para telas pequenas */
-}
-
-/* Estilos para telas médias (até 768px) */
-@media (max-width: 768px) {
-  /* Estilos específicos para telas médias */
-}
-
-/* Estilos para telas grandes (acima de 768px) */
-@media (min-width: 769px) {
-  /* Estilos específicos para telas grandes */
+/*container table*/
+.containerTable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
 }

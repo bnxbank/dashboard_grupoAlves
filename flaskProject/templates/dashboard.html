@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="user-scalable=no">
     <title>Tatico Grafico</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -11,63 +11,81 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="coluna-esquerda">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
-            <a href="">Menu</a>
-            <h3>
-                <img src="{{ url_for('static', filename='images/Dashboard.png') }}" alt="Dashboard.png"
-                    style="width: 24px; height: 24px;">
-                <a href="">Dashboard</a>
-            </h3>
-            <h3>
-                <img src="{{ url_for('static', filename='images/Curso.png') }}" alt="Curso.png"
-                    style="width: 24px; height: 24px;">
-                <a href="">Course</a>
-            </h3>
-            <h3>
-                <img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil.png"
-                    style="width: 24px; height: 24px;">
-                <a href="">Profile</a>
-            </h3>
+<div class="container">
+    <div class="coluna-esquerda">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        <a href="">Menu</a>
+        <h3>
+            <img src="{{ url_for('static', filename='images/Dashboard.png') }}" alt="Dashboard.png"
+                 style="width: 24px; height: 24px;">
+            <a href="">Dashboard</a>
+        </h3>
+        <h3>
+            <img src="{{ url_for('static', filename='images/Curso.png') }}" alt="Curso.png"
+                 style="width: 24px; height: 24px;">
+            <a href="">Course</a>
+        </h3>
+        <h3>
+            <img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil.png"
+                 style="width: 24px; height: 24px;">
+            <a href="">Profile</a>
+        </h3>
 
-        </div>
-        <div class="coluna-direita">
-            <h2>Tatico Fechamento Comercial</h2>
-            <p>relatório de dados do Tatico</p>
-            <div class="chart-container">
-                <div class="coluna-dentroDireita" id="chartContainer">
-                    
-                    <div id="chart1" class="chart-div"></div>
-                    <div id="chart2" class="chart-div"></div>
-                    <div id="chart3" class="chart-div"></div>
-                    <div id="chart4" class="chart-div"></div>
-                    <div id="chart5" class="chart-div"></div>
-                    <div id="chart6" class="chart-div"></div>
-                    <div id="chart7" class="chart-div"></div>
-                    <div id="chart8" class="chart-div"></div>
-                    <div id="chart9" class="chart large-chart"></div>
-                    <div class="chart-year">2023</div>
-                    <!-- Divs para os gráficos de 2022 -->
+    </div>
+    <div class="coluna-direita">
+        <h2>Tatico Fechamento Comercial</h2>
+        <p>relatório de dados do Tatico</p>
+        <div class="chart-container">
+            <div class="coluna-dentroDireita" id="chartContainer">
+
+                <div id="chart1" class="chart-div-top"></div>
+                <div id="chart2" class="chart-div"></div>
+                <div id="chart3" class="chart-div"></div>
+                <div id="chart4" class="chart-div"></div>
+                <div id="chart5" class="chart-div"></div>
+                <div id="chart6" class="chart-div"></div>
+                <div id="chart7" class="chart-div"></div>
+                <div id="chart8" class="chart-div"></div>
+                <div id="chart9" class="chart-div"></div>
+
+
+                <div class="containerTable">
+                    <table>
+                        <tr>
+                            <td>VENDAS</td>
+                            <td>6.430.133</td>
+                            <td>ENTRADAS</td>
+                            <td>7.195,786</td>
+                            <td>89%</td>
+                        </tr>
+                        <tr>
+                            <td>EVOLUÇÃO</td>
+                            <td>FAT</td>
+                            <td>16,81%</td>
+                            <td>RENT</td>
+                            <td>18,21%</td>
+                        </tr>
+                    </table>
                 </div>
-                <div id="charts2022">
-                    <!-- Elementos HTML para gráficos de 2022 -->
-                    <div id="chartttt2022"><h1>2022</h1></div>
-                    <div id="chart12022" class="chart-div"></div>
-                    <div id="chart22022" class="chart-div"></div>
-                    <div id="chart32022" class="chart-div"></div>
-                    <div id="chart42022" class="chart-div"></div>
-                    <div id="chart52022" class="chart-div"></div>
-                    <div id="chart62022" class="chart-div"></div>
-                    <div id="chart72022" class="chart-div"></div>
-                    <div id="chart82022" class="chart-div"></div>
-                    <div id="chart92022" class="chart large-chart"></div>
 
 
-                </div>
+            </div>
+            <div id="charts2022">
+                <div id="chart12022" class="chart-div-top"></div>
+                <div id="chart22022" class="chart-div"></div>
+                <div id="chart32022" class="chart-div"></div>
+                <div id="chart42022" class="chart-div"></div>
+                <div id="chart52022" class="chart-div"></div>
+                <div id="chart62022" class="chart-div"></div>
+                <div id="chart72022" class="chart-div"></div>
+                <div id="chart82022" class="chart-div"></div>
+                <div id="chart92022" class="chart-div-last"></div>
+
+
             </div>
         </div>
     </div>
+</div>
 </body>
 
 </html>

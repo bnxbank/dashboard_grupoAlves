@@ -94,19 +94,16 @@ function drawIndividualChart(chartIndex, columnTitle, dataSet, idSuffix) {
         '#000080',
     ];
 
-   
+
 
    var options = {
-
     curveType: 'function',
     colors: [chartColors[chartIndex % chartColors.length]],
     pointSize: 5,
-    width: '100%',
-    height: 70,
-    legend: {position: 'none'},
+    legend: {position: 'none'}, //sem legenda
     vAxis: {textPosition: 'none'}, // Adicione esta linha para ocultar os números no eixo y
 };
-    
+
 
 
 
