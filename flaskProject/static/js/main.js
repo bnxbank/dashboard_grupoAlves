@@ -1,10 +1,10 @@
 google.charts.load('current', {packages: ['corechart']});
 google.charts.setOnLoadCallback(function () {
-    drawCharts(allData, ''); // Dados de 2023
+    drawCharts(allData2023, '2023'); // Dados de 2023
     drawCharts(allData2022, '2022'); // Dados de 2022
 });
 
-var allData = [
+var allData2023 = [
     [11355189, 11718061, 62468095.57, 12596033.16, 20.16, 11552, 13118, 10.58, 5.32],
     [11896319, 11183848, 61055572.19, 12859511.51, 21.06, 11353, 12949, 11.13, 5.46],
     [13589381, 11961338, 68567964.06, 14712653.97, 21.46, 11411, 13319, 11.14, 5.73],
@@ -124,25 +124,3 @@ function drawIndividualChart(chartIndex, columnTitle, dataSet, idSuffix) {
         document.getElementById('chart' + chartIndex + idSuffix)
     );
     chart.draw(view, options);
-
-    var legendDiv = document.getElementById('legendDiv');
-    var color = chartColors[chartIndex % chartColors.length];
-
-    var legendSpan = document.createElement('span');
-    legendSpan.style.display = 'inline-block';
-    legendSpan.style.marginRight = '10px';
-
-    var legendMarker = document.createElement('span');
-    legendMarker.style.display = 'inline-block';
-    legendMarker.style.width = '10px';
-    legendMarker.style.height = '10px';
-    legendMarker.style.marginRight = '5px';
-    legendMarker.style.backgroundColor = color;
-
-    var legendText = document.createElement('span');
-    legendText.textContent = columnTitle;
-
-    legendSpan.appendChild(legendMarker);
-    legendSpan.appendChild(legendText);
-    legendDiv.appendChild(legendSpan);
-}
