@@ -4,37 +4,32 @@ body {
     padding: 0;
 }
 
-/* Estilos do container */
 .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Espaçamento entre as colunas */
+    gap: 10px;
 }
 
-/* Estilos da coluna esquerda */
 .coluna-esquerda {
     flex: 0;
 }
 
-/* Estilos da coluna-direita */
 .coluna-direita {
-    flex: 3; /* Ajuste este valor para controlar a largura da coluna-direita */
-    background-color: #E6E6E6; /* Adicionando cor de fundo à coluna-direita */
-    padding: 10px; /* Adicionando espaço interno */
-    border-radius: 10px; /* Adicionando bordas arredondadas */
+    flex: 3;
+    background-color: #E6E6E6;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-/* Estilos da coluna-dentroDireita */
 .coluna-dentroDireita {
-    background-color: #424242; /* Adicionando cor de fundo à coluna-dentroDireita */
-    border-radius: 10px; /* Adicionando bordas arredondadas */
+    background-color: #424242;
+    border-radius: 10px;
 }
 
 .chart-container {
     margin: 10px;
 }
 
-/* Estilos do gráfico */
 #curve_chart {
     height: 250px;
 }
@@ -51,7 +46,6 @@ body {
     height: 109px;
 }
 
-/* Estilos da tabela */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -63,23 +57,24 @@ td {
     padding: 10px;
 }
 
-/* Estilos do container da tabela */
 .containerTable {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
     align-items: start;
     padding-left: 250px;
-    padding-right: 250px;"
+    padding-right: 250px;
 }
 
 #chart-div svg g:last-of-type line {
   display: none;
 }
+
 .container-infoTable table,
 .container-infoTable td {
     border: 1px solid #FFFFFF;
 }
+
 #legendDiv {
     font-size: 20px;
     color: white;

@@ -124,3 +124,4 @@ function drawIndividualChart(chartIndex, columnTitle, dataSet, idSuffix) {
         document.getElementById('chart' + chartIndex + idSuffix)
     );
     chart.draw(view, options);
+}
