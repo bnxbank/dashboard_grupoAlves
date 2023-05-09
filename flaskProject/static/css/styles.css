@@ -3,7 +3,6 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-
 }
 
 /* Estilos do container */
@@ -33,41 +32,56 @@ body {
 }
 
 .chart-container {
-  margin: 10px;
+    margin: 10px;
 }
 
 /* Estilos do gráfico */
 #curve_chart {
-
+    height: 250px;
 }
+
 .chart-div {
     height: 65px;
 }
-.chart-div-top {
 
+.chart-div-top {
     height: 68px;
 }
+
 .chart-div-last {
     height: 109px;
 }
 
-
- /*table*/
+/* Estilos da tabela */
 table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 td {
-  border: 1px solid #000;
-  text-align: center;
-  padding: 10px;
+    border: 1px solid #000;
+    text-align: center;
+    padding: 10px;
 }
 
-/*container table*/
+/* Estilos do container da tabela */
 .containerTable {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    align-items: start;
+    padding-left: 250px;
+    padding-right: 250px;"
+}
+
+#chart-div svg g:last-of-type line {
+  display: none;
+}
+.container-infoTable table,
+.container-infoTable td {
+    border: 1px solid #FFFFFF;
+}
+#legendDiv {
+    font-size: 20px;
+    color: white;
 }

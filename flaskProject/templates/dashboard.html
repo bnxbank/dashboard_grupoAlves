@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no">
+    <meta name="viewport" content="user-scalable=0.25">
     <title>Tatico Grafico</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -37,7 +37,10 @@
         <p>relatório de dados do Tatico</p>
         <div class="chart-container">
             <div class="coluna-dentroDireita" id="chartContainer">
-
+                <div id="legendDiv"></div>
+                <div style="writing-mode: vertical-rl;">
+  Seu texto aqui
+</div>
                 <div id="chart1" class="chart-div-top"></div>
                 <div id="chart2" class="chart-div"></div>
                 <div id="chart3" class="chart-div"></div>
@@ -50,27 +53,54 @@
 
 
                 <div class="containerTable">
-                    <table>
-                        <tr>
-                            <td>VENDAS</td>
-                            <td>6.430.133</td>
-                            <td>ENTRADAS</td>
-                            <td>7.195,786</td>
-                            <td>89%</td>
-                        </tr>
-                        <tr>
-                            <td>EVOLUÇÃO</td>
-                            <td>FAT</td>
-                            <td>16,81%</td>
-                            <td>RENT</td>
-                            <td>18,21%</td>
-                        </tr>
-                    </table>
+
+                    <div class="container-infoTable">
+                        <table>
+                            <tr>
+                                <td>VENDAS</td>
+                               <td style="color: blue;">6.430.133</td>
+                                <td style="color: white;">ENTRADAS</td>
+                                <td style="color: orange;">7.195,786</td>
+                                <td style="color: white">89%</td>
+                            </tr>
+                            <tr>
+                                <td style="color: white">EVOLUÇÃO</td>
+                                <td style="color: white">FAT</td>
+                                <td style="color: #3c6fce">16,81%</td>
+                                <td style="color: white">RENT</td>
+                                <td style="color: yellow">18,21%</td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <div class="container-infoSoma">
+                        <table>
+                            <tr>
+                                <td>SOMA</td>
+                                <td>38.932.148,87</td>
+                                <td>Média</td>
+                                <td>12.977.382,96</td>
+                                <td>2.590.037,44</td>
+                                <td>19,96%</td>
+                                <td>11.538</td>
+                                <td>8.549.152,04</td>
+                                <td>2.143.377,81</td>
+                                <td>946.598,86</td>
+                                <td>13.435</td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+
                 </div>
 
 
             </div>
+{#<div style="writing-mode: vertical-rl;"> 2022</div>#}
             <div id="charts2022">
+
                 <div id="chart12022" class="chart-div-top"></div>
                 <div id="chart22022" class="chart-div"></div>
                 <div id="chart32022" class="chart-div"></div>

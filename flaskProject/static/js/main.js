@@ -82,33 +82,67 @@ function drawIndividualChart(chartIndex, columnTitle, dataSet, idSuffix) {
         },
     ]);
 
-    var chartColors = [
-        '#FF0000',
-        '#00FF00',
-        '#0000FF',
-        '#a6a13a',
-        '#FF00FF',
-        '#00FFFF',
-        '#800000',
-        '#008000',
-        '#000080',
+         var chartColors = [
+        '#3374dc',
+        '#ffbd15',
+        '#067237',
+        '#25549b',
+        '#e37b11',
+        '#b7ecec',
+        '#8c8989',
+        '#cde05b',
+        '#e7b4b4',
     ];
 
 
 
-   var options = {
-    curveType: 'function',
-    colors: [chartColors[chartIndex % chartColors.length]],
-    pointSize: 5,
-    legend: {position: 'none'}, //sem legenda
-    vAxis: {textPosition: 'none'}, // Adicione esta linha para ocultar os números no eixo y
-};
-
-
-
-
+    var options = {
+        curveType: 'function',
+        colors: [chartColors[chartIndex % chartColors.length]],
+        pointSize: 10,
+        vAxis: {
+            textPosition: 'none',
+            gridlines: {
+                color: 'transparent'  // adicione esta linha para remover as linhas de grade verticais
+            }
+        },
+        hAxis: {
+            textStyle: {
+                color: '#FFFFFF',
+                fontName: 'Arial',
+                fontSize: 16,
+                fontWeight: 'normal'
+            },
+            gridlines: {
+                color: 'transparent'  // adicione esta linha para remover as linhas de grade horizontais
+            }
+        },
+        backgroundColor: '#383838',
+        legend: {position: 'none'},
+    };
     var chart = new google.visualization.LineChart(
         document.getElementById('chart' + chartIndex + idSuffix)
     );
     chart.draw(view, options);
+
+    var legendDiv = document.getElementById('legendDiv');
+    var color = chartColors[chartIndex % chartColors.length];
+
+    var legendSpan = document.createElement('span');
+    legendSpan.style.display = 'inline-block';
+    legendSpan.style.marginRight = '10px';
+
+    var legendMarker = document.createElement('span');
+    legendMarker.style.display = 'inline-block';
+    legendMarker.style.width = '10px';
+    legendMarker.style.height = '10px';
+    legendMarker.style.marginRight = '5px';
+    legendMarker.style.backgroundColor = color;
+
+    var legendText = document.createElement('span');
+    legendText.textContent = columnTitle;
+
+    legendSpan.appendChild(legendMarker);
+    legendSpan.appendChild(legendText);
+    legendDiv.appendChild(legendSpan);
 }
