@@ -9,34 +9,39 @@
     <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
 </head>
 <body>
-       <div class="coluna-esquerda">
-        <div class="laranja">
-            <div class="slogan">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
-            </div>
-            <div class="menu-esquerdo"><a href="">Menu</a></div>
-            <div class="outros-itens">
-                <h3>
-                    <img src="{{ url_for('static', filename='images/Dashboard.png') }}" alt="Dashboard.png"
-                         style="width: 24px; height: 24px;">
-                    <a href="">Dashboard</a>
-                </h3>
-                <h3>
-                    <img src="{{ url_for('static', filename='images/Curso.png') }}" alt="Curso.png"
-                         style="width: 24px; height: 24px;">
-                    <a href="">Course</a>
-                </h3>
-                <h3>
-                    <img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil.png"
-                         style="width: 24px; height: 24px;">
-                    <a href="">Profile</a>
-                </h3>
-            </div>
+<div class="coluna-esquerda">
+    <div class="laranja">
+        <div class="slogan">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </div>
+        <div class="menu-esquerdo"><a href="">Menu</a></div>
+        <div class="outros-itens">
+            <h3>
+                <img src="{{ url_for('static', filename='images/Dashboard.png') }}" alt="Dashboard.png"
+                     style="width: 24px; height: 24px;">
+                <a href="">Dashboard</a>
+            </h3>
+            <h3>
+                <img src="{{ url_for('static', filename='images/Curso.png') }}" alt="Curso.png"
+                     style="width: 24px; height: 24px;">
+                <a href="">Course</a>
+            </h3>
+            <h3>
+                <img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil.png"
+                     style="width: 24px; height: 24px;">
+                <a href="">Profile</a>
+            </h3>
         </div>
     </div>
+</div>
+
+<div class="direita">
+    <div class="menu-central"> menu menu menu menu menu menu menu menu menu menu menu menu menu menu menu menu</div>
     <div class="coluna-charts">
         <div class="azul-chart1">
             <div class="ano1vertical">Ano 1</div>
+
+
             <div class="charts1" id="chartContainer">
                 <div id="legendDiv"></div>
                 <div id="chart12023" class="chart-div-top"></div>
@@ -49,7 +54,7 @@
                 <div id="chart62023" class="chart-div"></div>
                 <div id="chart72023" class="chart-div"></div>
                 <div id="chart82023" class="chart-div"></div>
-                <div id="chart92023" class="chart-div-last"></div>
+                <div id="chart92023" class="chart-div"></div>
             </div>
         </div>
         <div class="azul-chart2">
@@ -69,6 +74,8 @@
             </div>
         </div>
     </div>
+</div>
+
 
 </body>
 </html>
