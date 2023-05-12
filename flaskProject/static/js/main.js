@@ -1,10 +1,10 @@
 google.charts.load('current', {packages: ['corechart']});
 google.charts.setOnLoadCallback(function () {
-    drawCharts(allData, ''); // Dados de 2023
+    drawCharts(allData2023, '2023'); // Dados de 2023
     drawCharts(allData2022, '2022'); // Dados de 2022
 });
 
-var allData = [
+var allData2023 = [
     [11355189, 11718061, 62468095.57, 12596033.16, 20.16, 11552, 13118, 10.58, 5.32],
     [11896319, 11183848, 61055572.19, 12859511.51, 21.06, 11353, 12949, 11.13, 5.46],
     [13589381, 11961338, 68567964.06, 14712653.97, 21.46, 11411, 13319, 11.14, 5.73],
@@ -82,28 +82,44 @@ function drawIndividualChart(chartIndex, columnTitle, dataSet, idSuffix) {
         },
     ]);
 
-    var chartColors = [
-        '#FF0000',
-        '#00FF00',
-        '#0000FF',
-        '#a6a13a',
-        '#FF00FF',
-        '#00FFFF',
-        '#800000',
-        '#008000',
-        '#000080',
+         var chartColors = [
+        '#3374dc',
+        '#ffbd15',
+        '#067237',
+        '#25549b',
+        '#e37b11',
+        '#b7ecec',
+        '#8c8989',
+        '#cde05b',
+        '#e7b4b4',
     ];
 
+
+
     var options = {
-        title: columnTitle,
         curveType: 'function',
         colors: [chartColors[chartIndex % chartColors.length]],
-        pointSize: 5,
-        width: '15%',
-        height: 60,
+        pointSize: 10,
+        vAxis: {
+            textPosition: 'none',
+            gridlines: {
+                color: 'transparent'  // adicione esta linha para remover as linhas de grade verticais
+            }
+        },
+        hAxis: {
+            textStyle: {
+                color: '#FFFFFF',
+                fontName: 'Arial',
+                fontSize: 16,
+                fontWeight: 'normal'
+            },
+            gridlines: {
+                color: 'transparent'  // adicione esta linha para remover as linhas de grade horizontais
+            }
+        },
+        backgroundColor: '#383838',
         legend: {position: 'none'},
     };
-
     var chart = new google.visualization.LineChart(
         document.getElementById('chart' + chartIndex + idSuffix)
     );

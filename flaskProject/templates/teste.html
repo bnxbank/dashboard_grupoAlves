@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <div class="coluna-esquerda">
+            <div class="laranja">       
+                <div class="slogan">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+                </div>
+                <div class="menu-esquerdo"><a href="">Menu</a></div>
+                <div class="outros-itens">
+                    <h3>
+                        <img src="{{ url_for('static', filename='images/Dashboard.png') }}" alt="Dashboard.png"
+                             style="width: 24px; height: 24px;">
+                        <a href="">Dashboard</a>
+                    </h3>
+                    <h3>
+                        <img src="{{ url_for('static', filename='images/Curso.png') }}" alt="Curso.png"
+                             style="width: 24px; height: 24px;">
+                        <a href="">Course</a>
+                    </h3>
+                    <h3>
+                        <img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil.png"
+                             style="width: 24px; height: 24px;">
+                        <a href="">Profile</a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="menu"></div>
+        <div class="coluna-charts">
+            <div class="azul-chart1">
+                <div class="ano1vertical"></div>
+                <div class="charts1"></div>
+            </div>
+            <div class="azul-chart2">
+                <div class="ano2vertical"></div>
+                <div class="charts2"></div>
+            </div>
+        </div>
+
+
+</body>
+</html>
