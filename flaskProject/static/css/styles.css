@@ -7,7 +7,7 @@ body {
 }
 
 .coluna-esquerda {
-      flex: 0.2;
+    flex: 0.2;
 }
 
 .direita {
@@ -28,7 +28,6 @@ body {
     flex: 3;
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 .laranja {
@@ -43,20 +42,65 @@ body {
 
 .azul-chart1, .azul-chart2 {
     flex: 1;
-    display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    background-color: #E6E6E6;
+    margin: 0;
+    padding: 0;
+    background-color: #383838;
     border-radius: 10px;
 }
 
-.ano1vertical, .ano2vertical, .charts1, .charts2 {
-    margin: 10px;
+/*vertical ano*/
+.azul-chart1 {
+    display: flex;
+    flex-direction: row;
 }
 
+.ano1vertical {
+    flex: 0.1;
+    background-color:#383838; /* Para visualizar a div */
+    width: 10px;
+     font-size: 50px;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            letter-spacing: 10px;
+            text-align: center;
+            color: white;
+}
+
+.charts1 {
+    flex: 4;
+    background-color: #faa; /* Para visualizar a div */
+}
+
+
+
+.azul-chart2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.ano2vertical {
+    flex: 0.1;
+    background-color: #383838; /* Para visualizar a div */
+     font-size: 50px;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            letter-spacing: 10px;
+            text-align: center;
+            color: white;
+}
+
+.charts2 {
+    flex: 4;
+    background-color: #faa; /* Para visualizar a div */
+}
+
+
+
+
+
 #chartContainer, #charts2022 {
-    background-color: #424242;
+    background-color: #383838;
     border-radius: 10px;
 }
 
@@ -72,12 +116,18 @@ body {
     height: 109px;
 }
 
-#legendDiv {
+#legend2023 {
     font-size: 20px;
     color: white;
+     display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-
-
+#title-top {
+  font-size: 20px; /* Ajuste o tamanho da fonte conforme necessário */
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+}
 
 

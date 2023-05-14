@@ -34,17 +34,31 @@ var allData2022 = [
     [843937, 865332, 7592743.02, 1397701.73, 21.34, 11409, 16308, 20.31, 8.45]
 ];
 
+
+   var chartColors = [
+        '#3374dc',
+        '#ffbd15',
+        '#067237',
+        '#25549b',
+        '#e37b11',
+        '#b7ecec',
+        '#8c8989',
+        '#cde05b',
+        '#e7b4b4',
+    ];
+
+
 function drawCharts(dataSet, idSuffix) {
     var columnTitles = [
-        'ITENSENTRADA',
-        'ITENSVENDIDOS',
-        'Faturamento',
-        'Rentabilidade',
-        'FxR',
-        'sku',
-        'SKUESTOQUE',
-        'Margem de Lucro',
-        'Preço Médio de Venda',
+        'FAT($)',
+        'RENT($)',
+        'RENT(%)',
+        'VEND QUAN',
+        'ENTR QUAN',
+        'ESTQ($)',
+        'RUP COMPRA($)',
+        'SKU EST',
+        'SKU-VEND',
     ];
 
     for (var i = 1; i <= columnTitles.length; i++) {
@@ -82,17 +96,6 @@ function drawIndividualChart(chartIndex, columnTitle, dataSet, idSuffix) {
         },
     ]);
 
-         var chartColors = [
-        '#3374dc',
-        '#ffbd15',
-        '#067237',
-        '#25549b',
-        '#e37b11',
-        '#b7ecec',
-        '#8c8989',
-        '#cde05b',
-        '#e7b4b4',
-    ];
 
 
 
@@ -125,3 +128,31 @@ function drawIndividualChart(chartIndex, columnTitle, dataSet, idSuffix) {
     );
     chart.draw(view, options);
 }
+function createLegend(dataSet, id) {
+    var legendDiv = document.getElementById(id);
+    var columnTitles = [
+        'FAT($)',
+        'RENT($)',
+        'RENT(%)',
+        'VEND QUAN',
+        'ENTR QUAN',
+        'ESTQ($)',
+        'RUP COMPRA($)',
+        'SKU EST',
+        'SKU-VEND',
+    ];
+     var legendHtml = '<ul style="display: flex; flex-wrap: wrap; padding: 0;">';
+    for (var i = 0; i < columnTitles.length; i++) {
+        legendHtml += '<li style="list-style-type: none; margin-right: 5px;"><span style="color:' + chartColors[i % chartColors.length] +
+            '">&#9679;</span> ' + columnTitles[i] + '</li>';
+    }
+    legendHtml += '</ul>';
+    legendDiv.innerHTML = legendHtml;
+}
+
+// Chamar a função quando os gráficos são desenhados
+google.charts.setOnLoadCallback(function () {
+    drawCharts(allData2023, '2023'); // Dados de 2023
+    drawCharts(allData2022, '2022'); // Dados de 2022
+    createLegend(allData2023, 'legend2023'); // Cria a legenda para 2023
+});
