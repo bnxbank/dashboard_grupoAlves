@@ -69,7 +69,6 @@ body {
 
 .charts1 {
     flex: 4;
-    background-color: #faa; /* Para visualizar a div */
 }
 
 
@@ -81,7 +80,7 @@ body {
 
 .ano2vertical {
     flex: 0.1;
-    background-color: #383838; /* Para visualizar a div */
+    background-color: #383838;
      font-size: 50px;
             writing-mode: vertical-lr;
             transform: rotate(180deg);
@@ -92,7 +91,6 @@ body {
 
 .charts2 {
     flex: 4;
-    background-color: #faa; /* Para visualizar a div */
 }
 
 
@@ -128,6 +126,43 @@ body {
   color: white;
   text-align: center;
   margin: 0 auto;
+}
+
+.table {
+    height: 2rem;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+.table-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px; /* Ajuste esse valor conforme necessário */
+}
+
+#table1, .table-soma {
+    flex: 1;
+    margin: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+
+table, th, td {
+    border: 1px solid white;
+}
+
+td {
+    padding: 15px;
+    text-align: center;
+    background-color: #383838;
 }
 
 
