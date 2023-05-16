@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/faturamento.css') }}">
+    <script src="{{ url_for('static', filename='js/faturamento.js') }}" defer></script>
 </head>
 <body>
 <div class="coluna-esquerda">
@@ -15,7 +15,7 @@
             <h3>
                 <img src="{{ url_for('static', filename='images/Dashboard.png') }}" alt="Dashboard.png"
                      style="width: 24px; height: 24px;">
-                <a href="">Dashboard</a>
+                <a href="{{ url_for('faturamento') }}">Faturamento</a>
             </h3>
             <h3>
                 <img src="{{ url_for('static', filename='images/Curso.png') }}" alt="Curso.png"
@@ -35,38 +35,26 @@
     <div class="menu-central"> menu menu menu menu menu menu menu menu menu menu menu menu menu menu menu menu</div>
     <div class="coluna-charts">
         <div class="azul-chart1">
-            <div class="ano1vertical">2023</div>
+            <div class="ano1vertical">2022</div>
 
 
             <div class="charts1" id="chartContainer">
-                <div id="title-top" ´>ANALISE COMERCIAL - (Goiânia) geral (LOJAS)</div>
-                <div id="legend2023"></div>
-                <div id="chart12023" class="chart-div-top"></div>
-                <div id="chart22023" class="chart-div"></div>
-                <div id="chart32023" class="chart-div"></div>
-                <div id="chart42023" class="chart-div"></div>
-                <div id="chart52023" class="chart-div"></div>
-                <div id="chart62023" class="chart-div"></div>
-                <div id="chart72023" class="chart-div"></div>
-                <div id="chart82023" class="chart-div"></div>
-                <div id="chart92023" class="chart-div"></div>
-                 <div id="table-container1" class="table-container">
+                <div id="title-top" ´>FATURAMENTO - (Goiânia) geral (LOJAS)</div>
+                <div id="legend2022"></div>
+                <div id="chart12022" class="chart-div-top"></div>
+                <div id="chart22022" class="chart-div"></div>
+                <div id="chart32022" class="chart-div"></div>
+                <div id="table-container1" class="table-container">
                     <div id="table1">
                         <div>
                             <table>
-                                <tr>
-                                    <td>VENDAS</td>
-                                    <td>0</td>
-                                    <td>ENTRADAS</td>
-                                    <td>35.019.078</td>
-                                    <td>95%</td>
-                                </tr>
+
                                 <tr>
                                     <td>EVOLUÇÃO</td>
                                     <td>FAT</td>
-                                    <td>100%</td>
-                                    <td>RENT</td>
-                                    <td>-4,47%</td>
+                                    <td>-68,14%</td>
+                                    <td>RENT $</td>
+                                    <td>-67,78%</td>
                                 </tr>
                             </table>
                         </div>
@@ -77,16 +65,12 @@
                             <table>
                                 <tr>
                                     <td>SOMA</td>
-                                    <td>197.118.127,25</td>
+                                    <td>38.932.148,87</td>
                                     <td>MEDIA</td>
-                                    <td>65.706.042,42</td>
-                                    <td>13.043.724,32</td>
-                                    <td>19,85%</td>
-                                    <td>11,468</td>
-                                    <td>45.415.813,15</td>
-                                    <td>11.121.082,14</td>
-                                    <td>4.412.847,86</td>
-                                    <td>13.432</td>
+                                    <td>3.539.286,26</td>
+                                    <td>706.373,85</td>
+                                    <td>19,96%</td>
+
                                 </tr>
                             </table>
                         </div>
@@ -96,35 +80,23 @@
             </div>
         </div>
         <div class="azul-chart2">
-            <div class="ano2vertical">2022</div>
-            <div class="charts2" id="charts2022">
-                <div id="chart12022" class="chart-div-top"></div>
-                <div id="chart22022" class="chart-div"></div>
-                <div id="chart32022" class="chart-div"></div>
-                <div id="chart42022" class="chart-div"></div>
-                <div id="chart52022" class="chart-div"></div>
-                <div id="chart62022" class="chart-div"></div>
-                <div id="chart72022" class="chart-div"></div>
-                <div id="chart82022" class="chart-div"></div>
-                <div id="chart92022" class="chart-div-last"></div>
+            <div class="ano2vertical">2021</div>
+            <div class="charts2" id="charts2021">
+                <div id="chart12021" class="chart-div-top"></div>
+                <div id="chart22021" class="chart-div"></div>
+                <div id="chart32021" class="chart-div"></div>
 
                 <div id="table-container2" class="table-container">
                     <div id="table2">
                         <div>
                             <table>
-                                <tr>
-                                    <td>VENDAS</td>
-                                    <td>0</td>
-                                    <td>ENTRADAS</td>
-                                    <td>35.019.078</td>
-                                    <td>95%</td>
-                                </tr>
+
                                 <tr>
                                     <td>EVOLUÇÃO</td>
                                     <td>FAT</td>
-                                    <td>100%</td>
-                                    <td>RENT</td>
-                                    <td>-4,47%</td>
+                                    <td>-68,14%</td>
+                                    <td>RENT $</td>
+                                    <td>-67,78%</td>
                                 </tr>
                             </table>
                         </div>
@@ -135,16 +107,12 @@
                             <table>
                                 <tr>
                                     <td>SOMA</td>
-                                    <td>197.118.127,25</td>
+                                    <td>38.932.148,87</td>
                                     <td>MEDIA</td>
-                                    <td>65.706.042,42</td>
-                                    <td>13.043.724,32</td>
-                                    <td>19,85%</td>
-                                    <td>11,468</td>
-                                    <td>45.415.813,15</td>
-                                    <td>11.121.082,14</td>
-                                    <td>4.412.847,86</td>
-                                    <td>13.432</td>
+                                    <td>3.539.286,26</td>
+                                    <td>706.373,85</td>
+                                    <td>19,96%</td>
+
                                 </tr>
                             </table>
                         </div>
@@ -153,7 +121,60 @@
                 </div>
             </div>
         </div>
+         <div class="azul-chart3">
+    <div class="ano3vertical">2020</div>
+    <div class="charts3" id="charts2020">
+        <div id="chart12020" class="chart-div-top"></div>
+        <div id="chart22020" class="chart-div"></div>
+        <div id="chart32020" class="chart-div"></div>
+        <div id="table-container3" class="table-container">
+
+
+</div>
+
+<div class="azul-chart4">
+    <div class="ano4vertical">2019</div>
+    <div class="charts4" id="charts2019">
+        <div id="chart12019" class="chart-div-top"></div>
+        <div id="chart22019" class="chart-div"></div>
+ <div id="chart32019" class="chart-div"></div>
+        <!-- Adicione suas tabelas aqui, se necessário -->
     </div>
 </div>
+
+<div class="azul-chart5">
+    <div class="ano5vertical">2018</div>
+    <div class="charts5" id="charts2018">
+        <div id="chart12018" class="chart-div-top"></div>
+        <div id="chart22018" class="chart-div"></div>
+        <div id="chart32018" class="chart-div"></div>
+        <!-- Adicione suas tabelas aqui, se necessário -->
+    </div>
+</div>
+
+<div class="azul-chart6">
+    <div class="ano6vertical">2017</div>
+    <div class="charts6" id="charts2017">
+        <div id="chart12017" class="chart-div-top"></div>
+        <div id="chart22017" class="chart-div"></div>
+        <div id="chart32017" class="chart-div"></div>
+        <!-- Adicione suas tabelas aqui, se necessário -->
+    </div>
+</div>
+
+<div class="azul-chart7">
+    <div class="ano7vertical">2016</div>
+    <div class="charts7" id="charts2016">
+        <div id="chart12016" class="chart-div-top"></div>
+        <div id="chart22016" class="chart-div"></div>
+        <div id="chart32016" class="chart-div-last"></div>
+        <!-- Adicione suas tabelas aqui, se necessário -->
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 </body>
 </html>
