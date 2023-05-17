@@ -6,175 +6,327 @@
 </head>
 <body>
 <div class="coluna-esquerda">
-    <div class="laranja">
-        <div class="slogan">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
-        </div>
-        <div class="menu-esquerdo"><a href="">Menu</a></div>
-        <div class="outros-itens">
-            <h3>
-                <img src="{{ url_for('static', filename='images/Dashboard.png') }}" alt="Dashboard.png"
-                     style="width: 24px; height: 24px;">
-                <a href="{{ url_for('faturamento') }}">Faturamento</a>
-            </h3>
-            <h3>
-                <img src="{{ url_for('static', filename='images/Curso.png') }}" alt="Curso.png"
-                     style="width: 24px; height: 24px;">
-                <a href="">Course</a>
-            </h3>
-            <h3>
-                <img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil.png"
-                     style="width: 24px; height: 24px;">
-                <a href="">Profile</a>
-            </h3>
-        </div>
-    </div>
-</div>
-
-<div class="direita">
-    <div class="menu-central"> menu menu menu menu menu menu menu menu menu menu menu menu menu menu menu menu</div>
-    <div class="coluna-charts">
-        <div class="azul-chart1">
-            <div class="ano1vertical">2022</div>
-
-
-            <div class="charts1" id="chartContainer">
-                <div id="title-top" ´>FATURAMENTO - (Goiânia) geral (LOJAS)</div>
-                <div id="legend2022"></div>
-                <div id="chart12022" class="chart-div-top"></div>
-                <div id="chart22022" class="chart-div"></div>
-                <div id="chart32022" class="chart-div"></div>
-                <div id="table-container1" class="table-container">
-                    <div id="table1">
-                        <div>
-                            <table>
-
-                                <tr>
-                                    <td>EVOLUÇÃO</td>
-                                    <td>FAT</td>
-                                    <td>-68,14%</td>
-                                    <td>RENT $</td>
-                                    <td>-67,78%</td>
-                                </tr>
-                            </table>
-                        </div>
-
-                    </div>
-                    <div id="table-soma1" class="table-soma">
-                        <div>
-                            <table>
-                                <tr>
-                                    <td>SOMA</td>
-                                    <td>38.932.148,87</td>
-                                    <td>MEDIA</td>
-                                    <td>3.539.286,26</td>
-                                    <td>706.373,85</td>
-                                    <td>19,96%</td>
-
-                                </tr>
-                            </table>
-                        </div>
-
-                    </div>
-                </div>
+        <div class="laranja">
+            <div class="slogan">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            </div>
+            <div class="menu-esquerdo"><a href="">Menu</a></div>
+            <div class="outros-itens">
+                <h3>
+                    <img src="{{ url_for('static', filename='images/Dashboard.png') }}" alt="Dashboard.png"
+                         style="width: 24px; height: 24px;">
+                    <a href="{{ url_for('faturamento') }}">Faturamento</a>
+                </h3>
+                <h3>
+                    <img src="{{ url_for('static', filename='images/Curso.png') }}" alt="Curso.png"
+                         style="width: 24px; height: 24px;">
+                    <a href="">Course</a>
+                </h3>
+                <h3>
+                    <img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil.png"
+                         style="width: 24px; height: 24px;">
+                    <a href="">Profile</a>
+                </h3>
             </div>
         </div>
-        <div class="azul-chart2">
-            <div class="ano2vertical">2021</div>
-            <div class="charts2" id="charts2021">
-                <div id="chart12021" class="chart-div-top"></div>
-                <div id="chart22021" class="chart-div"></div>
-                <div id="chart32021" class="chart-div"></div>
+    </div>
 
-                <div id="table-container2" class="table-container">
-                    <div id="table2">
-                        <div>
-                            <table>
+        <div class="direita">
+            <div class="menu-central"> menu menu menu menu menu menu menu menu menu menu menu menu menu menu menu menu</div>
+                        <div class="coluna-charts">
+                            <div class="azul-chart1">
+                                <div class="ano1vertical">2022</div>
+                                <div class="charts1" id="chartContainer">
+                                    <div id="title-top">FATURAMENTO - (Goiânia) geral (LOJAS)</div>
+                                    <div id="legend2022"></div>
+                                    <div id="chart12022" class="chart-div-top"></div>
+                                    <div id="chart22022" class="chart-div"></div>
+                                    <div id="chart32022" class="chart-div"></div>
+                                    <div id="table-container1" class="table-container">
+                                        <div id="table1">
+                                            <div>
+                                                <table>
+                                                    <tr>
+                                                        <td>EVOLUÇÃO</td>
+                                                        <td>FAT</td>
+                                                        <td>-68,14%</td>
+                                                        <td>RENT $</td>
+                                                        <td>-67,78%</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div id="table-soma1" class="table-soma">
+                                            <div>
+                                                <table>
+                                                    <tr>
+                                                        <td>SOMA</td>
+                                                        <td>38.932.148,87</td>
+                                                        <td>MEDIA</td>
+                                                        <td>3.539.286,26</td>
+                                                        <td>706.373,85</td>
+                                                        <td>19,96%</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="azul-chart2">
+                                    <div class="ano2vertical">2021</div>
+                                        <div class="charts2" id="charts2021">
+                                            <div id="chart12021" class="chart-div-top"></div>
+                                            <div id="chart22021" class="chart-div"></div>
+                                            <div id="chart32021" class="chart-div"></div>
+                                                        <div id="table-container2" class="table-container">
+                                                                <div id="table2">
+                                                                        <div>
+                                                                                <table>
+                                                                                            <tr>
+                                                                                                <td>EVOLUÇÃO</td>
+                                                                                                <td>FAT</td>
+                                                                                                <td>-68,14%</td>
+                                                                                                <td>RENT $</td>
+                                                                                                <td>-67,78%</td>
+                                                                                            </tr>
+                                                                                </table>
+                                                                        </div>
+                                                                </div>
+                                                                <div id="table-soma2" class="table-soma">
+                                                                        <div>
+                                                                                <table>
+                                                                                        <tr>
+                                                                                            <td>SOMA</td>
+                                                                                            <td>38.932.148,87</td>
+                                                                                            <td>MEDIA</td>
+                                                                                            <td>3.539.286,26</td>
+                                                                                            <td>706.373,85</td>
+                                                                                            <td>19,96%</td>
+                                                                                        </tr>
+                                                                                </table>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                        </div>
+                            </div>
+                            <div class="azul-chart3">
+                                <div class="ano3vertical">2020</div>
+                                <div class="charts3" id="charts2020">
+                                    <div id="chart12020" class="chart-div-top"></div>
+                                    <div id="chart22020" class="chart-div"></div>
+                                    <div id="chart32020" class="chart-div"></div>
+                                    <div id="table-container3" class="table-container">
 
-                                <tr>
-                                    <td>EVOLUÇÃO</td>
-                                    <td>FAT</td>
-                                    <td>-68,14%</td>
-                                    <td>RENT $</td>
-                                    <td>-67,78%</td>
-                                </tr>
-                            </table>
-                        </div>
+                                            <div id="table3">
+                                                <div>
+                                                    <table>
+                                                        <tr>
+                                                            <td>EVOLUÇÃO</td>
+                                                            <td>FAT</td>
+                                                            <td>-68,14%</td>
+                                                            <td>RENT $</td>
+                                                            <td>-67,78%</td>
+                                                        </tr>
+                                                        </table>
+                                                </div>
+                                            </div>
+                                            <div id="table-soma3" class="table-soma">
+                                                <div>
+                                                        <table>
+                                                        <tr>
+                                                            <td>SOMA</td>
+                                                            <td>38.932.148,87</td>
+                                                            <td>MEDIA</td>
+                                                            <td>3.539.286,26</td>
+                                                            <td>706.373,85</td>
+                                                            <td>19,96%</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
 
-                    </div>
-                    <div id="table-soma2" class="table-soma">
-                        <div>
-                            <table>
-                                <tr>
-                                    <td>SOMA</td>
-                                    <td>38.932.148,87</td>
-                                    <td>MEDIA</td>
-                                    <td>3.539.286,26</td>
-                                    <td>706.373,85</td>
-                                    <td>19,96%</td>
 
-                                </tr>
-                            </table>
-                        </div>
+                                    </div>
 
-                    </div>
+
+
+
+                                </div>
+                            </div>
+
+
+                            <div class="azul-chart4">
+                                <div class="ano4vertical">2019</div>
+                                <div class="charts4" id="charts2019">
+                                    <div id="chart12019" class="chart-div-top"></div>
+                                    <div id="chart22019" class="chart-div"></div>
+                                    <div id="chart32019" class="chart-div"></div>
+                                    <div id="table-container4" class="table-container">
+                                        <div id="table4">
+                                            <div>
+                                                <table>
+                                                    <tr>
+                                                        <td>EVOLUÇÃO</td>
+                                                        <td>FAT</td>
+                                                        <td>-68,14%</td>
+                                                        <td>RENT $</td>
+                                                        <td>-67,78%</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div id="table-soma4" class="table-soma">
+                                            <div>
+                                                <table>
+                                                    <tr>
+                                                        <td>SOMA</td>
+                                                        <td>38.932.148,87</td>
+                                                        <td>MEDIA</td>
+                                                        <td>3.539.286,26</td>
+                                                        <td>706.373,85</td>
+                                                        <td>19,96%</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="azul-chart5">
+                                    <div class="ano5vertical">2018</div>
+                                    <div class="charts5" id="charts2018">
+                                        <div id="chart12018" class="chart-div-top"></div>
+                                        <div id="chart22018" class="chart-div"></div>
+                                        <div id="chart32018" class="chart-div"></div>
+                                        <div id="table-container5" class="table-container">
+
+                                            <div id="table5">
+                <div>
+                    <table>
+                        <tr>
+                            <td>EVOLUÇÃO</td>
+                            <td>FAT</td>
+                            <td>-68,14%</td>
+                            <td>RENT $</td>
+                            <td>-67,78%</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
+            <div id="table-soma5" class="table-soma">
+                <div>
+                    <table>
+                        <tr>
+                            <td>SOMA</td>
+                            <td>38.932.148,87</td>
+                            <td>MEDIA</td>
+                            <td>3.539.286,26</td>
+                            <td>706.373,85</td>
+                            <td>19,96%</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="azul-chart6">
+                                    <div class="ano6vertical">2017</div>
+                                    <div class="charts6" id="charts2017">
+                                        <div id="chart12017" class="chart-div-top"></div>
+                                        <div id="chart22017" class="chart-div"></div>
+                                        <div id="chart32017" class="chart-div"></div>
+                                        <div id="table-container6" class="table-container">
+
+                                             <div id="table6">
+                                                <div>
+                                                    <table>
+                                                        <tr>
+                                                            <td>EVOLUÇÃO</td>
+                                                            <td>FAT</td>
+                                                            <td>-68,14%</td>
+                                                            <td>RENT $</td>
+                                                            <td>-67,78%</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div id="table-soma6" class="table-soma">
+                                                <div>
+                                                    <table>
+                                                        <tr>
+                                                            <td>SOMA</td>
+                                                            <td>38.932.148,87</td>
+                                                            <td>MEDIA</td>
+                                                            <td>3.539.286,26</td>
+                                                            <td>706.373,85</td>
+                                                            <td>19,96%</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="azul-chart7">
+                                    <div class="ano7vertical">2016</div>
+                                    <div class="charts7" id="charts2016">
+                                        <div id="chart12016" class="chart-div-top"></div>
+                                        <div id="chart22016" class="chart-div"></div>
+                                        <div id="chart32016" class="chart-div-last"></div>
+                                        <div id="table-container7" class="table-container">
+
+                                            <div id="table7">
+                                                    <div>
+                                                        <table>
+                                                            <tr>
+                                                                <td>EVOLUÇÃO</td>
+                                                                <td>FAT</td>
+                                                                <td>-68,14%</td>
+                                                                <td>RENT $</td>
+                                                                <td>-67,78%</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                            </div>
+                                            <div id="table-soma7" class="table-soma">
+                                                    <div>
+                                                        <table>
+                                                            <tr>
+                                                                <td>SOMA</td>
+                                                                <td>38.932.148,87</td>
+                                                                <td>MEDIA</td>
+                                                                <td>3.539.286,26</td>
+                                                                <td>706.373,85</td>
+                                                                <td>19,96%</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                            </div>
+
+
+
+
+
+                        </div>
         </div>
-         <div class="azul-chart3">
-    <div class="ano3vertical">2020</div>
-    <div class="charts3" id="charts2020">
-        <div id="chart12020" class="chart-div-top"></div>
-        <div id="chart22020" class="chart-div"></div>
-        <div id="chart32020" class="chart-div"></div>
-        <div id="table-container3" class="table-container">
-
-
-</div>
-
-<div class="azul-chart4">
-    <div class="ano4vertical">2019</div>
-    <div class="charts4" id="charts2019">
-        <div id="chart12019" class="chart-div-top"></div>
-        <div id="chart22019" class="chart-div"></div>
- <div id="chart32019" class="chart-div"></div>
-        <!-- Adicione suas tabelas aqui, se necessário -->
-    </div>
-</div>
-
-<div class="azul-chart5">
-    <div class="ano5vertical">2018</div>
-    <div class="charts5" id="charts2018">
-        <div id="chart12018" class="chart-div-top"></div>
-        <div id="chart22018" class="chart-div"></div>
-        <div id="chart32018" class="chart-div"></div>
-        <!-- Adicione suas tabelas aqui, se necessário -->
-    </div>
-</div>
-
-<div class="azul-chart6">
-    <div class="ano6vertical">2017</div>
-    <div class="charts6" id="charts2017">
-        <div id="chart12017" class="chart-div-top"></div>
-        <div id="chart22017" class="chart-div"></div>
-        <div id="chart32017" class="chart-div"></div>
-        <!-- Adicione suas tabelas aqui, se necessário -->
-    </div>
-</div>
-
-<div class="azul-chart7">
-    <div class="ano7vertical">2016</div>
-    <div class="charts7" id="charts2016">
-        <div id="chart12016" class="chart-div-top"></div>
-        <div id="chart22016" class="chart-div"></div>
-        <div id="chart32016" class="chart-div-last"></div>
-        <!-- Adicione suas tabelas aqui, se necessário -->
-    </div>
-</div>
-</div>
-</div>
-</div>
-</div>
 
 </body>
 </html>
