@@ -10,6 +10,7 @@ body {
     flex: 0.2;
 }
 
+
 .direita {
     flex: 3;
     display: flex;
@@ -39,7 +40,8 @@ body {
 .slogan, .menu-esquerdo, .outros-itens {
     margin: 10px;
 }
-.azul-chart1,.azul-chart2,.azul-chart3,.azul-chart4,.azul-chart5,.azul-chart6,.azul-chart7 {
+
+.azul-chart1, .azul-chart2, .azul-chart3, .azul-chart4, .azul-chart5, .azul-chart6, .azul-chart7 {
     flex: 1;
     flex-direction: column;
     margin: 0;
@@ -48,39 +50,26 @@ body {
     border-radius: 10px;
 }
 
-
-
-
-
-
-.ano1vertical,.ano2vertical,.ano3vertical, .ano4vertical,.ano5vertical,.ano6vertical,.ano7vertical {
+.ano1vertical, .ano2vertical, .ano3vertical, .ano4vertical, .ano5vertical, .ano6vertical, .ano7vertical {
     flex: 0.1;
-    background-color:#383838; /* Para visualizar a div */
+    background-color: #383838; /* Para visualizar a div */
     width: 10px;
-     font-size: 50px;
-            writing-mode: vertical-lr;
-            transform: rotate(180deg);
-            letter-spacing: 10px;
-            text-align: center;
-            color: white;
+    font-size: 50px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    letter-spacing: 10px;
+    text-align: center;
+    color: white;
 }
 
-.charts1, .charts2, .charts3, .charts4, .charts5, .charts6, .charts7{
+.charts1, .charts2, .charts3, .charts4, .charts5, .charts6, .charts7 {
     flex: 4;
 }
-
-
 
 .azul-chart1, .azul-chart2, .azul-chart3, .azul-chart4, .azul-chart5, .azul-chart6, .azul-chart7 {
     display: flex;
     flex-direction: row;
 }
-
-
-
-
-
-
 
 #chartContainer, #charts2022 {
     background-color: #383838;
@@ -92,7 +81,7 @@ body {
 }
 
 .chart-div-top {
-    height: 68px;
+    height: 85px;
 }
 
 .chart-div-last {
@@ -102,25 +91,21 @@ body {
 #legend2022 {
     font-size: 20px;
     color: white;
-     display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 #title-top {
-  font-size: 20px; /* Ajuste o tamanho da fonte conforme necessário */
-  color: white;
-  text-align: center;
-  margin: 0 auto;
+    font-size: 20px; /* Ajuste o tamanho da fonte conforme necessário */
+    color: white;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .table {
     height: 2rem;
     width: 100%;
-}
-
-table, th, td {
-    border: 1px solid white;
-    border-collapse: collapse;
 }
 
 .table-container {
@@ -129,10 +114,51 @@ table, th, td {
     max-width: 900px; /* Ajuste esse valor conforme necessário */
 }
 
-#table1, .table-soma {
-    flex: 1;
-    margin: 10px;
+
+.table-soma {
+    margin-left: 800px; /* Move a div para a direita */
+    margin-top: 10px; /* Adiciona um espaço entre as divs */
 }
 
+.table-first td {
+    border: 1px solid white;
+    white-space: nowrap; /* Impede a quebra de linha */
+}
 
+.table-first td:first-child,
+.table-first td:nth-child(2) {
+    color: white; /* EVOLUÇÃO e FAT */
+}
 
+.table-first td:nth-child(3) {
+    color: #6695f5; /* -68,14% e -67,78% */
+}
+
+.table-first td:nth-child(4) {
+    color: white; /* RENT $ */
+}
+
+.table-first td:nth-child(5) {
+    color: yellow; /* Altera a cor para amarelo */
+}
+
+.table-soma td:nth-child(1),
+.table-soma td:nth-child(3) {
+    color: white;
+}
+
+.table-soma td:nth-child(2) {
+    background-color: #749f74; /* Altera o fundo para verde */
+}
+
+.table-soma td:nth-child(4) {
+    background-color: #558bc9; /* Altera o fundo para azul */
+}
+
+.table-soma td:nth-child(5) {
+    background-color: yellow; /* Altera o fundo para amarelo */
+}
+
+.table-soma td:nth-child(6) {
+    background-color: #429142; /* Altera o fundo para verde escuro */
+}
