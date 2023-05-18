@@ -103,21 +103,16 @@ body {
     margin: 0 auto;
 }
 
-.table {
-    height: 2rem;
-    width: 100%;
-}
+
 
 .table-container {
     display: flex;
-    justify-content: space-between;
-    max-width: 900px; /* Ajuste esse valor conforme necessário */
+    max-width: 1200px; /* Ajuste esse valor conforme necessário */
 }
 
 
 .table-soma {
     margin-left: 800px; /* Move a div para a direita */
-    margin-top: 10px; /* Adiciona um espaço entre as divs */
 }
 
 .table-first td {
@@ -162,3 +157,5 @@ body {
 .table-soma td:nth-child(6) {
     background-color: #429142; /* Altera o fundo para verde escuro */
 }
+
+

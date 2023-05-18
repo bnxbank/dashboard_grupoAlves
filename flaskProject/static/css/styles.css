@@ -132,7 +132,7 @@ body {
 .table-container {
     display: flex;
     justify-content: space-between;
-    max-width: 900px; /* Ajuste esse valor conforme necessário */
+    max-width: 700px; /* Ajuste esse valor conforme necessário */
 }
 
 
