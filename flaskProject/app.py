@@ -16,17 +16,19 @@ allData = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  
+
 ]
 
 
 @app.route('/')
 def dashboard():
-    return render_template('analisecomercial.html', allData = allData)
+    return render_template('analisecomercial.html', allData=allData)
+
 
 @app.route('/faturamento')
 def faturamento():
     return render_template('faturamento.html')
+
 
 @app.route('/importar_csv')
 def importar_csv():
@@ -34,6 +36,7 @@ def importar_csv():
     dados = pd.read_csv(arquivo_csv, delimiter=';')
     # Resto do código para manipular os dados do CSV
     return 'CSV importado com sucesso!'
+
 
 if __name__ == '__main__':
     app.run(debug=True)
