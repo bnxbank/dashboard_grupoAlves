@@ -58,6 +58,7 @@
                     <div id="table1">
                         <div>
                             <table>
+<<<<<<< Updated upstream
                                 <tr>
                                     <td>VENDAS</td>
                                     <td>0</td>
@@ -71,6 +72,18 @@
                                     <td>100%</td>
                                     <td>RENT</td>
                                     <td>-4,47%</td>
+=======
+                                <tr class="row-1">                
+                                    {% for valor in dados_tabela %}
+                                    <td>{{ valor }}</td>
+                                    {% endfor %}
+                                </tr>
+                                
+                                <tr  class="row-2">
+                                     {% for valor in dados_tabela2 %}
+                                    <td>{{ valor }}</td>
+                                    {% endfor %}
+>>>>>>> Stashed changes
                                 </tr>
                             </table>
                         </div>
@@ -81,17 +94,16 @@
                             <table>
                                 <tr>
                                     <td>SOMA</td>
-                                    <td>197.118.127,25</td>
+                                    <td>{{ soma_valores }}</td>
                                     <td>MEDIA</td>
-                                    <td>65.706.042,42</td>
-                                    <td>13.043.724,32</td>
-                                    <td>19,85%</td>
-                                    <td>11,468</td>
-                                    <td>45.415.813,15</td>
-                                    <td>11.121.082,14</td>
-                                    <td>4.412.847,86</td>
-                                    <td>13.432</td>
-                                </tr>
+                                    <td>{{ media_valores }}</td>
+                                    <td>{{ media_valor1 }}</td>
+                                    <td>{{ media_valor2 }}</td>
+                                    <td>{{ media_valor3 }}</td>
+                                    <td>{{ media_valor4 }}</td>
+                                    <td>{{ media_valor5 }}</td>
+                                    <td>{{ media_valor6 }}</td>
+                                    <td>{{ media_valor7 }}</td>
                             </table>
                         </div>
 
