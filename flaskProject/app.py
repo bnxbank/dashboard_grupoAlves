@@ -16,13 +16,64 @@ allData = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
-
 ]
+
+@app.route('/')
+def dashboard():
+    dados_tabela = ["VENDAS", 10, "ENTRADAS", 35.019078, 40]  # Exemplo de dados para a tabela
+    dados_tabela2 = ["EVOLUÇÃO", "FAT", "100%", "RENT", "-4.47%"]  # Exemplo de dados para a segunda tabela
+    soma_valores = "197.118.127,25"
+    media_valores = "65.706.042,42"
+    media_valor1 = "13.043.724,32"
+    media_valor2 = "19,85%"
+    media_valor3 = "11,468"
+    media_valor4 = "45.415.813,15"
+    media_valor5 = "11.121.082,14"
+    media_valor6 = "4.412.847,86"
+    media_valor7 = "13.432"
+
+    return render_template('analisecomercial.html',
+                           allData=allData,
+                           dados_tabela=dados_tabela,
+                           dados_tabela2=dados_tabela2,
+                           soma_valores=soma_valores,
+                           media_valores=media_valores,
+                           media_valor1=media_valor1,
+                           media_valor2=media_valor2,
+                           media_valor3=media_valor3,
+                           media_valor4=media_valor4,
+                           media_valor5=media_valor5,
+                           media_valor6=media_valor6,
+                           media_valor7=media_valor7)
 
 
 @app.route('/a')
-def dashboard():
-    return render_template('analisecomercial.html', allData=allData)
+def dashboard_a():
+    dados_tabela = ["VENDAS", 10, "ENTRADAS", 35.019078, 40]  # Exemplo de dados para a tabela
+    dados_tabela2 = ["EVOLUÇÃO", "FAT", "100%", "RENT", "-4.47%"]  # Exemplo de dados para a segunda tabela
+    soma_valores = "197.118.127,25"
+    media_valores = "65.706.042,42"
+    media_valor1 = "13.043.724,32"
+    media_valor2 = "119,85%"
+    media_valor3 = "11,468"
+    media_valor4 = "45.415.813,15"
+    media_valor5 = "11.121.082,14"
+    media_valor6 = "4.412.847,86"
+    media_valor7 = "13.432"
+
+    return render_template('analisecomercial.html',
+                           allData=allData,
+                           dados_tabela=dados_tabela,
+                           dados_tabela2=dados_tabela2,
+                           soma_valores=soma_valores,
+                           media_valores=media_valores,
+                           media_valor1=media_valor1,
+                           media_valor2=media_valor2,
+                           media_valor3=media_valor3,
+                           media_valor4=media_valor4,
+                           media_valor5=media_valor5,
+                           media_valor6=media_valor6,
+                           media_valor7=media_valor7)
 
 
 @app.route('/faturamento')
