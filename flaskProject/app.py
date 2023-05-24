@@ -20,6 +20,27 @@ allData = [
 
 @app.route('/')
 def dashboard():
+    data = {
+        'vendas': '0',
+        'entradas': '35.019.078',
+        'porcentagem': '95%'
+    }
+    data2 = {
+        'evolucao': 'EVOLUÇÃO',
+        'fat': '100%',
+        'rent': '-4,47%'
+    }
+    soma_data = {
+        'soma': '197.118.127,25',
+        'media': '65.706.042,42',
+        'valor_1': '13.043.724,32',
+        'porcentagem': '19,85%',
+        'valor_2': '11,468',
+        'valor_3': '45.415.813,15',
+        'valor_4': '11.121.082,14',
+        'valor_5': '4.412.847,86',
+        'valor_6': '13.432'
+    }
     dados_tabela = ["VENDAS", 10, "ENTRADAS", 35.019078, 40]  # Exemplo de dados para a tabela
     dados_tabela2 = ["EVOLUÇÃO", "FAT", "100%", "RENT", "-4.47%"]  # Exemplo de dados para a segunda tabela
     soma_valores = "197.118.127,25"
@@ -44,17 +65,37 @@ def dashboard():
                            media_valor4=media_valor4,
                            media_valor5=media_valor5,
                            media_valor6=media_valor6,
-                           media_valor7=media_valor7)
-
+                           media_valor7=media_valor7,  data=data, data2=data2, soma_data=soma_data)
 
 @app.route('/a')
 def dashboard_a():
+    data = {
+        'vendas': '0',
+        'entradas': '35.019.078',
+        'porcentagem': '95%'
+    }
+    data2 = {
+        'evolucao': 'EVOLUÇÃO',
+        'fat': '100%',
+        'rent': '-4,47%'
+    }
+    soma_data = {
+        'soma': '197.118.127,25',
+        'media': '65.706.042,42',
+        'valor_1': '13.043.724,32',
+        'porcentagem': '19,85%',
+        'valor_2': '11,468',
+        'valor_3': '45.415.813,15',
+        'valor_4': '11.121.082,14',
+        'valor_5': '4.412.847,86',
+        'valor_6': '13.432'
+    }
     dados_tabela = ["VENDAS", 10, "ENTRADAS", 35.019078, 40]  # Exemplo de dados para a tabela
     dados_tabela2 = ["EVOLUÇÃO", "FAT", "100%", "RENT", "-4.47%"]  # Exemplo de dados para a segunda tabela
     soma_valores = "197.118.127,25"
     media_valores = "65.706.042,42"
     media_valor1 = "13.043.724,32"
-    media_valor2 = "119,85%"
+    media_valor2 = "19,85%"
     media_valor3 = "11,468"
     media_valor4 = "45.415.813,15"
     media_valor5 = "11.121.082,14"
@@ -73,20 +114,16 @@ def dashboard_a():
                            media_valor4=media_valor4,
                            media_valor5=media_valor5,
                            media_valor6=media_valor6,
-                           media_valor7=media_valor7)
+                           media_valor7=media_valor7,  data=data, data2=data2, soma_data=soma_data)
 
 
 @app.route('/faturamento')
 def faturamento():
-    return render_template('faturamento.html')
+    # Os valores aqui são apenas para exemplo, substitua-os pelos seus dados reais
+    evolucao_fat = "-68,14%"
+    rent_dollar = "-67,78%"
+    return render_template('faturamento.html', evolucao_fat=evolucao_fat, rent_dollar=rent_dollar)
 
-
-@app.route('/importar_csv')
-def importar_csv():
-    arquivo_csv = 'alldata2016.csv'
-    dados = pd.read_csv(arquivo_csv, delimiter=';')
-    # Resto do código para manipular os dados do CSV
-    return 'CSV importado com sucesso!'
 
 
 if __name__ == '__main__':

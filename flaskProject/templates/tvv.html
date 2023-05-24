@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=0.25">
+    <title>Tatico Grafico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            background-color: black;  /* alterado para preto */
+        }
+    </style>
+</head>
+<body>
+<div class="coluna-esquerda">
+    <div class="laranja">
+        <div class="slogan">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </div>
+        <div class="menu-esquerdo"><a href="">Menu</a></div>
+        <div class="outros-itens">
+            <h3>
+                <img src="{{ url_for('static', filename='images/Dashboard.png') }}" alt="Dashboard.png"
+                     style="width: 24px; height: 24px;">
+                <a href="{{ url_for('faturamento') }}">Faturamento</a>
+            </h3>
+            <h3>
+                <img src="{{ url_for('static', filename='images/Curso.png') }}" alt="Curso.png"
+                     style="width: 24px; height: 24px;">
+                <a href="">Course</a>
+            </h3>
+            <h3>
+                <img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil.png"
+                     style="width: 24px; height: 24px;">
+                <a href="">Profile</a>
+            </h3>
+        </div>
+    </div>
+</div>
+
+<div class="direita">
+    <div class="menu-central"> menu menu menu menu menu menu menu menu menu menu menu menu menu menu menu menu</div>
+    <div class="coluna-charts">
+        <div class="azul-chart1">
+            <div class="ano1vertical">2023</div>
+
+
+            <div class="charts1" id="chartContainer">
+                <div id="title-top">ANALISE COMERCIAL - (Goiânia) geral (LOJAS)</div>
+                <div id="legend2023"></div>
+            </div>
+        </div>
+        <div class="azul-chart2">
+            <div class="ano2vertical">2022</div>
+            <div class="charts2" id="charts2022"></div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
