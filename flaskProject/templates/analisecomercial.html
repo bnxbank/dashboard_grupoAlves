@@ -276,18 +276,19 @@ google.charts.setOnLoadCallback(function () {
                             <table>
                                 <tr class="row-1">
                                     <td>VENDAS</td>
-                                    <td>0</td>
+                                    <td>{{ data.vendas }}</td>
                                     <td>ENTRADAS</td>
-                                    <td>35.019.078</td>
-                                    <td>95%</td>
+                                    <td>{{ data.entradas }}</td>
+                                    <td>{{ data.porcentagem }}</td>
                                 </tr>
-                                <tr  class="row-2">
-                                    <td>EVOLUÇÃO</td>
+                                <tr class="row-2">
+                                    <td>{{ data2.evolucao }}</td>
                                     <td>FAT</td>
-                                    <td>100%</td>
+                                    <td>{{ data2.fat }}</td>
                                     <td>RENT</td>
-                                    <td>-4,47%</td>
+                                    <td>{{ data2.rent }}</td>
                                 </tr>
+                                
                             </table>
                         </div>
 
@@ -297,16 +298,16 @@ google.charts.setOnLoadCallback(function () {
                             <table>
                                 <tr>
                                     <td>SOMA</td>
-                                    <td>197.118.127,25</td>
+                                    <td>{{ data3.soma }}</td>
                                     <td>MEDIA</td>
-                                    <td>65.706.042,42</td>
-                                    <td>13.043.724,32</td>
-                                    <td>19,85%</td>
-                                    <td>11,468</td>
-                                    <td>45.415.813,15</td>
-                                    <td>11.121.082,14</td>
-                                    <td>4.412.847,86</td>
-                                    <td>13.432</td>
+                                    <td>{{ data3.media }}</td>
+                                    <td>{{ data3.valor1 }}</td>
+                                    <td>{{ data3.porcentagem }}</td>
+                                    <td>{{ data3.valor2 }}</td>
+                                    <td>{{ data3.valor3 }}</td>
+                                    <td>{{ data3.valor4 }}</td>
+                                    <td>{{ data3.valor5 }}</td>
+                                    <td>{{ data3.valor6 }}</td>
                                 </tr>
                             </table>
                         </div>
