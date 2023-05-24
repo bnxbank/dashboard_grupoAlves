@@ -122,7 +122,15 @@ def faturamento():
     # Os valores aqui são apenas para exemplo, substitua-os pelos seus dados reais
     evolucao_fat = "-68,14%"
     rent_dollar = "-67,78%"
-    return render_template('faturamento.html', evolucao_fat=evolucao_fat, rent_dollar=rent_dollar)
+    soma = "38.932.148,87"
+    media = "3.539.286,26"
+    media_valor = "706.373,85"
+    porcentagem = "19,96%"
+    return render_template('faturamento.html',
+                           evolucao_fat=evolucao_fat,
+                           rent_dollar=rent_dollar,
+                           soma=soma, media=media,
+                           media_valor=media_valor, porcentagem=porcentagem)
 
 
 
