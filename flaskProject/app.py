@@ -119,7 +119,10 @@ def dashboard_a():
 
 @app.route('/faturamento')
 def faturamento():
-    return render_template('faturamento.html')
+    # Os valores aqui são apenas para exemplo, substitua-os pelos seus dados reais
+    evolucao_fat = "-68,14%"
+    rent_dollar = "-67,78%"
+    return render_template('faturamento.html', evolucao_fat=evolucao_fat, rent_dollar=rent_dollar)
 
 
 
