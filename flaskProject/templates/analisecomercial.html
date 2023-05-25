@@ -28,9 +28,7 @@ google.charts.setOnLoadCallback(function () {
 // ];
 
 var allData2023 ={{allData}};
-
 var allData2022 ={{allData2}};
-
 
 
    var chartColors = [
@@ -207,16 +205,19 @@ google.charts.setOnLoadCallback(function () {
                     <div id="table1" class="table-first">
                         <div>
                             <table>
-                                <tr class="row-1">                
-                                    {% for valor in dados_tabela %}
-                                    <td>{{ valor }}</td>
-                                    {% endfor %}
+                                <tr class="row-1">
+                                    <td>VENDAS</td>
+                                    <td>0</td>
+                                    <td>ENTRADAS</td>
+                                    <td>35.019.078</td>
+                                    <td>95%</td>
                                 </tr>
-                                
-                                <tr  class="row-2">
-                                     {% for valor in dados_tabela2 %}
-                                    <td>{{ valor }}</td>
-                                    {% endfor %}
+                                <tr class="row-2">
+                                    <td>EVOLUÇÃO</td>
+                                    <td>FAT</td>
+                                    <td>100%</td>
+                                    <td>RENT</td>
+                                    <td>-4%</td>
                                 </tr>
                             </table>
                         </div>
@@ -225,18 +226,19 @@ google.charts.setOnLoadCallback(function () {
                     <div id="table-soma1" class="table-soma">
                         <div>
                             <table>
-                                <tr>
-                                    <td>SOMA</td>
-                                    <td>{{ soma_valores }}</td>
-                                    <td>MEDIA</td>
-                                    <td>{{ media_valores }}</td>
-                                    <td>{{ media_valor1 }}</td>
-                                    <td>{{ media_valor2 }}</td>
-                                    <td>{{ media_valor3 }}</td>
-                                    <td>{{ media_valor4 }}</td>
-                                    <td>{{ media_valor5 }}</td>
-                                    <td>{{ media_valor6 }}</td>
-                                    <td>{{ media_valor7 }}</td>
+                            <tr>
+                                <td>SOMA</td>
+                                <td>{{ soma.soma }}</td>
+                                <td>MEDIA</td>
+                                <td>{{ soma.media1 }}</td>
+                                <td>{{ soma.media2 }}</td>
+                                <td>{{ soma.percentual }}</td>
+                                <td>{{ soma.valor1 }}</td>
+                                <td>{{ soma.valor2 }}</td>
+                                <td>{{ soma.valor3 }}</td>
+                                <td>{{ soma.valor4 }}</td>
+                                <td>{{ soma.valor5 }}</td>
+                            </tr>
                             </table>
                         </div>
 
@@ -263,17 +265,17 @@ google.charts.setOnLoadCallback(function () {
                             <table>
                                 <tr class="row-1">
                                     <td>VENDAS</td>
-                                    <td>{{ data.vendas }}</td>
+                                    <td>0</td>
                                     <td>ENTRADAS</td>
-                                    <td>{{ data.entradas }}</td>
-                                    <td>{{ data.porcentagem }}</td>
+                                    <td>35.019.078</td>
+                                    <td>95%</td>
                                 </tr>
                                 <tr class="row-2">
-                                    <td>{{ data2.evolucao }}</td>
+                                    <td>EVOLUÇÃO</td>
                                     <td>FAT</td>
-                                    <td>{{ data2.fat }}</td>
+                                    <td>100%</td>
                                     <td>RENT</td>
-                                    <td>{{ data2.rent }}</td>
+                                    <td>-4%</td>
                                 </tr>
                                 
                             </table>
@@ -285,18 +287,18 @@ google.charts.setOnLoadCallback(function () {
                             <table>
                                 <tr>
                                     <td>SOMA</td>
-                                    <td>{{ soma_data.soma }}</td>
+                                    <td>{{ soma2.soma }}</td>
                                     <td>MEDIA</td>
-                                    <td>{{ soma_data.media }}</td>
-                                    <td>{{ soma_data.valor1 }}</td>
-                                    <td>{{ soma_data.porcentagem }}</td>
-                                    <td>{{ soma_data.valor2 }}</td>
-                                    <td>{{ soma_data.valor3 }}</td>
-                                    <td>{{ soma_data.valor4 }}</td>
-                                    <td>{{ soma_data.valor5 }}</td>
-                                    <td>{{ soma_data.valor6 }}</td>
+                                    <td>{{ soma2.media1 }}</td>
+                                    <td>{{ soma2.media2 }}</td>
+                                    <td>{{ soma2.percentual }}</td>
+                                    <td>{{ soma2.valor1 }}</td>
+                                    <td>{{ soma2.valor2 }}</td>
+                                    <td>{{ soma2.valor3 }}</td>
+                                    <td>{{ soma2.valor4 }}</td>
+                                    <td>{{ soma2.valor5 }}</td>
                                 </tr>
-                            </table>
+                                </table>
                         </div>
 
                     </div>
