@@ -135,116 +135,155 @@ allData9 = [
     [843937, 865332, 7592743.02],
 ]
 
+evolucao = {
+    # 2023 análise comercial
+}
+
+evolucao2 = {
+    # 2022 análise comercial
+}
+
+evolucao3 = {
+    # 2022 faturamento
+    "fat": "-68,14%",
+    "rent": "-67,78%"
+}
+
+evolucao4 = {
+    # 2021 faturamento
+    "fat": "-70,32%",
+    "rent": "-69,94%"
+}
+
+evolucao5 = {
+    # 2020 faturamento
+    "fat": "-72,51%",
+    "rent": "-71,89%"
+}
+
+evolucao6 = {
+    # 2019 faturamento
+    "fat": "-74,83%",
+    "rent": "-74,09%"
+}
+
+evolucao7 = {
+    # 2018 faturamento
+    "fat": "-77,29%",
+    "rent": "-76,44%"
+}
+
+evolucao8 = {
+    # 2017 faturamento
+    "fat": "-79,89%",
+    "rent": "-78,92%"
+}
+
+evolucao9 = {
+    # 2016 faturamento
+    "fat": "-82,64%",
+    "rent": "-81,56%"
+}
+soma = {
+    # 2023 analise comercial
+        "soma": "1917.118.127,25",
+        "media1": "65.706.042,42",
+        "media2": "13.043.724,32",
+        "percentual": "19,85%",
+        "valor1": "11,468",
+        "valor2": "45.415.813,15",
+        "valor3": "11.121.082,14",
+        "valor4": "4.412.847,86",
+        "valor5": "13.432"
+    }
+soma2 = {
+    # 2022 analise comercial
+    "soma": "1.815.120.111,78",
+    "media1": "63.602.034,14",
+    "media2": "12.877.243,89",
+    "percentual": "18,78%",
+    "valor1": "10,968",
+    "valor2": "44.315.813,15",
+    "valor3": "10.101.082,14",
+    "valor4": "4.212.847,86",
+    "valor5": "12.932"
+}
+soma3 = {
+    # 2022 faturamento
+    "soma": "38.148,87",
+    "media1": "3.539.286,26",
+    "media2": "706.373,85",
+    "percentual": "19,96%"
+}
+
+soma4 = {
+    # 2021 faturamento
+    "soma": "35.836.159,77",
+    "media1": "3.256.014,52",
+    "media2": "651.203,90",
+    "percentual": "18,92%"
+}
+
+soma5 = {
+    # 2020 faturamento
+    "soma": "32.745.123,69",
+    "media1": "2.977.738,52",
+    "media2": "595.547,70",
+    "percentual": "17,86%"
+}
+
+soma6 = {
+    # 2019 faturamento
+    "soma": "29.670.112,59",
+    "media1": "2.697.282,96",
+    "media2": "539.456,59",
+    "percentual": "16,80%"
+}
+
+soma7 = {
+    # 2018 faturamento
+    "soma": "26.603.107,49",
+    "media1": "2.418.282,41",
+    "media2": "483.656,48",
+    "percentual": "15,74%"
+}
+
+soma8 = {
+    # 2017 faturamento
+    "soma": "23.542.102,39",
+    "media1": "2.139.281,85",
+    "media2": "427.856,37",
+    "percentual": "14,68%"
+}
+soma9 = {
+    # 2015 faturamento
+    "soma": "20.486.097,29",
+    "media1": "1.860.281,30",
+    "media2": "372.056,26",
+    "percentual": "13,62%"
+}
 @app.route('/')
 def dashboard():
-    data = {
-        'vendas': '0',
-        'entradas': '35.019.078',
-        'porcentagem': '95%'
-    }
-    data2 = {
-        'evolucao': 'EVOLUÇÃO',
-        'fat': '100%',
-        'rent': '-4,47%'
-    }
-    soma_data = {
-        'soma': '197.118.127,25',
-        'media': '65.706.042,42',
-        'valor_1': '13.043.724,32',
-        'porcentagem': '19,85%',
-        'valor_2': '11,468',
-        'valor_3': '45.415.813,15',
-        'valor_4': '11.121.082,14',
-        'valor_5': '4.412.847,86',
-        'valor_6': '13.432'
-    }
-    dados_tabela = ["VENDAS", 10, "ENTRADAS", 35.019078, 40]  # Exemplo de dados para a tabela
-    dados_tabela2 = ["EVOLUÇÃO", "FAT", "100%", "RENT", "-4.47%"]  # Exemplo de dados para a segunda tabela
-    soma_valores = "197.118.127,25"
-    media_valores = "65.706.042,42"
-    media_valor1 = "13.043.724,32"
-    media_valor2 = "19,85%"
-    media_valor3 = "11,468"
-    media_valor4 = "45.415.813,15"
-    media_valor5 = "11.121.082,14"
-    media_valor6 = "4.412.847,86"
-    media_valor7 = "13.432"
+     
+    
 
     return render_template('analisecomercial.html',
                            allData2=allData2,
                            allData=allData,
-                           dados_tabela=dados_tabela,
-                           dados_tabela2=dados_tabela2,
-                           soma_valores=soma_valores,
-                           media_valores=media_valores,
-                           media_valor1=media_valor1,
-                           media_valor2=media_valor2,
-                           media_valor3=media_valor3,
-                           media_valor4=media_valor4,
-                           media_valor5=media_valor5,
-                           media_valor6=media_valor6,
-                           media_valor7=media_valor7,  data=data, data2=data2, soma_data=soma_data)
+                           soma=soma, soma2=soma2)
 
 @app.route('/analisecomercial')
 def dashboard_a():
-    data = {
-        'vendas': '0',
-        'entradas': '35.019.078',
-        'porcentagem': '95%'
-    }
-    data2 = {
-        'evolucao': 'EVOLUÇÃO',
-        'fat': '100%',
-        'rent': '-4,47%'
-    }
-    soma_data = {
-        'soma': '197.118.127,25',
-        'media': '65.706.042,42',
-        'valor_1': '13.043.724,32',
-        'porcentagem': '19,85%',
-        'valor_2': '11,468',
-        'valor_3': '45.415.813,15',
-        'valor_4': '11.121.082,14',
-        'valor_5': '4.412.847,86',
-        'valor_6': '13.432'
-    }
-    dados_tabela = ["VENDAS", 10, "ENTRADAS", 35.019078, 40]  # Exemplo de dados para a tabela
-    dados_tabela2 = ["evolucao", "FAT", "100%", "RENT", "-4.47%"]  # Exemplo de dados para a segunda tabela
-    soma_valores = "197.118.127,25"
-    media_valores = "65.706.042,42"
-    media_valor1 = "13.043.724,32"
-    media_valor2 = "19,85%"
-    media_valor3 = "11,468"
-    media_valor4 = "45.415.813,15"
-    media_valor5 = "11.121.082,14"
-    media_valor6 = "4.412.847,86"
-    media_valor7 = "13.432"
 
     return render_template('analisecomercial.html',
                            allData2=allData2,
                            allData=allData,
-                           dados_tabela=dados_tabela,
-                           dados_tabela2=dados_tabela2,
-                           soma_valores=soma_valores,
-                           media_valores=media_valores,
-                           media_valor1=media_valor1,
-                           media_valor2=media_valor2,
-                           media_valor3=media_valor3,
-                           media_valor4=media_valor4,
-                           media_valor5=media_valor5,
-                           media_valor6=media_valor6,
-                           media_valor7=media_valor7,  data=data, data2=data2, soma_data=soma_data)
+                           soma=soma, soma2=soma2)
 
 
 @app.route('/faturamento')
 def faturamento():
-    # Os valores aqui são apenas para exemplo, substitua-os pelos seus dados reais
-    evolucao_fat = "-68,14%"
-    rent_dollar = "-67,78%"
-    soma = "38.932.148,87"
-    media = "3.539.286,26"
-    media_valor = "706.373,85"
-    porcentagem = "19,96%"
+    
     return render_template('faturamento.html',
                            allData9=allData9,
                            allData8=allData8,
@@ -253,10 +292,10 @@ def faturamento():
                            allData5=allData5,
                            allData4=allData4,
                            allData3=allData3,
-                           evolucao_fat=evolucao_fat,
-                           rent_dollar=rent_dollar,
-                           soma=soma, media=media,
-                           media_valor=media_valor, porcentagem=porcentagem)
+                           evolucao3=evolucao3, evolucao4=evolucao4, evolucao5=evolucao5, 
+                           evolucao6=evolucao6, evolucao7=evolucao7, evolucao8=evolucao8, 
+                           evolucao9=evolucao9, soma3=soma3, soma4=soma4, soma5=soma5, 
+                           soma6=soma6, soma7=soma7, soma8=soma8, soma9=soma9)
 
 
 
