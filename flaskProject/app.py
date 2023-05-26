@@ -4,6 +4,7 @@ import pandas as pd
 app = Flask(__name__)
 
 allData = [
+    # 2023 analise comercial
     [235791, 11718061, 62468095.57, 12596033.16, 20.16, 11552, 13118, 10.58, 5.32],
     [11896319, 11183848, 61055572.19, 12859511.51, 21.06, 11353, 12949, 11.13, 5.46],
     [13589381, 11961338, 68567964.06, 14712653.97, 21.46, 11411, 13319, 11.14, 5.73],
@@ -19,6 +20,7 @@ allData = [
 ]
 
 allData2 = [
+    # 2022 analise comercial
     [43, 1234504, 9567205.57, 1245233.16, 22.16, 15840, 24128, 12.58, 6.32],
     [578244, 936292, 7885899.19, 1383722.51, 24.06, 16741, 21049, 14.13, 7.46],
     [894502, 842509, 5796122.06, 1512367.97, 23.46, 14251, 16319, 15.14, 6.73],
@@ -34,6 +36,7 @@ allData2 = [
 ]
 
 allData3 = [
+    # 2022 faturamento
     [11355189, 11718061, 62468095.57],
     [11896319, 11183848, 61055572.19],
     [13589381, 11961338, 68567964.06],
@@ -63,7 +66,7 @@ allData4 = [
     [843937, 865332, 7592743.02],
 ]
 allData5 = [
-    # 2020
+    # 2020 faturamento
     [458903, 764104, 9567205.57],
     [578244, 936292, 7885899.19],
     [894502, 842509, 5796122.06],
@@ -134,13 +137,25 @@ allData9 = [
     [1078522, 663329, 5248603.91],
     [843937, 865332, 7592743.02],
 ]
+vendas = "6.430.133"
+entradas = "7.195,786"
+percentual = "89%"
+
+vendas2 = "5.800.000"
+entradas2 = "6.500,000"
+percentual2 = "88%"
+
 
 evolucao = {
     # 2023 análise comercial
+    "fat": "16,81%",
+    "rent": "18,21%"
 }
 
 evolucao2 = {
     # 2022 análise comercial
+    "fat": "16,81%",
+    "rent": "18,21%"
 }
 
 evolucao3 = {
@@ -270,7 +285,11 @@ def dashboard():
     return render_template('analisecomercial.html',
                            allData2=allData2,
                            allData=allData,
-                           soma=soma, soma2=soma2)
+                           evolucao=evolucao, evolucao2=evolucao2,
+                           soma=soma, soma2=soma2, vendas=vendas,
+                           vendas2=vendas2, entradas=entradas, entradas2=entradas2,
+                           percentual=percentual, percentual2=percentual2
+                           )
 
 @app.route('/analisecomercial')
 def dashboard_a():
@@ -278,7 +297,10 @@ def dashboard_a():
     return render_template('analisecomercial.html',
                            allData2=allData2,
                            allData=allData,
-                           soma=soma, soma2=soma2)
+                           evolucao=evolucao, evolucao2=evolucao2,
+                           soma=soma, soma2=soma2, vendas=vendas,
+                           vendas2=vendas2, entradas=entradas, entradas2=entradas2,
+                           percentual=percentual, percentual2=percentual2)
 
 
 @app.route('/faturamento')

@@ -207,17 +207,17 @@ google.charts.setOnLoadCallback(function () {
                             <table>
                                 <tr class="row-1">
                                     <td>VENDAS</td>
-                                    <td>0</td>
-                                    <td>ENTRADAS</td>
-                                    <td>35.019.078</td>
-                                    <td>95%</td>
+                                    <td>{{ vendas }}</td>
+                                    <td>ENTRADAS</td>                                    
+                                    <td>{{ entradas }}</td>
+                                    <td>{{ percentual }}</td>
                                 </tr>
                                 <tr class="row-2">
                                     <td>EVOLUÇÃO</td>
                                     <td>FAT</td>
-                                    <td>100%</td>
+                                    <td>{{ evolucao.fat }}</td>
                                     <td>RENT</td>
-                                    <td>-4%</td>
+                                    <td>{{ evolucao.rent }}</td>
                                 </tr>
                             </table>
                         </div>
@@ -265,17 +265,17 @@ google.charts.setOnLoadCallback(function () {
                             <table>
                                 <tr class="row-1">
                                     <td>VENDAS</td>
-                                    <td>0</td>
+                                    <td>{{ vendas2 }}</td>
                                     <td>ENTRADAS</td>
-                                    <td>35.019.078</td>
-                                    <td>95%</td>
+                                    <td>{{ entradas2 }}</td>
+                                    <td>{{ percentual2 }}</td>
                                 </tr>
                                 <tr class="row-2">
                                     <td>EVOLUÇÃO</td>
                                     <td>FAT</td>
-                                    <td>100%</td>
+                                    <td>{{ evolucao2.fat }}</td>
                                     <td>RENT</td>
-                                    <td>-4%</td>
+                                    <td>{{ evolucao2.rent }}</td>
                                 </tr>
                                 
                             </table>
@@ -285,19 +285,19 @@ google.charts.setOnLoadCallback(function () {
                     <div id="table-soma2" class="table-soma">
                         <div>
                             <table>
-                                <tr>
-                                    <td>SOMA</td>
-                                    <td>{{ soma2.soma }}</td>
-                                    <td>MEDIA</td>
-                                    <td>{{ soma2.media1 }}</td>
-                                    <td>{{ soma2.media2 }}</td>
-                                    <td>{{ soma2.percentual }}</td>
-                                    <td>{{ soma2.valor1 }}</td>
-                                    <td>{{ soma2.valor2 }}</td>
-                                    <td>{{ soma2.valor3 }}</td>
-                                    <td>{{ soma2.valor4 }}</td>
-                                    <td>{{ soma2.valor5 }}</td>
-                                </tr>
+                                    <tr>
+                                        <td>SOMA</td>
+                                        <td>{{ soma2.soma }}</td>
+                                        <td>MEDIA</td>
+                                        <td>{{ soma2.media1 }}</td>
+                                        <td>{{ soma2.media2 }}</td>
+                                        <td>{{ soma2.percentual }}</td>
+                                        <td>{{ soma2.valor1 }}</td>
+                                        <td>{{ soma2.valor2 }}</td>
+                                        <td>{{ soma2.valor3 }}</td>
+                                        <td>{{ soma2.valor4 }}</td>
+                                        <td>{{ soma2.valor5 }}</td>
+                                    </tr>
                                 </table>
                         </div>
 
