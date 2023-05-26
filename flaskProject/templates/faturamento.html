@@ -9,116 +9,13 @@ google.charts.setOnLoadCallback(function () {
     drawCharts(allData2021, '2021'); // Dados de 2021
 });
 
-var allData2022 = [
-    [11355189, 11718061, 62468095.57],
-    [11896319, 11183848, 61055572.19],
-    [13589381, 11961338, 68567964.06],
-    [12237109, 12020019, 71098304.87],
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
-];
-
-var allData2021 = [
-    [458903, 764104, 9567205.57],
-    [578244, 936292, 7885899.19],
-    [894502, 842509, 5796122.06],
-    [764802, 915710, 6760894.87],
-    [951331, 868602, 6842430.90],
-    [874921, 838912, 6750901.44],
-    [945740, 876192, 6789438.77],
-    [942662, 965432, 7598847.37],
-    [812401, 854302, 6979081.49],
-    [938402, 785302, 6587421.07],
-    [1078522, 663329, 5248603.91],
-    [843937, 865332, 7592743.02]
-];
-var allData2020 = [
-    // Dados para 2020
-     [458903, 764104, 9567205.57],
-    [578244, 936292, 7885899.19],
-    [894502, 842509, 5796122.06],
-    [764802, 915710, 6760894.87],
-    [951331, 868602, 6842430.90],
-    [874921, 838912, 6750901.44],
-    [945740, 876192, 6789438.77],
-    [942662, 965432, 7598847.37],
-    [812401, 854302, 6979081.49],
-    [938402, 785302, 6587421.07],
-    [1078522, 663329, 5248603.91],
-    [843937, 865332, 7592743.02]
-];
-
-var allData2019 = [
-    // Dados para 2019
-     [458903, 764104, 9567205.57],
-    [578244, 936292, 7885899.19],
-    [894502, 842509, 5796122.06],
-    [764802, 915710, 6760894.87],
-    [951331, 868602, 6842430.90],
-    [874921, 838912, 6750901.44],
-    [945740, 876192, 6789438.77],
-    [942662, 965432, 7598847.37],
-    [812401, 854302, 6979081.49],
-    [938402, 785302, 6587421.07],
-    [1078522, 663329, 5248603.91],
-    [843937, 865332, 7592743.02]
-];
-
-var allData2018 = [
-    // Dados para 2018
-     [458903, 764104, 9567205.57],
-    [578244, 936292, 7885899.19],
-    [894502, 842509, 5796122.06],
-    [764802, 915710, 6760894.87],
-    [951331, 868602, 6842430.90],
-    [874921, 838912, 6750901.44],
-    [945740, 876192, 6789438.77],
-    [942662, 965432, 7598847.37],
-    [812401, 854302, 6979081.49],
-    [938402, 785302, 6587421.07],
-    [1078522, 663329, 5248603.91],
-    [843937, 865332, 7592743.02]
-];
-
-var allData2017 = [
-    // Dados para 2017
-     [458903, 764104, 9567205.57],
-    [578244, 936292, 7885899.19],
-    [894502, 842509, 5796122.06],
-    [764802, 915710, 6760894.87],
-    [951331, 868602, 6842430.90],
-    [874921, 838912, 6750901.44],
-    [945740, 876192, 6789438.77],
-    [942662, 965432, 7598847.37],
-    [812401, 854302, 6979081.49],
-    [938402, 785302, 6587421.07],
-    [1078522, 663329, 5248603.91],
-    [843937, 865332, 7592743.02]
-];
-
-var allData2016 = [
-    // Dados para 2016
-     [458903, 764104, 9567205.57],
-    [578244, 936292, 7885899.19],
-    [894502, 842509, 5796122.06],
-    [764802, 915710, 6760894.87],
-    [951331, 868602, 6842430.90],
-    [874921, 838912, 6750901.44],
-    [945740, 876192, 6789438.77],
-    [942662, 965432, 7598847.37],
-    [812401, 854302, 6979081.49],
-    [938402, 785302, 6587421.07],
-    [1078522, 663329, 5248603.91],
-    [843937, 865332, 7592743.02]
-];
-
-
+var allData2022 ={{allData3}};
+var allData2021 ={{allData4}};
+var allData2020 ={{allData5}};
+var allData2019 ={{allData6}};
+var allData2018 ={{allData7}};
+var allData2017 ={{allData8}};
+var allData2016 ={{allData9}};
 
 
    var chartColors = [
@@ -246,7 +143,7 @@ google.charts.setOnLoadCallback(function () {
                 <h3>
                     <img src="{{ url_for('static', filename='images/Dashboard.png') }}" alt="Dashboard.png"
                          style="width: 24px; height: 24px;">
-                    <a href="a">Analise Comercial</a>
+                    <a href="analisecomercial">Analise Comercial</a>
                 </h3>
                 <h3>
                     <img src="{{ url_for('static', filename='images/Curso.png') }}" alt="Curso.png"
@@ -280,9 +177,9 @@ google.charts.setOnLoadCallback(function () {
                                                     <tr>
                                                         <td>EVOLUÇÃO</td>
                                                         <td>FAT</td>
-                                                        <td>{{ evolucao_fat }}</td>
+                                                        <td>{{ evolucao3.fat }}</td>
                                                         <td>RENT $</td>
-                                                        <td>{{ rent_dollar }}</td>
+                                                        <td>{{ evolucao3.rent }}</td>
                                                     </tr>
                                                 </table>
                                             </div>
@@ -292,12 +189,12 @@ google.charts.setOnLoadCallback(function () {
                                                 <table>
                                                     <tr>
                                                         <td>SOMA</td>
-                                                        <td>38.932.148,87</td>
+                                                        <td>{{ soma3.soma }}</td>
                                                         <td>MEDIA</td>
-                                                        <td>3.539.286,26</td>
-                                                        <td>706.373,85</td>
-                                                        <td>19,96%</td>
-                                                    </tr>
+                                                        <td>{{ soma3.media1 }}</td>
+                                                        <td>{{ soma3.media2 }}</td>
+                                                        <td>{{ soma3.percentual }}</td>
+                                                    </tr>                                                    
                                                 </table>
                                             </div>
                                         </div>
@@ -317,9 +214,9 @@ google.charts.setOnLoadCallback(function () {
                                                                                             <tr>
                                                                                                 <td>EVOLUÇÃO</td>
                                                                                                 <td>FAT</td>
-                                                                                                <td>-68,14%</td>
+                                                                                                <td>{{ evolucao4.fat }}</td>
                                                                                                 <td>RENT $</td>
-                                                                                                <td>-67,78%</td>
+                                                                                                <td>{{ evolucao4.rent }}</td>
                                                                                             </tr>
                                                                                 </table>
                                                                         </div>
@@ -329,11 +226,11 @@ google.charts.setOnLoadCallback(function () {
                                                                                 <table>
                                                                                         <tr>
                                                                                             <td>SOMA</td>
-                                                                                            <td>38.932.148,87</td>
+                                                                                            <td>{{ soma4.soma }}</td>
                                                                                             <td>MEDIA</td>
-                                                                                            <td>3.539.286,26</td>
-                                                                                            <td>706.373,85</td>
-                                                                                            <td>19,96%</td>
+                                                                                            <td>{{ soma4.media1 }}</td>
+                                                                                            <td>{{ soma4.media2 }}</td>
+                                                                                            <td>{{ soma4.percentual }}</td>
                                                                                         </tr>
                                                                                 </table>
                                                                         </div>
@@ -355,9 +252,9 @@ google.charts.setOnLoadCallback(function () {
                                                         <tr>
                                                             <td>EVOLUÇÃO</td>
                                                             <td>FAT</td>
-                                                            <td>-68,14%</td>
+                                                            <td>{{ evolucao5.fat }}</td>
                                                             <td>RENT $</td>
-                                                            <td>-67,78%</td>
+                                                            <td>{{ evolucao5.rent }}</td>
                                                         </tr>
                                                         </table>
                                                 </div>
@@ -367,11 +264,11 @@ google.charts.setOnLoadCallback(function () {
                                                         <table>
                                                         <tr>
                                                             <td>SOMA</td>
-                                                            <td>38.932.148,87</td>
+                                                            <td>{{ soma5.soma }}</td>
                                                             <td>MEDIA</td>
-                                                            <td>3.539.286,26</td>
-                                                            <td>706.373,85</td>
-                                                            <td>19,96%</td>
+                                                            <td>{{ soma5.media1 }}</td>
+                                                            <td>{{ soma5.media2 }}</td>
+                                                            <td>{{ soma5.percentual }}</td>
                                                         </tr>
                                                     </table>
                                                 </div>
@@ -399,10 +296,10 @@ google.charts.setOnLoadCallback(function () {
                                                 <table>
                                                     <tr>
                                                         <td>EVOLUÇÃO</td>
-                                                        <td>FAT</td>
-                                                        <td>-68,14%</td>
-                                                        <td>RENT $</td>
-                                                        <td>-67,78%</td>
+                                                            <td>FAT</td>
+                                                            <td>{{ evolucao6.fat }}</td>
+                                                            <td>RENT $</td>
+                                                            <td>{{ evolucao6.rent }}</td>
                                                     </tr>
                                                 </table>
                                             </div>
@@ -412,11 +309,11 @@ google.charts.setOnLoadCallback(function () {
                                                 <table>
                                                     <tr>
                                                         <td>SOMA</td>
-                                                        <td>38.932.148,87</td>
+                                                        <td>{{ soma6.soma }}</td>
                                                         <td>MEDIA</td>
-                                                        <td>3.539.286,26</td>
-                                                        <td>706.373,85</td>
-                                                        <td>19,96%</td>
+                                                        <td>{{ soma6.media1 }}</td>
+                                                        <td>{{ soma6.media2 }}</td>
+                                                        <td>{{ soma6.percentual }}</td>
                                                     </tr>
                                                 </table>
                                             </div>
@@ -441,9 +338,9 @@ google.charts.setOnLoadCallback(function () {
                         <tr>
                             <td>EVOLUÇÃO</td>
                             <td>FAT</td>
-                            <td>-68,14%</td>
+                            <td>{{ evolucao7.fat }}</td>
                             <td>RENT $</td>
-                            <td>-67,78%</td>
+                            <td>{{ evolucao7.rent }}</td>
                         </tr>
                     </table>
                 </div>
@@ -453,11 +350,11 @@ google.charts.setOnLoadCallback(function () {
                     <table>
                         <tr>
                             <td>SOMA</td>
-                            <td>38.932.148,87</td>
+                            <td>{{ soma7.soma }}</td>
                             <td>MEDIA</td>
-                            <td>3.539.286,26</td>
-                            <td>706.373,85</td>
-                            <td>19,96%</td>
+                            <td>{{ soma7.media1 }}</td>
+                            <td>{{ soma7.media2 }}</td>
+                            <td>{{ soma7.percentual }}</td>
                         </tr>
                     </table>
                 </div>
@@ -483,9 +380,9 @@ google.charts.setOnLoadCallback(function () {
                                                         <tr>
                                                             <td>EVOLUÇÃO</td>
                                                             <td>FAT</td>
-                                                            <td>-68,14%</td>
+                                                            <td>{{ evolucao8.fat }}</td>
                                                             <td>RENT $</td>
-                                                            <td>-67,78%</td>
+                                                            <td>{{ evolucao8.rent }}</td>
                                                         </tr>
                                                     </table>
                                                 </div>
@@ -495,11 +392,11 @@ google.charts.setOnLoadCallback(function () {
                                                     <table>
                                                         <tr>
                                                             <td>SOMA</td>
-                                                            <td>38.932.148,87</td>
+                                                            <td>{{ soma8.soma }}</td>
                                                             <td>MEDIA</td>
-                                                            <td>3.539.286,26</td>
-                                                            <td>706.373,85</td>
-                                                            <td>19,96%</td>
+                                                            <td>{{ soma8.media1 }}</td>
+                                                            <td>{{ soma8.media2 }}</td>
+                                                            <td>{{ soma8.percentual }}</td>
                                                         </tr>
                                                     </table>
                                                 </div>
@@ -524,9 +421,9 @@ google.charts.setOnLoadCallback(function () {
                                                             <tr>
                                                                 <td>EVOLUÇÃO</td>
                                                                 <td>FAT</td>
-                                                                <td>-68,14%</td>
-                                                                <td>RENT $</td>
-                                                                <td>-67,78%</td>
+                                                                <td>{{ evolucao9.fat }}</td>
+                                                            <td>RENT $</td>
+                                                            <td>{{ evolucao9.rent }}</td>
                                                             </tr>
                                                         </table>
                                                     </div>
@@ -536,11 +433,11 @@ google.charts.setOnLoadCallback(function () {
                                                         <table>
                                                             <tr>
                                                                 <td>SOMA</td>
-                                                                <td>38.932.148,87</td>
+                                                                <td>{{ soma9.soma }}</td>
                                                                 <td>MEDIA</td>
-                                                                <td>3.539.286,26</td>
-                                                                <td>706.373,85</td>
-                                                                <td>19,96%</td>
+                                                                <td>{{ soma9.media1 }}</td>
+                                                                <td>{{ soma9.media2 }}</td>
+                                                                <td>{{ soma9.percentual }}</td>
                                                             </tr>
                                                         </table>
                                                     </div>

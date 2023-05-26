@@ -4,7 +4,8 @@ import pandas as pd
 app = Flask(__name__)
 
 allData = [
-    [2357911, 11718061, 62468095.57, 12596033.16, 20.16, 11552, 13118, 10.58, 5.32],
+    # 2023 analise comercial
+    [235791, 11718061, 62468095.57, 12596033.16, 20.16, 11552, 13118, 10.58, 5.32],
     [11896319, 11183848, 61055572.19, 12859511.51, 21.06, 11353, 12949, 11.13, 5.46],
     [13589381, 11961338, 68567964.06, 14712653.97, 21.46, 11411, 13319, 11.14, 5.73],
     [12237109, 12020019, 71098304.87, 14210656.16, 19.99, 11475, 13050, 11.19, 5.91],
@@ -15,114 +16,308 @@ allData = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],    
 ]
 
+allData2 = [
+    # 2022 analise comercial
+    [43, 1234504, 9567205.57, 1245233.16, 22.16, 15840, 24128, 12.58, 6.32],
+    [578244, 936292, 7885899.19, 1383722.51, 24.06, 16741, 21049, 14.13, 7.46],
+    [894502, 842509, 5796122.06, 1512367.97, 23.46, 14251, 16319, 15.14, 6.73],
+    [764802, 915710, 6760894.87, 1470196.16, 21.99, 13752, 16560, 16.19, 7.01],
+    [951331, 868602, 6842430.90, 1435532.40, 20.40, 13658, 15871, 14.92, 6.93],
+    [874921, 838912, 6750901.44, 1341376.16, 20.78, 12655, 14782, 16.14, 6.94],
+    [945740, 876192, 6789438.77, 1427245.80, 21.31, 14406, 16897, 15.68, 7.06],
+    [942662, 965432, 7598847.37, 1337729.25, 19.29, 14105, 17232, 14.98, 6.86],
+    [812401, 854302, 6979081.49, 1305731.77, 21.21, 13219, 16698, 15.89, 6.76],
+    [938402, 785302, 6587421.07, 1285501.19, 20.99, 12467, 15679, 16.97, 7.03],
+    [1078522, 663329, 5248603.91, 1209289.66, 21.09, 11474, 12992, 17.57, 8.00],
+    [843937, 865332, 7592743.02, 1397701.73, 21.34, 11409, 16308, 20.31, 8.45],
+]
+
+allData3 = [
+    # 2022 faturamento
+    [11355189, 11718061, 62468095.57],
+    [11896319, 11183848, 61055572.19],
+    [13589381, 11961338, 68567964.06],
+    [12237109, 12020019, 71098304.87],
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+]
+
+allData4 = [
+    [458903, 764104, 9567205.57],
+    [578244, 936292, 7885899.19],
+    [894502, 842509, 5796122.06],
+    [764802, 915710, 6760894.87],
+    [951331, 868602, 6842430.90],
+    [874921, 838912, 6750901.44],
+    [945740, 876192, 6789438.77],
+    [942662, 965432, 7598847.37],
+    [812401, 854302, 6979081.49],
+    [938402, 785302, 6587421.07],
+    [1078522, 663329, 5248603.91],
+    [843937, 865332, 7592743.02],
+]
+allData5 = [
+    # 2020 faturamento
+    [458903, 764104, 9567205.57],
+    [578244, 936292, 7885899.19],
+    [894502, 842509, 5796122.06],
+    [764802, 915710, 6760894.87],
+    [951331, 868602, 6842430.90],
+    [874921, 838912, 6750901.44],
+    [945740, 876192, 6789438.77],
+    [942662, 965432, 7598847.37],
+    [812401, 854302, 6979081.49],
+    [938402, 785302, 6587421.07],
+    [1078522, 663329, 5248603.91],
+    [843937, 865332, 7592743.02],
+]
+
+allData6 = [
+    [458903, 764104, 9567205.57],
+    [578244, 936292, 7885899.19],
+    [894502, 842509, 5796122.06],
+    [764802, 915710, 6760894.87],
+    [951331, 868602, 6842430.90],
+    [874921, 838912, 6750901.44],
+    [945740, 876192, 6789438.77],
+    [942662, 965432, 7598847.37],
+    [812401, 854302, 6979081.49],
+    [938402, 785302, 6587421.07],
+    [1078522, 663329, 5248603.91],
+    [843937, 865332, 7592743.02],
+]
+allData7 = [
+    [458903, 764104, 9567205.57],
+    [578244, 936292, 7885899.19],
+    [894502, 842509, 5796122.06],
+    [764802, 915710, 6760894.87],
+    [951331, 868602, 6842430.90],
+    [874921, 838912, 6750901.44],
+    [945740, 876192, 6789438.77],
+    [942662, 965432, 7598847.37],
+    [812401, 854302, 6979081.49],
+    [938402, 785302, 6587421.07],
+    [1078522, 663329, 5248603.91],
+    [843937, 865332, 7592743.02],
+]
+allData8 = [
+    [458903, 764104, 9567205.57],
+    [578244, 936292, 7885899.19],
+    [894502, 842509, 5796122.06],
+    [764802, 915710, 6760894.87],
+    [951331, 868602, 6842430.90],
+    [874921, 838912, 6750901.44],
+    [945740, 876192, 6789438.77],
+    [942662, 965432, 7598847.37],
+    [812401, 854302, 6979081.49],
+    [938402, 785302, 6587421.07],
+    [1078522, 663329, 5248603.91],
+    [843937, 865332, 7592743.02]
+]
+allData9 = [
+    [458903, 764104, 9567205.57],
+    [578244, 936292, 7885899.19],
+    [894502, 842509, 5796122.06],
+    [764802, 915710, 6760894.87],
+    [951331, 868602, 6842430.90],
+    [874921, 838912, 6750901.44],
+    [945740, 876192, 6789438.77],
+    [942662, 965432, 7598847.37],
+    [812401, 854302, 6979081.49],
+    [938402, 785302, 6587421.07],
+    [1078522, 663329, 5248603.91],
+    [843937, 865332, 7592743.02],
+]
+vendas = "6.430.133"
+entradas = "7.195,786"
+percentual = "89%"
+
+vendas2 = "5.800.000"
+entradas2 = "6.500,000"
+percentual2 = "88%"
+
+
+evolucao = {
+    # 2023 análise comercial
+    "fat": "16,81%",
+    "rent": "18,21%"
+}
+
+evolucao2 = {
+    # 2022 análise comercial
+    "fat": "16,81%",
+    "rent": "18,21%"
+}
+
+evolucao3 = {
+    # 2022 faturamento
+    "fat": "-68,14%",
+    "rent": "-67,78%"
+}
+
+evolucao4 = {
+    # 2021 faturamento
+    "fat": "-70,32%",
+    "rent": "-69,94%"
+}
+
+evolucao5 = {
+    # 2020 faturamento
+    "fat": "-72,51%",
+    "rent": "-71,89%"
+}
+
+evolucao6 = {
+    # 2019 faturamento
+    "fat": "-74,83%",
+    "rent": "-74,09%"
+}
+
+evolucao7 = {
+    # 2018 faturamento
+    "fat": "-77,29%",
+    "rent": "-76,44%"
+}
+
+evolucao8 = {
+    # 2017 faturamento
+    "fat": "-79,89%",
+    "rent": "-78,92%"
+}
+
+evolucao9 = {
+    # 2016 faturamento
+    "fat": "-82,64%",
+    "rent": "-81,56%"
+}
+soma = {
+    # 2023 analise comercial
+        "soma": "1917.118.127,25",
+        "media1": "65.706.042,42",
+        "media2": "13.043.724,32",
+        "percentual": "19,85%",
+        "valor1": "11,468",
+        "valor2": "45.415.813,15",
+        "valor3": "11.121.082,14",
+        "valor4": "4.412.847,86",
+        "valor5": "13.432"
+    }
+soma2 = {
+    # 2022 analise comercial
+    "soma": "1.815.120.111,78",
+    "media1": "63.602.034,14",
+    "media2": "12.877.243,89",
+    "percentual": "18,78%",
+    "valor1": "10,968",
+    "valor2": "44.315.813,15",
+    "valor3": "10.101.082,14",
+    "valor4": "4.212.847,86",
+    "valor5": "12.932"
+}
+soma3 = {
+    # 2022 faturamento
+    "soma": "38.148,87",
+    "media1": "3.539.286,26",
+    "media2": "706.373,85",
+    "percentual": "19,96%"
+}
+
+soma4 = {
+    # 2021 faturamento
+    "soma": "35.836.159,77",
+    "media1": "3.256.014,52",
+    "media2": "651.203,90",
+    "percentual": "18,92%"
+}
+
+soma5 = {
+    # 2020 faturamento
+    "soma": "32.745.123,69",
+    "media1": "2.977.738,52",
+    "media2": "595.547,70",
+    "percentual": "17,86%"
+}
+
+soma6 = {
+    # 2019 faturamento
+    "soma": "29.670.112,59",
+    "media1": "2.697.282,96",
+    "media2": "539.456,59",
+    "percentual": "16,80%"
+}
+
+soma7 = {
+    # 2018 faturamento
+    "soma": "26.603.107,49",
+    "media1": "2.418.282,41",
+    "media2": "483.656,48",
+    "percentual": "15,74%"
+}
+
+soma8 = {
+    # 2017 faturamento
+    "soma": "23.542.102,39",
+    "media1": "2.139.281,85",
+    "media2": "427.856,37",
+    "percentual": "14,68%"
+}
+soma9 = {
+    # 2015 faturamento
+    "soma": "20.486.097,29",
+    "media1": "1.860.281,30",
+    "media2": "372.056,26",
+    "percentual": "13,62%"
+}
 @app.route('/')
 def dashboard():
-    data = {
-        'vendas': '0',
-        'entradas': '35.019.078',
-        'porcentagem': '95%'
-    }
-    data2 = {
-        'evolucao': 'EVOLUÇÃO',
-        'fat': '100%',
-        'rent': '-4,47%'
-    }
-    soma_data = {
-        'soma': '197.118.127,25',
-        'media': '65.706.042,42',
-        'valor_1': '13.043.724,32',
-        'porcentagem': '19,85%',
-        'valor_2': '11,468',
-        'valor_3': '45.415.813,15',
-        'valor_4': '11.121.082,14',
-        'valor_5': '4.412.847,86',
-        'valor_6': '13.432'
-    }
-    dados_tabela = ["VENDAS", 10, "ENTRADAS", 35.019078, 40]  # Exemplo de dados para a tabela
-    dados_tabela2 = ["EVOLUÇÃO", "FAT", "100%", "RENT", "-4.47%"]  # Exemplo de dados para a segunda tabela
-    soma_valores = "197.118.127,25"
-    media_valores = "65.706.042,42"
-    media_valor1 = "13.043.724,32"
-    media_valor2 = "19,85%"
-    media_valor3 = "11,468"
-    media_valor4 = "45.415.813,15"
-    media_valor5 = "11.121.082,14"
-    media_valor6 = "4.412.847,86"
-    media_valor7 = "13.432"
+     
+    
 
     return render_template('analisecomercial.html',
+                           allData2=allData2,
                            allData=allData,
-                           dados_tabela=dados_tabela,
-                           dados_tabela2=dados_tabela2,
-                           soma_valores=soma_valores,
-                           media_valores=media_valores,
-                           media_valor1=media_valor1,
-                           media_valor2=media_valor2,
-                           media_valor3=media_valor3,
-                           media_valor4=media_valor4,
-                           media_valor5=media_valor5,
-                           media_valor6=media_valor6,
-                           media_valor7=media_valor7,  data=data, data2=data2, soma_data=soma_data)
+                           evolucao=evolucao, evolucao2=evolucao2,
+                           soma=soma, soma2=soma2, vendas=vendas,
+                           vendas2=vendas2, entradas=entradas, entradas2=entradas2,
+                           percentual=percentual, percentual2=percentual2
+                           )
 
-@app.route('/a')
+@app.route('/analisecomercial')
 def dashboard_a():
-    data = {
-        'vendas': '0',
-        'entradas': '35.019.078',
-        'porcentagem': '95%'
-    }
-    data2 = {
-        'evolucao': 'EVOLUÇÃO',
-        'fat': '100%',
-        'rent': '-4,47%'
-    }
-    soma_data = {
-        'soma': '197.118.127,25',
-        'media': '65.706.042,42',
-        'valor_1': '13.043.724,32',
-        'porcentagem': '19,85%',
-        'valor_2': '11,468',
-        'valor_3': '45.415.813,15',
-        'valor_4': '11.121.082,14',
-        'valor_5': '4.412.847,86',
-        'valor_6': '13.432'
-    }
-    dados_tabela = ["VENDAS", 10, "ENTRADAS", 35.019078, 40]  # Exemplo de dados para a tabela
-    dados_tabela2 = ["EVOLUÇÃO", "FAT", "100%", "RENT", "-4.47%"]  # Exemplo de dados para a segunda tabela
-    soma_valores = "197.118.127,25"
-    media_valores = "65.706.042,42"
-    media_valor1 = "13.043.724,32"
-    media_valor2 = "19,85%"
-    media_valor3 = "11,468"
-    media_valor4 = "45.415.813,15"
-    media_valor5 = "11.121.082,14"
-    media_valor6 = "4.412.847,86"
-    media_valor7 = "13.432"
 
     return render_template('analisecomercial.html',
+                           allData2=allData2,
                            allData=allData,
-                           dados_tabela=dados_tabela,
-                           dados_tabela2=dados_tabela2,
-                           soma_valores=soma_valores,
-                           media_valores=media_valores,
-                           media_valor1=media_valor1,
-                           media_valor2=media_valor2,
-                           media_valor3=media_valor3,
-                           media_valor4=media_valor4,
-                           media_valor5=media_valor5,
-                           media_valor6=media_valor6,
-                           media_valor7=media_valor7,  data=data, data2=data2, soma_data=soma_data)
+                           evolucao=evolucao, evolucao2=evolucao2,
+                           soma=soma, soma2=soma2, vendas=vendas,
+                           vendas2=vendas2, entradas=entradas, entradas2=entradas2,
+                           percentual=percentual, percentual2=percentual2)
 
 
 @app.route('/faturamento')
 def faturamento():
-    # Os valores aqui são apenas para exemplo, substitua-os pelos seus dados reais
-    evolucao_fat = "-68,14%"
-    rent_dollar = "-67,78%"
-    return render_template('faturamento.html', evolucao_fat=evolucao_fat, rent_dollar=rent_dollar)
+    
+    return render_template('faturamento.html',
+                           allData9=allData9,
+                           allData8=allData8,
+                           allData7=allData7,
+                           allData6=allData6,                           
+                           allData5=allData5,
+                           allData4=allData4,
+                           allData3=allData3,
+                           evolucao3=evolucao3, evolucao4=evolucao4, evolucao5=evolucao5, 
+                           evolucao6=evolucao6, evolucao7=evolucao7, evolucao8=evolucao8, 
+                           evolucao9=evolucao9, soma3=soma3, soma4=soma4, soma5=soma5, 
+                           soma6=soma6, soma7=soma7, soma8=soma8, soma9=soma9)
 
 
 
