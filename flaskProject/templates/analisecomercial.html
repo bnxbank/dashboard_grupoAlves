@@ -57,6 +57,7 @@ function drawCharts(dataSet, idSuffix) {
         'SKU-VEND',
     ];
 
+
     for (var i = 1; i <= columnTitles.length; i++) {
         drawIndividualChart(i, columnTitles[i - 1], dataSet, idSuffix);
     }
@@ -78,6 +79,11 @@ function drawIndividualChart(chartIndex, columnTitle, dataSet, idSuffix) {
         ['Novembro', dataSet[10][chartIndex - 1]],
         ['Dezembro', dataSet[11][chartIndex - 1]],
     ]);
+
+    var formatter = new google.visualization.NumberFormat(
+        {prefix: '', decimalSymbol: ',', groupingSymbol: '.'}
+    );
+    formatter.format(data, 1); // Aplique a formatação na segunda coluna
 
     var view = new google.visualization.DataView(data);
     view.setColumns([
@@ -183,7 +189,9 @@ google.charts.setOnLoadCallback(function () {
 </div>
 
 <div class="direita">
-    <div class="menu-central"> menu menu menu menu menu menu menu menu menu menu menu menu menu menu menu menu</div>
+    <div class="menu-central"> 
+        {% include 'menus.html' %}
+    </div>
     <div class="coluna-charts">
         <div class="azul-chart1">
             <div class="ano1vertical">2023</div>

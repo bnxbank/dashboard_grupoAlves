@@ -1,7 +1,12 @@
 import psycopg2
 
+cache = {}
 
-def consulta(secao, loja, data_inicial, data_final):   
+def consulta(secao, loja, data_inicial, data_final): 
+    # Verifique se os resultados desta consulta já estão no cache
+    cache_key = (secao, loja, data_inicial, data_final)
+    if cache_key in cache:
+        return cache[cache_key]  
     # Conecte-se ao seu banco de dados
     con = psycopg2.connect(
                 user="admin",
@@ -29,7 +34,8 @@ def consulta(secao, loja, data_inicial, data_final):
     for row in rows:
         allData.append([float(val) for val in row[:3]])
 
-
+    cache[cache_key] = allData
+    print(allData)
     # print the output data
     return allData
 

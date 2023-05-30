@@ -1,0 +1,31 @@
+<select id="my_select">
+    <option value="Selecione o tipo">Selecione o tipo</option>
+    <option value="Faturamento">Faturamento</option>
+    <option value="Comercial">Análise Comercial</option>
+    <option value="Quebras">Quebras e Ruptura</option>
+</select>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#my_select').change(function() {
+        var selected_option = $(this).val();
+        
+        switch(selected_option) {
+            case 'Faturamento':
+                window.location.href = 'http://127.0.0.1:5000/faturamento';
+                break;
+            case 'Comercial':
+                window.location.href = 'http://127.0.0.1:5000/analisecomercial';
+                break;
+            case 'Quebras':
+                window.location.href = '#';
+                break;
+            default:
+                // default URL if none of the options match
+                window.location.href = 'http://127.0.0.1:5000/';
+        }
+    });
+});
+</script>
+
+
