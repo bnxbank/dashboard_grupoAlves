@@ -1,6 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import pandas as pd
 import graficos as gr
+import numpy as np
 
 app = Flask(__name__)
 
@@ -36,19 +37,7 @@ allData2 = [
     [843937, 865332, 7592743.02, 1397701.73, 21.34, 11409, 16308, 20.31, 8.45],
 ]
 
-allData3 = gr.consulta('GERAL', 'GERAL', '2016-01-01', '2016-12-31') #valor correspondente a 2022
 
-allData4 = gr.consulta('GERAL', 'GERAL', '2017-01-01', '2017-12-31') #valor correspondente a 2021
-
-allData5 = gr.consulta('GERAL', 'GERAL', '2016-01-01', '2016-12-31') #valor correspondente a 2020
-
-allData6 = gr.consulta('GERAL', 'GERAL', '2017-01-01', '2017-12-31') #valor correspondente a 2019
-
-allData7 = gr.consulta('GERAL', 'GERAL', '2018-01-01', '2018-12-31') #valor correspondente a 2018
-
-allData8 = gr.consulta('GERAL', 'GERAL', '2017-01-01', '2017-12-31') #valor correspondente a 2017
-
-allData9 = gr.consulta('GERAL', 'GERAL', '2016-01-01', '2016-12-31') #valor correspondente a 2016
 
 vendas = "6.430.133"
 entradas = "7.195,786"
@@ -218,7 +207,54 @@ def dashboard_a():
 
 @app.route('/faturamento')
 def faturamento():
-    
+    #ano = request.form['ano']
+    ano = 2023
+    anos = [str(ano - i) for i in range(1, 7)]
+    #print(anos, ano)
+
+    allData3 = gr.consulta('GERAL', 'GERAL', anos[0],1) #valor correspondente a 2022
+    matriz = np.array(allData3)
+    soma_A11 = np.sum(matriz[:,0])
+    soma_A12 = np.sum(matriz[:,1])
+    media_A13 = np.mean(matriz[:,2])
+    print(soma_A11, soma_A12, media_A13)
+
+    allData4 = gr.consulta('GERAL', 'GERAL', anos[0],1) #valor correspondente a 2021
+    matriz = np.array(allData4)
+    soma_A21 = np.sum(matriz[:,0])
+    soma_A22 = np.sum(matriz[:,1])
+    media_A23 = np.mean(matriz[:,2])
+
+    allData5 = gr.consulta('GERAL', 'GERAL', anos[1],1) #valor correspondente a 2020
+    matriz = np.array(allData5)
+    soma_A31 = np.sum(matriz[:,0])
+    soma_A32 = np.sum(matriz[:,1])
+    media_A33 = np.mean(matriz[:,2])
+
+    allData6 = gr.consulta('GERAL', 'GERAL', anos[2],1) #valor correspondente a 2019
+    matriz = np.array(allData6)
+    soma_A41 = np.sum(matriz[:,0])
+    soma_A42 = np.sum(matriz[:,1])
+    media_A43 = np.mean(matriz[:,2])
+
+    allData7 = gr.consulta('GERAL', 'GERAL', anos[3],1) #valor correspondente a 2018
+    matriz = np.array(allData7)
+    soma_A51 = np.sum(matriz[:,0])
+    soma_A52 = np.sum(matriz[:,1])
+    media_A53 = np.mean(matriz[:,2])
+
+    allData8 = gr.consulta('GERAL', 'GERAL', anos[4],1) #valor correspondente a 2017
+    matriz = np.array(allData8)
+    soma_A61 = np.sum(matriz[:,0])
+    soma_A62 = np.sum(matriz[:,1])
+    media_A63 = np.mean(matriz[:,2])
+
+    allData9 = gr.consulta('GERAL', 'GERAL', '2016',1) #valor correspondente a 2016
+    matriz = np.array(allData9)
+    soma_A71 = np.sum(matriz[:,0])
+    soma_A72 = np.sum(matriz[:,1])
+    media_A73 = np.mean(matriz[:,2])
+
     return render_template('faturamento.html',
                            allData9=allData9,
                            allData8=allData8,
@@ -230,7 +266,7 @@ def faturamento():
                            evolucao3=evolucao3, evolucao4=evolucao4, evolucao5=evolucao5, 
                            evolucao6=evolucao6, evolucao7=evolucao7, evolucao8=evolucao8, 
                            evolucao9=evolucao9, soma3=soma3, soma4=soma4, soma5=soma5, 
-                           soma6=soma6, soma7=soma7, soma8=soma8, soma9=soma9)
+                           soma6=soma6, soma7=soma7, soma8=soma8, soma9=soma9, anos=anos)
 
 
 
