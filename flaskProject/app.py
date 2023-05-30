@@ -214,36 +214,37 @@ def faturamento():
 
     allData3 = gr.consulta('GERAL', 'GERAL', anos[0],1) #valor correspondente a 2022
     matriz = np.array(allData3)
-    soma_A11 = np.sum(matriz[:,0])
-    soma_A12 = np.sum(matriz[:,1])
-    media_A13 = np.mean(matriz[:,2])
-    print(soma_A11, soma_A12, media_A13)
+    soma_A10 = np.sum(matriz[:,0])
+    soma_A11 = np.mean(matriz[:,0])
+    soma_A12 = np.mean(matriz[:,1])
+    soma_A13 = np.mean(matriz[:,2])
+    print(soma_A10, soma_A11, soma_A12, soma_A13)
 
-    allData4 = gr.consulta('GERAL', 'GERAL', anos[0],1) #valor correspondente a 2021
+    allData4 = gr.consulta('GERAL', 'GERAL', anos[1],1) #valor correspondente a 2021
     matriz = np.array(allData4)
     soma_A21 = np.sum(matriz[:,0])
-    soma_A22 = np.sum(matriz[:,1])
+    soma_A22 = np.mean(matriz[:,1])
     media_A23 = np.mean(matriz[:,2])
 
-    allData5 = gr.consulta('GERAL', 'GERAL', anos[1],1) #valor correspondente a 2020
+    allData5 = gr.consulta('GERAL', 'GERAL', anos[2],1) #valor correspondente a 2020
     matriz = np.array(allData5)
     soma_A31 = np.sum(matriz[:,0])
     soma_A32 = np.sum(matriz[:,1])
     media_A33 = np.mean(matriz[:,2])
 
-    allData6 = gr.consulta('GERAL', 'GERAL', anos[2],1) #valor correspondente a 2019
+    allData6 = gr.consulta('GERAL', 'GERAL', anos[3],1) #valor correspondente a 2019
     matriz = np.array(allData6)
     soma_A41 = np.sum(matriz[:,0])
     soma_A42 = np.sum(matriz[:,1])
     media_A43 = np.mean(matriz[:,2])
 
-    allData7 = gr.consulta('GERAL', 'GERAL', anos[3],1) #valor correspondente a 2018
+    allData7 = gr.consulta('GERAL', 'GERAL', anos[4],1) #valor correspondente a 2018
     matriz = np.array(allData7)
     soma_A51 = np.sum(matriz[:,0])
     soma_A52 = np.sum(matriz[:,1])
     media_A53 = np.mean(matriz[:,2])
 
-    allData8 = gr.consulta('GERAL', 'GERAL', anos[4],1) #valor correspondente a 2017
+    allData8 = gr.consulta('GERAL', 'GERAL', anos[5],1) #valor correspondente a 2017
     matriz = np.array(allData8)
     soma_A61 = np.sum(matriz[:,0])
     soma_A62 = np.sum(matriz[:,1])
@@ -266,7 +267,7 @@ def faturamento():
                            evolucao3=evolucao3, evolucao4=evolucao4, evolucao5=evolucao5, 
                            evolucao6=evolucao6, evolucao7=evolucao7, evolucao8=evolucao8, 
                            evolucao9=evolucao9, soma3=soma3, soma4=soma4, soma5=soma5, 
-                           soma6=soma6, soma7=soma7, soma8=soma8, soma9=soma9, anos=anos)
+                           soma6=soma6, soma7=soma7, soma8=soma8, soma9=soma9, anos=anos, soma_A10=soma_A10, soma_A11=soma_A11, soma_A12=soma_A12, soma_A13=soma_A13,)
 
 
 
