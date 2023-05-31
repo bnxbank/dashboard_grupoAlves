@@ -86,36 +86,77 @@ $(document).ready(function() {
 
         var tipo = $('#tipo').val();
         var secao = $(this).val();
-        window.location.href = 'http://127.0.0.1:5000/' + tipo.toLowerCase() + '/' + secao;
+        var year = $('#year-select').val()-1;
+        var loja = $('#loja').val();
+        window.location.href = 'http://127.0.0.1:5000/' + tipo.toLowerCase() + '/' + secao+ '/' + loja+ '/'+ year;
     });                
 });
 </script>
-<select id="year-select"></select>
 
+
+<select id="loja">
+        <option value="PORTAL">PORTAL</option>
+        <option value="CENTRO">CENTRO</option>
+        <option value="PAPILLON">PAPILLON</option>
+        <option value="T7">T7</option>
+        <option value="CAMPINAS">CAMPINAS</option>
+        <option value="GERAL">GERAL</option>
+        <option value="GARAVELO">GARAVELO</option>
+    </option>
+
+</select>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
-    var currentYear = new Date().getFullYear();
-    var startYear = 2016;
-    var options = "";
-    for (var year = currentYear ; year >= startYear ; year--){
-        options += "<option value='" + year + "'>" + year + "</option>";
+    var saved_option = localStorage.getItem('selected_option_loja');
+    if (saved_option) {
+        $('#loja').val(saved_option);
     }
-    $('#year-select').html(options);
 
-    function updateUrl() {
+    $('#loja').change(function() {
+        var selected_option = $(this).val();
+
+        // Salva o valor selecionado em LocalStorage
+        localStorage.setItem('selected_option_loja', selected_option);
+
         var tipo = $('#tipo').val();
         var secao = $('#secao').val();
-        var year = $('#year-select').val();
-        window.location.href = 'http://127.0.0.1:5000/' + tipo.toLowerCase() + '/' + secao + '/' + year;
-    }
-
-    $('#tipo, #secao, #year-select').change(updateUrl);
-
-    // atualiza a URL quando a página é carregada
-    updateUrl();
+        var year = $('#year-select').val()-1;
+        var loja = $(this).val();
+        window.location.href = 'http://127.0.0.1:5000/' + tipo.toLowerCase() + '/' + secao+ '/' + loja+ '/'+ year;
+    });                
 });
 </script>
+
+<select id="year-select">
+    <option value="ano">ano</option>
+    <script>
+    $(document).ready(function() {
+        var currentYear = new Date().getFullYear()+1;
+        var startYear = 2016;
+        var options = "";
+        for (var year = currentYear ; year >= startYear ; year--){
+            options += "<option value='" + year + "'>" + year + "</option>";
+        }
+        $('#year-select').html(options);
+    });
+</script>
+</select>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('#year-select').change(function() {
+      var tipo = $('#tipo').val();
+      var secao = $('#secao').val();
+      var loja = $('#loja').val();
+      var ano = $(this).val()-1;
+      var url = 'http://127.0.0.1:5000/' + tipo.toLowerCase() + '/' + secao+ '/' + loja+ '/'+ year;
+      window.location.href = url;
+    });
+  });
+  </script>
+  
 
 
 
