@@ -22,10 +22,11 @@ def consulta(secao, loja, ano, sql1, cache=cache):
     # Execute a consulta
     if sql1 == 1:
         cur.execute("SELECT SUM(f.valores) as valores_faturamento, SUM(r.valores) as valores_rentabilidade, SUM(rp.valores) as valores_rentabilidadeporcentagem, EXTRACT(YEAR FROM f.Datas) as ano, EXTRACT(MONTH FROM f.Datas) as mes  FROM  graficos_faturamento f JOIN graficos_rentabilidade r ON f.Datas = r.Datas AND f.Loja = r.Loja AND f.secao = r.secao JOIN graficos_rentabilidadeporcentagem rp ON f.Datas = rp.DATAS  AND f.Loja = rp.Loja AND f.secao = rp.secao WHERE f.Datas >= '"+ano+"-01-01' AND f.Datas <= '"+ano+"-12-31' AND f.secao = '"+secao+"' AND f.Loja = '"+loja+"'  GROUP BY  EXTRACT(YEAR FROM f.Datas), EXTRACT(MONTH FROM f.Datas) ORDER BY ano, mes")
-    
+    if sql1 == 2:
+        cur.execute("SELECT SUM(f.valores) as valores_faturamento, SUM(r.valores) as valores_rentabilidade, SUM(rp.valores) as valores_rentabilidadeporcentagem, EXTRACT(YEAR FROM f.datas) as ano, EXTRACT(MONTH FROM f.datas) as mes  FROM  graficos_estoque f JOIN graficos_rupturacompra r ON f.datas  = r.Datas AND f.Loja = r.Loja AND f.secao = r.secao JOIN graficos_rupturacompra rp ON f.datas  = rp.DATAS  AND f.Loja = rp.Loja AND f.secao = rp.secao WHERE f.datas >= '"+ano+"-01-01' AND f.datas  <= '"+ano+"-12-31' AND f.secao = '"+secao+"' AND f.Loja = '"+secao+"'  GROUP BY  EXTRACT(YEAR FROM f.datas),EXTRACT(MONTH FROM f.datas) ORDER BY ano, mes")
     #print(cur.query)
 
-    # Recupere os resultados
+    # Recupere os resultados 
     rows = cur.fetchall()
     
     # create a list to hold the output data

@@ -2,7 +2,7 @@
 <head>
     <!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
     <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estoqueruptura.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/faturamento.css') }}">
     <script>
     google.charts.load('current', {packages: ['corechart']});
     google.charts.setOnLoadCallback(function () {
@@ -20,17 +20,17 @@ var allData2016 ={{allData9}};
 
 
    var chartColors = [
-        '#3374dc',
-        '#FF0000',
-        '#067237',
+        '#37c203a',
+        '#ff9f68',
+        '#feff89',
     ];
 
 
 function drawCharts(dataSet, idSuffix) {
     var columnTitles = [
-        'Estoque',
-        'Ruptura Compra',
-        'Ruptura venda',
+        'Quebras',
+        'Inventario',
+        'Apontada',
     ];
 
 

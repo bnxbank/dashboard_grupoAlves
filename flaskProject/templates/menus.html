@@ -4,6 +4,7 @@
     <option value="Comercial">Análise Comercial</option>
     <option value="Metarealizado">Meta Realizado</option>
     <option value="Estoqueruptura">Estoque e Ruptura</option>
+    <option value="quebras">quebras</option>
 </select>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -33,7 +34,11 @@ $(document).ready(function() {
                 break;
             case 'Estoqueruptura':
                 window.location.href = 'http://127.0.0.1:5000/Estoqueruptura';
-                break;                
+                break; 
+            case 'quebras':
+                window.location.href = 'http://127.0.0.1:5000/quebras';
+                break;                     
+                           
                 
             default:
                 // default URL if none of the options match

@@ -461,6 +461,111 @@ def Estoqueruptura(secao, ano, loja):
     anos = [str(ano - i) for i in range(1, 7)]
     print(secao,loja, ano)
 
+    allData3 = gr.consulta(secao, loja, anos[0],2) #valor correspondente a 2022
+    matriz = np.array(allData3)
+    matrizr = matriz_para_lista(matriz)
+    allData3 = matrizr
+    #print(allData3)
+
+    soma_A10 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A11 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A12 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A13 = "{:.2f}%".format(np.mean(matriz[:,2]))
+    #print(soma_A10, soma_A11, soma_A12, soma_A13)
+
+    allData4 = gr.consulta(secao, loja, anos[1],2) #valor correspondente a 2021
+    matriz = np.array(allData4)
+    matrizr = matriz_para_lista(matriz)
+    allData4 = matrizr
+    #print(allData4)
+
+    soma_A20 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A21 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A22 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A23 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData5 = gr.consulta(secao, loja, anos[2],2) #valor correspondente a 2020
+    matriz = np.array(allData5)
+    matrizr = matriz_para_lista(matriz)
+    allData5 = matrizr
+    #print(allData5)
+
+    soma_A30 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A31 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A32 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A33 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData6 = gr.consulta(secao, loja, anos[3],2) #valor correspondente a 2019
+    matriz = np.array(allData6)
+    matrizr = matriz_para_lista(matriz)
+    allData6 = matrizr
+    #print(allData6)   
+    
+    soma_A30 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A31 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A32 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A33 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData7 = gr.consulta(secao, loja, anos[4],2) #valor correspondente a 2018
+    matriz = np.array(allData7)
+    matrizr = matriz_para_lista(matriz)
+    allData7 = matrizr
+    #print(allData7)   
+
+    soma_A40 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A41 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A42 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A43 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData8 = gr.consulta(secao, loja, anos[5],2) #valor correspondente a 2017
+    matriz = np.array(allData8)
+    matrizr = matriz_para_lista(matriz)
+    allData8 = matrizr
+    #print(allData8)   
+
+    soma_A50 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A51 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A52 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A53 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData9 = gr.consulta(secao, loja, '2016',2) #valor correspondente a 2016
+    matriz = np.array(allData9)
+    matrizr = matriz_para_lista(matriz)
+    allData9 = matrizr
+    #print(allData9)   
+
+    soma_A60 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A61 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A62 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A63 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    return render_template('estoqueruptura.html',
+                           allData9=allData9,
+                           allData8=allData8,
+                           allData7=allData7,
+                           allData6=allData6,                           
+                           allData5=allData5,
+                           allData4=allData4,
+                           allData3=allData3,
+                           evolucao3=evolucao3, evolucao4=evolucao4, evolucao5=evolucao5, 
+                           evolucao6=evolucao6, evolucao7=evolucao7, evolucao8=evolucao8, 
+                           evolucao9=evolucao9, soma3=soma3, soma4=soma4, soma5=soma5, 
+                           soma6=soma6, soma7=soma7, soma8=soma8, soma9=soma9, anos=anos, soma_A10=soma_A10, soma_A11=soma_A11, soma_A12=soma_A12, soma_A13=soma_A13, soma_A20=soma_A20, soma_A21=soma_A21, soma_A22=soma_A22, soma_A23=soma_A23, soma_A30=soma_A30, soma_A31=soma_A31, soma_A32=soma_A32, soma_A33=soma_A33, soma_A40=soma_A40, soma_A41=soma_A41, soma_A42=soma_A42, soma_A43=soma_A43, soma_A50=soma_A50, soma_A51=soma_A51, soma_A52=soma_A52, soma_A53=soma_A53, soma_A60=soma_A60, soma_A61=soma_A61, soma_A62=soma_A62, soma_A63=soma_A63, )
+
+
+
+@app.route('/quebras', defaults={'secao': 'GERAL', 'ano': datetime.now().year, 'loja': 'GERAL'}, methods=['GET'])
+@app.route('/quebras/<secao>/<loja>/<ano>', methods=['GET'])
+def quebras(secao, ano, loja):
+    if ano is None:
+        ano = datetime.now().year  # define o ano atual como padrão
+    else:
+        ano = int(ano)
+    secao='{}'.format(secao)
+    loja='{}'.format(loja)
+    anos = [str(ano - i) for i in range(1, 7)]
+    print(secao,loja, ano)
+
     allData3 = gr.consulta(secao, loja, anos[0],1) #valor correspondente a 2022
     matriz = np.array(allData3)
     matrizr = matriz_para_lista(matriz)
@@ -539,7 +644,7 @@ def Estoqueruptura(secao, ano, loja):
     soma_A62 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
     soma_A63 = "{:.2f}%".format(np.mean(matriz[:,2]))
 
-    return render_template('estoqueruptura.html',
+    return render_template('faturamento.html',
                            allData9=allData9,
                            allData8=allData8,
                            allData7=allData7,
@@ -551,6 +656,9 @@ def Estoqueruptura(secao, ano, loja):
                            evolucao6=evolucao6, evolucao7=evolucao7, evolucao8=evolucao8, 
                            evolucao9=evolucao9, soma3=soma3, soma4=soma4, soma5=soma5, 
                            soma6=soma6, soma7=soma7, soma8=soma8, soma9=soma9, anos=anos, soma_A10=soma_A10, soma_A11=soma_A11, soma_A12=soma_A12, soma_A13=soma_A13, soma_A20=soma_A20, soma_A21=soma_A21, soma_A22=soma_A22, soma_A23=soma_A23, soma_A30=soma_A30, soma_A31=soma_A31, soma_A32=soma_A32, soma_A33=soma_A33, soma_A40=soma_A40, soma_A41=soma_A41, soma_A42=soma_A42, soma_A43=soma_A43, soma_A50=soma_A50, soma_A51=soma_A51, soma_A52=soma_A52, soma_A53=soma_A53, soma_A60=soma_A60, soma_A61=soma_A61, soma_A62=soma_A62, soma_A63=soma_A63, )
+
+
+
 
 
 if __name__ == '__main__':
