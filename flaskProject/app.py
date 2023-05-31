@@ -644,7 +644,7 @@ def quebras(secao, ano, loja):
     soma_A62 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
     soma_A63 = "{:.2f}%".format(np.mean(matriz[:,2]))
 
-    return render_template('faturamento.html',
+    return render_template('quebras.html',
                            allData9=allData9,
                            allData8=allData8,
                            allData7=allData7,
