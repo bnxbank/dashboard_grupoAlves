@@ -33,7 +33,7 @@ def consulta(secao, loja, ano, sql1, cache=cache):
 
     # iterate over the rows and add each one to the list
     for row in rows:
-        allData.append([float(val) for val in row[:3]])
+        allData.append([float(val) if val is not None else 0.0 for val in row[:3]])
 
     cache[cache_key] = allData
     #print(allData)

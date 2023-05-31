@@ -195,7 +195,24 @@ google.charts.setOnLoadCallback(function () {
                             <div class="azul-chart1">
                                 <div class="ano1vertical">{{anos[0]}}</div>
                                 <div class="charts1" id="chartContainer">
-                                    <div id="title-top">FATURAMENTO - (Goiânia) geral (LOJAS)</div>
+                                    <div id="title-top">
+
+                                        <p id="resultado"></p>
+
+                                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                                        <script>
+                                          $(document).ready(function() {
+                                            var tipo = $('#tipo').val();
+                                            var secao = $('#secao').val();
+                                            var loja = $('#loja').val();
+                                            var ano = $('#year-select').val() - 2;
+                                        
+                                            var meuTexto = tipo + ' - (loja:' + loja + ') secão:' + secao + ' (' + ano + ')';
+                                            $("#resultado").text(meuTexto);
+                                          });
+                                        </script>
+                                        
+                                    </div>
                                     <div id="legend2022"></div>
                                     <div id="chart12022" class="chart-div-top"></div>
                                     <div id="chart22022" class="chart-div"></div>
