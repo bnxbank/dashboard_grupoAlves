@@ -340,10 +340,10 @@ def faturamento():
     allData4 = matrizr
     print(allData4)
 
-    matriz = np.array(allData4)
-    soma_A21 = np.sum(matriz[:,0])
-    soma_A22 = np.mean(matriz[:,1])
-    media_A23 = np.mean(matriz[:,2])
+    soma_A20 = "{:,.2f}".format(np.sum(matriz[:,0]/1000))
+    soma_A21 = "{:,.2f}".format(np.mean(matriz[:,0]/1000))
+    soma_A22 = "{:,.2f}".format(np.mean(matriz[:,1]/1000))
+    soma_A23 = "{:.2f}".format(np.mean(matriz[:,2]))
 
     allData5 = gr.consulta('GERAL', 'GERAL', anos[2],1) #valor correspondente a 2020
     matriz = np.array(allData5)
@@ -351,10 +351,10 @@ def faturamento():
     allData5 = matrizr
     print(allData5)
 
-    matriz = np.array(allData5)
-    soma_A31 = np.sum(matriz[:,0])
-    soma_A32 = np.sum(matriz[:,1])
-    media_A33 = np.mean(matriz[:,2])
+    soma_A30 = "{:,.2f}".format(np.sum(matriz[:,0]/1000))
+    soma_A31 = "{:,.2f}".format(np.mean(matriz[:,0]/1000))
+    soma_A32 = "{:,.2f}".format(np.mean(matriz[:,1]/1000))
+    soma_A33 = "{:.2f}".format(np.mean(matriz[:,2]))
 
     allData6 = gr.consulta('GERAL', 'GERAL', anos[3],1) #valor correspondente a 2019
     matriz = np.array(allData6)
@@ -362,10 +362,10 @@ def faturamento():
     allData6 = matrizr
     print(allData6)   
     
-    matriz = np.array(allData6)
-    soma_A41 = np.sum(matriz[:,0])
-    soma_A42 = np.sum(matriz[:,1])
-    media_A43 = np.mean(matriz[:,2])
+    soma_A30 = "{:,.2f}".format(np.sum(matriz[:,0]/1000))
+    soma_A31 = "{:,.2f}".format(np.mean(matriz[:,0]/1000))
+    soma_A32 = "{:,.2f}".format(np.mean(matriz[:,1]/1000))
+    soma_A33 = "{:.2f}".format(np.mean(matriz[:,2]))
 
     allData7 = gr.consulta('GERAL', 'GERAL', anos[4],1) #valor correspondente a 2018
     matriz = np.array(allData7)
@@ -373,10 +373,10 @@ def faturamento():
     allData7 = matrizr
     print(allData7)   
 
-    matriz = np.array(allData7)
-    soma_A51 = np.sum(matriz[:,0])
-    soma_A52 = np.sum(matriz[:,1])
-    media_A53 = np.mean(matriz[:,2])
+    soma_A40 = "{:,.2f}".format(np.sum(matriz[:,0]/1000))
+    soma_A41 = "{:,.2f}".format(np.mean(matriz[:,0]/1000))
+    soma_A42 = "{:,.2f}".format(np.mean(matriz[:,1]/1000))
+    soma_A43 = "{:.2f}".format(np.mean(matriz[:,2]))
 
     allData8 = gr.consulta('GERAL', 'GERAL', anos[5],1) #valor correspondente a 2017
     matriz = np.array(allData8)
@@ -384,10 +384,10 @@ def faturamento():
     allData8 = matrizr
     print(allData8)   
 
-    matriz = np.array(allData8)
-    soma_A61 = np.sum(matriz[:,0])
-    soma_A62 = np.sum(matriz[:,1])
-    media_A63 = np.mean(matriz[:,2])
+    soma_A50 = "{:,.2f}".format(np.sum(matriz[:,0]/1000))
+    soma_A51 = "{:,.2f}".format(np.mean(matriz[:,0]/1000))
+    soma_A52 = "{:,.2f}".format(np.mean(matriz[:,1]/1000))
+    soma_A53 = "{:.2f}".format(np.mean(matriz[:,2]))
 
     allData9 = gr.consulta('GERAL', 'GERAL', '2016',1) #valor correspondente a 2016
     matriz = np.array(allData9)
@@ -395,10 +395,10 @@ def faturamento():
     allData9 = matrizr
     print(allData9)   
 
-    matriz = np.array(allData9)
-    soma_A71 = np.sum(matriz[:,0])
-    soma_A72 = np.sum(matriz[:,1])
-    media_A73 = np.mean(matriz[:,2])
+    soma_A60 = "{:,.2f}".format(np.sum(matriz[:,0]/1000))
+    soma_A61 = "{:,.2f}".format(np.mean(matriz[:,0]/1000))
+    soma_A62 = "{:,.2f}".format(np.mean(matriz[:,1]/1000))
+    soma_A63 = "{:.2f}".format(np.mean(matriz[:,2]))
 
     return render_template('faturamento.html',
                            allData9=allData9,
