@@ -36,7 +36,7 @@ def consulta(secao, loja, ano, sql1, cache=cache):
         allData.append([float(val) for val in row[:3]])
 
     cache[cache_key] = allData
-    print(allData)
+    #print(allData)
     # print the output data
     return allData
 

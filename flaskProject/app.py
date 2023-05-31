@@ -205,6 +205,15 @@ def dashboard_a():
                            percentual=percentual, percentual2=percentual2)
 
 
+
+def matriz_para_lista(matriz):
+    matriz_copia = np.copy(matriz)
+    matriz_copia[:,0] = matriz_copia[:,0] / 1000
+    matriz_copia[:,1] = matriz_copia[:,1] / 1000 
+    matriz = matriz_copia
+    lista = [[float("{:.2f}".format(item)) for item in row] for row in matriz]
+    return lista
+
 @app.route('/faturamento')
 def faturamento():
     #ano = request.form['ano']
@@ -214,11 +223,15 @@ def faturamento():
 
     allData3 = gr.consulta('GERAL', 'GERAL', anos[0],1) #valor correspondente a 2022
     matriz = np.array(allData3)
-    soma_A10 = np.sum(matriz[:,0])
-    soma_A11 = np.mean(matriz[:,0])
-    soma_A12 = np.mean(matriz[:,1])
-    soma_A13 = np.mean(matriz[:,2])
-    print(soma_A10, soma_A11, soma_A12, soma_A13)
+    matrizr = matriz_para_lista(matriz)
+    allData3 = matrizr
+    print(allData3)
+
+    soma_A10 = "{:,.2f}".format(np.sum(matriz[:,0]/1000))
+    soma_A11 = "{:,.2f}".format(np.mean(matriz[:,0]/1000))
+    soma_A12 = "{:,.2f}".format(np.mean(matriz[:,1]/1000))
+    soma_A13 = "{:.2f}".format(np.mean(matriz[:,2]))
+    #print(soma_A10, soma_A11, soma_A12, soma_A13)
 
     allData4 = gr.consulta('GERAL', 'GERAL', anos[1],1) #valor correspondente a 2021
     matriz = np.array(allData4)
