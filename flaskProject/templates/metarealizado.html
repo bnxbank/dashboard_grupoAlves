@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=0.25">
+    <title>Tatico Grafico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/metarealizado.css') }}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+
+google.charts.load('current', {packages: ['corechart']});
+google.charts.setOnLoadCallback(function () {
+    drawCharts(allData2023, '2023'); // Dados de 2023
+    drawCharts(allData2022, '2022'); // Dados de 2022
+    drawCharts(allData2021, '2021'); // Dados de 2021
+    drawCharts(allData2020, '2020'); // Dados de 2020
+    drawCharts(allData2019, '2019'); // Dados de 2019
+    drawCharts(allData2018, '2018'); // Dados de 2018
+    drawCharts(allData2017, '2017'); // Dados de 2017
+});
+
+
+var allData2023 ={{allData10}};
+var allData2022 ={{allData11}};
+var allData2021 ={{allData12}};
+var allData2020 ={{allData13}};
+var allData2019 ={{allData14}};
+var allData2018 ={{allData15}};
+var allData2017 ={{allData16}};
+
+
+
+
+
+   var chartColors = [
+        '#4c8be7',
+        '#e8500b',
+    ];
+
+
+function drawCharts(dataSet, idSuffix) {
+    var columnTitles = [
+        'META',
+        'REALIZADO',
+    ];
+
+    for (var i = 1; i <= columnTitles.length; i++) {
+        drawIndividualChart(i, columnTitles[i - 1], dataSet, idSuffix);
+    }
+}
+
+function drawIndividualChart(chartIndex, columnTitle, dataSet, idSuffix) {
+    var data = google.visualization.arrayToDataTable([
+        ['Month', columnTitle],
+        ['Janeiro', dataSet[0][chartIndex - 1]],
+        ['Fevereiro', dataSet[1][chartIndex - 1]],
+        ['Março', dataSet[2][chartIndex - 1]],
+        ['Abril', dataSet[3][chartIndex - 1]],
+        ['Maio', dataSet[4][chartIndex - 1]],
+        ['Junho', dataSet[5][chartIndex - 1]],
+        ['Julho', dataSet[6][chartIndex - 1]],
+        ['Agosto', dataSet[7][chartIndex - 1]],
+        ['Setembro', dataSet[8][chartIndex - 1]],
+        ['Outubro', dataSet[9][chartIndex - 1]],
+        ['Novembro', dataSet[10][chartIndex - 1]],
+        ['Dezembro', dataSet[11][chartIndex - 1]],
+    ]);
+
+    var view = new google.visualization.DataView(data);
+    view.setColumns([
+        0,
+        1,
+        {
+            calc: function (dt, rowIndex) {
+                return dt.getFormattedValue(rowIndex, 1);
+            },
+            type: 'string',
+            role: 'annotation',
+        },
+    ]);
+
+
+
+
+    var options = {
+        width: '100%',
+        chartArea: {
+            width: '100%',
+            left: 0,
+            right: 0
+        },
+        curveType: 'function',
+        colors: [chartColors[chartIndex % chartColors.length]],
+        pointSize: 10,
+        vAxis: {
+            textPosition: 'none',
+            gridlines: {
+                color: 'transparent'  // adicione esta linha para remover as linhas de grade verticais
+            }
+        },
+        hAxis: {
+            textStyle: {
+                color: '#FFFFFF',
+                fontName: 'Arial',
+                fontSize: 16,
+                fontWeight: 'normal'
+            },
+            gridlines: {
+                color: 'transparent'  // adicione esta linha para remover as linhas de grade horizontais
+            }
+        },
+        backgroundColor: '#383838',
+        legend: {position: 'none'},
+    };
+    var chart = new google.visualization.LineChart(
+        document.getElementById('chart' + chartIndex + idSuffix)
+    );
+    chart.draw(view, options);
+}
+function createLegend(dataSet, id) {
+    var legendDiv = document.getElementById(id);
+    var columnTitles = [
+        'META',
+        'REALIZADO',
+    ];
+     var legendHtml = '<ul style="display: flex; flex-wrap: wrap; padding: 0;">';
+    for (var i = 0; i < columnTitles.length; i++) {
+        legendHtml += '<li style="list-style-type: none; margin-right: 20px;"><span style="color:' + chartColors[i % chartColors.length] +
+            '">&#9679;</span> ' + columnTitles[i] + '</li>';
+    }
+    legendHtml += '</ul>';
+    legendDiv.innerHTML = legendHtml;
+}
+
+// Chamar a função quando os gráficos são desenhados
+google.charts.setOnLoadCallback(function () {
+    drawCharts(allData2023, '2023'); // Dados de 2023
+    drawCharts(allData2022, '2022'); // Dados de 2022
+    drawCharts(allData2021, '2021'); // Dados de 2021
+    drawCharts(allData2020, '2020'); // Dados de 2020
+    drawCharts(allData2019, '2019'); // Dados de 2019
+    createLegend(allData2023, 'legend2023'); // Cria a legenda para 2023
+});
+
+    </script>
+</head>
+<body>
+<div class="coluna-esquerda">
+    <div class="laranja">
+        <div class="slogan">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </div>
+        <div class="menu-esquerdo"><a href="">Menu</a></div>
+        <div class="outros-itens">
+            <h3>
+                <img src="{{ url_for('static', filename='images/Dashboard.png') }}" alt="Dashboard.png"
+                     style="width: 24px; height: 24px;">
+                <a href="{{ url_for('faturamento') }}">Faturamento</a>
+            </h3>
+            <h3>
+                <img src="{{ url_for('static', filename='images/Curso.png') }}" alt="Curso.png"
+                     style="width: 24px; height: 24px;">
+                     <a href="{{ url_for('metarealizado') }}">Meta Realizado</a>
+            </h3>
+            <h3>
+                <img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil.png"
+                     style="width: 24px; height: 24px;">
+                <a href="">Profile</a>
+            </h3>
+        </div>
+    </div>
+</div>
+
+<div class="direita">
+
+    <div class="menu-central">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+                 {% include 'menus.html' %}
+    </div>
+    <div class="coluna-charts">
+        <div class="azul-chart1">
+            <div class="ano1vertical">2023</div>                        <div class="charts1" id="chartContainer">
+                <div id="title-top">EMPRESA (GERAL)</div>
+                <div id="legend2023"></div>
+                <div id="chart12023" class="chart-div-top"></div>
+                <div id="chart22023" class="chart-div"></div>
+                 <div id="table-container1" class="table-container">
+                    <div id="table1" class="table-first">
+                        <div>
+                            <table>
+                                <tr class="row-1">
+                                        <td>MEDIA META</td>
+                                        <td>15.932.955,76</td>
+                                        <td>MEDIA REAL</td>
+                                        <td>13.542.453,09</td>
+                                        <td>0</td>
+                                        <td>-15%</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="azul-chart2">
+            <div class="ano2vertical">2022</div>
+            <div class="charts2" id="charts2022">
+                <div id="chart12022" class="chart-div-top"></div>
+                <div id="chart22022" class="chart-div"></div>
+
+                <div id="table-container2" class="table-container">
+                    <div id="table2" class="table-first">
+                        <div>
+                            <table>
+                                    <tr class="row-1">
+                                        <td>MEDIA META</td>
+                                        <td>15.932.955,76</td>
+                                        <td>MEDIA REAL</td>
+                                        <td>13.542.453,09</td>
+                                        <td>0</td>
+                                        <td>-15%</td>
+                                    </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="azul-chart3">
+            <div class="ano3vertical">2021</div>
+            <div class="charts3" id="charts2022">
+                <div id="chart12021" class="chart-div-top"></div>
+                <div id="chart22021" class="chart-div-last"></div>
+
+                <div id="table-container3" class="table-container">
+                    <div id="table3" class="table-first">
+                        <div>
+                            <table>
+                                <tr class="row-1">
+                                        <td>MEDIA META</td>
+                                        <td>15.932.955,76</td>
+                                        <td>MEDIA REAL</td>
+                                        <td>13.542.453,09</td>
+                                        <td>0</td>
+                                        <td>-15%</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="azul-chart4">
+            <div class="ano4vertical">2020</div>
+            <div class="charts4" id="charts2022">
+                <div id="chart12020" class="chart-div-top"></div>
+                <div id="chart22020" class="chart-div-last"></div>
+
+                <div id="table-container4" class="table-container">
+                    <div id="table4" class="table-first">
+                        <div>
+                            <table>
+                                <tr class="row-1">
+                                        <td>MEDIA META</td>
+                                        <td>15.932.955,76</td>
+                                        <td>MEDIA REAL</td>
+                                        <td>13.542.453,09</td>
+                                        <td>0</td>
+                                        <td>-15%</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="azul-chart5">
+            <div class="ano5vertical">2019</div>
+            <div class="charts5" id="charts2022">
+                <div id="chart12019" class="chart-div-top"></div>
+                <div id="chart22019" class="chart-div-last"></div>
+
+                <div id="table-container5" class="table-container">
+                    <div id="table5" class="table-first">
+                        <div>
+                            <table>
+                                <tr class="row-1">
+                                        <td>MEDIA META</td>
+                                        <td>15.932.955,76</td>
+                                        <td>MEDIA REAL</td>
+                                        <td>13.542.453,09</td>
+                                        <td>0</td>
+                                        <td>-15%</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="azul-chart6">
+            <div class="ano6vertical">2018</div>
+            <div class="charts6" id="charts2018">
+                <div id="chart12018" class="chart-div-top"></div>
+                <div id="chart22018" class="chart-div-last"></div>
+
+                <div id="table-container6" class="table-container">
+                    <div id="table6" class="table-first">
+                        <div>
+                            <table>
+                                <tr class="row-1">
+                                    <td>MEDIA META</td>
+                                    <td>15.932.955,76</td>
+                                    <td>MEDIA REAL</td>
+                                    <td>13.542.453,09</td>
+                                    <td>0</td>
+                                    <td>-15%</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="azul-chart7">
+            <div class="ano7vertical">2017</div>
+            <div class="charts7" id="charts2017">
+                <div id="chart12017" class="chart-div-top"></div>
+                <div id="chart22017" class="chart-div-last"></div>
+
+                <div id="table-container7" class="table-container">
+                    <div id="table7" class="table-first">
+                        <div>
+                            <table>
+                                <tr class="row-1">
+                                    <td>MEDIA META</td>
+                                    <td>15.932.955,76</td>
+                                    <td>MEDIA REAL</td>
+                                    <td>13.542.453,09</td>
+                                    <td>0</td>
+                                    <td>-15%</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+</body>
+</html>

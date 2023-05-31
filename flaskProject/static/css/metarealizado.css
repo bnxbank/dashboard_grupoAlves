@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.coluna-esquerda {
+    flex: 0.2;
+}
+
+.direita {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-central {
+    background-color: #f5f5f5;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.coluna-charts {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto; /* Adicione a propriedade overflow-x para permitir rolagem horizontal */
+  }
+  
+
+.laranja {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.slogan, .menu-esquerdo, .outros-itens {
+    margin: 10px;
+}
+
+.azul-chart1,
+.azul-chart2, .azul-chart3, .azul-chart4, .azul-chart5, .azul-chart6, .azul-chart7{
+  flex: 1;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background-color: #383838;
+  border-radius: 10px;
+  min-width: 400px; /* Defina a largura mínima desejada */
+}
+
+/*vertical ano*/
+.azul-chart1, .azul-chart2, .azul-chart3, .azul-chart4, .azul-chart5, .azul-chart6, .azul-chart7 {
+    display: flex;
+    flex-direction: row;
+}
+
+.ano1vertical, .ano2vertical, .ano3vertical, .ano4vertical, .ano5vertical, .ano6vertical, .ano7vertical {
+    flex: 0.1;
+    background-color:#383838; /* Para visualizar a div */
+    width: 10px;
+    font-size: 50px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    letter-spacing: 5px;
+    text-align: center;
+    color: white;
+}
+
+.charts1, .charts2, .charts3, .charts4, .charts5, .charts6, .charts7 {
+    flex: 4;
+}
+
+
+
+
+
+
+#chartContainer, #charts2022 {
+    background-color: #383838;
+    border-radius: 10px;
+}
+
+.chart-div {
+    height: 65px;
+}
+
+.chart-div-top {
+    height: 68px;
+}
+
+.chart-div-last {
+    height: 109px;
+}
+
+#legend2023 {
+    font-size: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-top {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.table {
+    height: 2rem;
+    width: 100%;
+}
+
+.table-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 700px; /* Ajuste esse valor conforme necessário */
+}
+
+
+
+.table-soma {
+    margin-left: 800px; /* Move a div para a direita */
+    margin-top: 10px; /* Adiciona um espaço entre as divs */
+}
+
+.table-first td {
+    border: 1px solid white;
+    white-space: nowrap; /* Impede a quebra de linha */
+}
+
+
+.table-first .row-1 td:nth-child(1), .table-first .row-1 td:nth-child(3), .table-first .row-1 td:nth-child(5) {
+  color: white; /* Altere para a cor do texto desejada */
+}
+
+.table-first .row-1 td:nth-child(2){
+    color: #558bc9;
+}
+.table-first .row-1 td:nth-child(4){
+    color: orange;
+}
+
+
+.table-first .row-2 td:nth-child(1), .table-first .row-2 td:nth-child(2), .table-first .row-2 td:nth-child(4) {
+  color: white; /* Altere para a cor do texto desejada */
+}
+
+.table-first .row-2 td:nth-child(3) {
+    color: #6695f5;
+}
+.table-first .row-2 td:nth-child(5){
+    color: yellow;
+}

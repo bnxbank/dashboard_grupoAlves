@@ -2,7 +2,7 @@
     <option value="Selecione o tipo">Selecione o tipo</option>
     <option value="Faturamento">Faturamento</option>
     <option value="Comercial">Análise Comercial</option>
-    <option value="Quebras">Quebras e Ruptura</option>
+    <option value="Metarealizado">Meta Realizado</option>
 </select>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -17,8 +17,8 @@ $(document).ready(function() {
             case 'Comercial':
                 window.location.href = 'http://127.0.0.1:5000/analisecomercial';
                 break;
-            case 'Quebras':
-                window.location.href = '#';
+            case 'Metarealizado':
+                window.location.href = 'http://127.0.0.1:5000/metarealizado';
                 break;
             default:
                 // default URL if none of the options match
