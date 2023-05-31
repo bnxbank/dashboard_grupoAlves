@@ -1,4 +1,4 @@
-<select id="my_select">
+<select id="tipo">
     <option value="Selecione o tipo">Selecione o tipo</option>
     <option value="Faturamento">Faturamento</option>
     <option value="Comercial">Análise Comercial</option>
@@ -7,8 +7,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
-    $('#my_select').change(function() {
+    // Quando a página é carregada, define a seleção com base no valor armazenado em LocalStorage
+    var saved_option = localStorage.getItem('selected_option');
+    if (saved_option) {
+        $('#tipo').val(saved_option);
+    }
+
+    $('#tipo').change(function() {
         var selected_option = $(this).val();
+
+        // Salva o valor selecionado em LocalStorage
+        localStorage.setItem('selected_option', selected_option);
+        
         
         switch(selected_option) {
             case 'Faturamento':
@@ -27,5 +37,85 @@ $(document).ready(function() {
     });
 });
 </script>
+<select id="secao">
+    <option value="VESTUARIO">VESTUARIO</option>
+    <option value="ALIMENTOS SALGADO">ALIMENTOS SALGADO</option>
+    <option value="FRIOS ACHOCOLATADOS">FRIOS ACHOCOLATADOS</option>
+    <option value="PEIXES RESFRIADOS">PEIXES RESFRIADOS</option>
+    <option value="FRIOS ACHOCOLATADOS">FRIOS ACHOCOLATADOS</option>
+    <option value="PEIXES RESFRIADOS">PEIXES RESFRIADOS</option>
+    <option value="BASICO">BASICO</option>
+    <option value="PADARIA PROPRIA">PADARIA PROPRIA</option>
+    <option value="HIGIENE">HIGIENE</option>
+    <option value="GERAL">GERAL</option>
+    <option value="ALIMENTOS DOCE">ALIMENTOS DOCE</option>
+    <option value="PAPEL HIGIENICO">PAPEL HIGIENICO</option>
+    <option value="UTILIDADES DOMESTICA">UTILIDADES DOMESTICA</option>
+    <option value="PADARIA INDUSTRIAL">PADARIA INDUSTRIAL</option>
+    <option value="LIMPEZA DOMESTICA">LIMPEZA DOMESTICA</option>
+    <option value="OVOS">OVOS</option>
+    <option value="FRIOS">FRIOS</option>
+    <option value="PAPELARIA">PAPELARIA</option>
+    <option value="ALHO">ALHO</option>
+    <option value="FRIOS LATICINIOS">FRIOS LATICINIOS</option>
+    <option value="ACOUGUE">ACOUGUE</option>
+    <option value="HORT FRUT">HORT FRUT</option>
+    <option value="LEITE">LEITE</option>
+    <option value="FRIOS CONGELADOS">FRIOS CONGELADOS</option>
+    <option value="PET SHOP">PET SHOP</option>
+    <option value="AUTOS">AUTOS</option>
+    <option value="BEBIDAS DEST E VINHO">BEBIDAS DEST E VINHO</option>
+    <option value="BEBIDAS REFRIGERADAS">BEBIDAS REFRIGERADAS</option>
+    <option value="TABACARIA">TABACARIA
+    </option>
+
+</select>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    var saved_option = localStorage.getItem('selected_option_secao');
+    if (saved_option) {
+        $('#secao').val(saved_option);
+    }
+
+    $('#secao').change(function() {
+        var selected_option = $(this).val();
+
+        // Salva o valor selecionado em LocalStorage
+        localStorage.setItem('selected_option_secao', selected_option);
+
+        var tipo = $('#tipo').val();
+        var secao = $(this).val();
+        window.location.href = 'http://127.0.0.1:5000/' + tipo.toLowerCase() + '/' + secao;
+    });                
+});
+</script>
+<select id="year-select"></select>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    var currentYear = new Date().getFullYear();
+    var startYear = 2016;
+    var options = "";
+    for (var year = currentYear ; year >= startYear ; year--){
+        options += "<option value='" + year + "'>" + year + "</option>";
+    }
+    $('#year-select').html(options);
+
+    function updateUrl() {
+        var tipo = $('#tipo').val();
+        var secao = $('#secao').val();
+        var year = $('#year-select').val();
+        window.location.href = 'http://127.0.0.1:5000/' + tipo.toLowerCase() + '/' + secao + '/' + year;
+    }
+
+    $('#tipo, #secao, #year-select').change(updateUrl);
+
+    // atualiza a URL quando a página é carregada
+    updateUrl();
+});
+</script>
+
 
 

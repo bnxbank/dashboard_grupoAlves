@@ -149,8 +149,46 @@ google.charts.setOnLoadCallback(function () {
 
         <div class="direita">
             <div class="menu-central">
+                </-- spinner de aviso de carga da pagina -->
+                <div id="loading" style="display:none;">
+                    <div class="loader">Carregando...usando no desenvolvimento para testes</div>
+                </div>
+                
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script>
+                $(document).ready(function() {
+                    // Mostra o elemento de carregamento quando a página começa a carregar
+                    $('#loading').show();
+                
+                    // Oculta o elemento de carregamento quando a página termina de carregar
+                    $(window).on('load', function() {
+                        $('#loading').hide();
+                    });
+                });
+                </script>
+                
+                <style>
+                #loading {
+                    position: fixed; /* Fixa a posição para que o elemento cubra toda a página */
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo branca com um pouco de transparência */
+                    z-index: 9999; /* Posiciona o elemento acima de todo o resto do conteúdo */
+                }
+                
+                .loader {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%); /* Centraliza o elemento */
+                    font-size: 20px;
+                }
+                </style>
+                
                 <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
-                 {% include 'menus.html' %}
+                 {% include 'menus.html' %}                 
             </div>
 
                         <div class="coluna-charts">
@@ -218,11 +256,11 @@ google.charts.setOnLoadCallback(function () {
                                                                                 <table>
                                                                                         <tr>
                                                                                             <td>SOMA</td>
-                                                                                            <td>{{ soma4.soma }}</td>
+                                                                                            <td>{{ soma_A20 }}</td>
                                                                                             <td>MEDIA</td>
-                                                                                            <td>{{ soma4.media1 }}</td>
-                                                                                            <td>{{ soma4.media2 }}</td>
-                                                                                            <td>{{ soma4.percentual }}</td>
+                                                                                            <td>{{ soma_A21 }}</td>
+                                                                                            <td>{{ soma_A22 }}</td>
+                                                                                            <td>{{ soma_A23 }}</td>
                                                                                         </tr>
                                                                                 </table>
                                                                         </div>
@@ -256,11 +294,11 @@ google.charts.setOnLoadCallback(function () {
                                                         <table>
                                                         <tr>
                                                             <td>SOMA</td>
-                                                            <td>{{ soma5.soma }}</td>
+                                                            <td>{{ soma_A30 }}</td>
                                                             <td>MEDIA</td>
-                                                            <td>{{ soma5.media1 }}</td>
-                                                            <td>{{ soma5.media2 }}</td>
-                                                            <td>{{ soma5.percentual }}</td>
+                                                            <td>{{ soma_A31 }}</td>
+                                                            <td>{{ soma_A32 }}</td>
+                                                            <td>{{ soma_A33 }}</td>
                                                         </tr>
                                                     </table>
                                                 </div>
@@ -301,11 +339,11 @@ google.charts.setOnLoadCallback(function () {
                                                 <table>
                                                     <tr>
                                                         <td>SOMA</td>
-                                                        <td>{{ soma6.soma }}</td>
+                                                        <td>{{ soma_A40 }}</td>
                                                         <td>MEDIA</td>
-                                                        <td>{{ soma6.media1 }}</td>
-                                                        <td>{{ soma6.media2 }}</td>
-                                                        <td>{{ soma6.percentual }}</td>
+                                                        <td>{{ soma_A41}}</td>
+                                                        <td>{{ soma_A42 }}</td>
+                                                        <td>{{ soma_A43 }}</td>
                                                     </tr>
                                                 </table>
                                             </div>
@@ -342,11 +380,11 @@ google.charts.setOnLoadCallback(function () {
                     <table>
                         <tr>
                             <td>SOMA</td>
-                            <td>{{ soma7.soma }}</td>
+                            <td>{{ soma_A50 }}</td>
                             <td>MEDIA</td>
-                            <td>{{ soma7.media1 }}</td>
-                            <td>{{ soma7.media2 }}</td>
-                            <td>{{ soma7.percentual }}</td>
+                            <td>{{ soma_A51 }}</td>
+                            <td>{{ soma_A52 }}</td>
+                            <td>{{ soma_A53 }}</td>
                         </tr>
                     </table>
                 </div>
@@ -384,11 +422,11 @@ google.charts.setOnLoadCallback(function () {
                                                     <table>
                                                         <tr>
                                                             <td>SOMA</td>
-                                                            <td>{{ soma8.soma }}</td>
+                                                            <td>{{ soma_A60 }}</td>
                                                             <td>MEDIA</td>
-                                                            <td>{{ soma8.media1 }}</td>
-                                                            <td>{{ soma8.media2 }}</td>
-                                                            <td>{{ soma8.percentual }}</td>
+                                                            <td>{{ soma_A61 }}</td>
+                                                            <td>{{ soma_A62 }}</td>
+                                                            <td>{{ soma_A63 }}</td>
                                                         </tr>
                                                     </table>
                                                 </div>
@@ -425,11 +463,11 @@ google.charts.setOnLoadCallback(function () {
                                                         <table>
                                                             <tr>
                                                                 <td>SOMA</td>
-                                                                <td>{{ soma9.soma }}</td>
+                                                                <td>{{ soma_A70 }}</td>
                                                                 <td>MEDIA</td>
-                                                                <td>{{ soma9.media1 }}</td>
-                                                                <td>{{ soma9.media2 }}</td>
-                                                                <td>{{ soma9.percentual }}</td>
+                                                                <td>{{ soma_A71 }}</td>
+                                                                <td>{{ soma_A72 }}</td>
+                                                                <td>{{ soma_A73 }}</td>
                                                             </tr>
                                                         </table>
                                                     </div>
