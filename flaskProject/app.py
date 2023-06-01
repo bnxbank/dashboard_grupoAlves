@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 import pandas as pd
 import graficos as gr
 import numpy as np
@@ -281,22 +281,26 @@ soma9 = {
     "media2": "372.056,26",
     "percentual": "13,62%"
 }
-@app.route('/')
-def dashboard():
-     
-    
+##############################################################################################################
+@app.route('/', defaults={'secao': 'GERAL', 'ano': datetime.now().year, 'loja': 'GERAL'}, methods=['GET'])
+def home(secao, ano, loja):
+    return redirect(url_for('analisecomercial', secao=secao, loja=loja, ano=ano))
 
-    return render_template('analisecomercial.html',
-                           allData2=allData2,
-                           allData=allData,
-                           evolucao=evolucao, evolucao2=evolucao2,
-                           soma=soma, soma2=soma2, vendas=vendas,
-                           vendas2=vendas2, entradas=entradas, entradas2=entradas2,
-                           percentual=percentual, percentual2=percentual2
-                           )
+@app.route('/analisecomercial/<secao>/<loja>/<ano>')
+@app.route('/analisecomercial/<secao>/<loja>/<ano>', methods=['GET'])
+def analisecomercial(secao, ano, loja):
+    if ano is None:
+        ano = datetime.now().year  # define o ano atual como padrão
+    else:
+        ano = int(ano)
+    secao='{}'.format(secao)
+    loja='{}'.format(loja)
+    anos = [str(ano - i) for i in range(1, 7)]
+    print(secao,loja, ano)
 
-@app.route('/analisecomercial')
-def dashboard_a():
+    allData = gr.consulta(secao, loja, str(ano),3)
+
+    allData2 = gr.consulta(secao, loja, anos[0],3)
 
     return render_template('analisecomercial.html',
                            allData2=allData2,
@@ -305,6 +309,8 @@ def dashboard_a():
                            soma=soma, soma2=soma2, vendas=vendas,
                            vendas2=vendas2, entradas=entradas, entradas2=entradas2,
                            percentual=percentual, percentual2=percentual2)
+
+##############################################################################################################
 
 
 
