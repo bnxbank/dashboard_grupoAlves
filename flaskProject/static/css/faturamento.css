@@ -50,6 +50,12 @@ body {
     border-radius: 10px;
 }
 
+.imagem-esquerda {
+    float: left;
+    margin-right: 10px;
+    width: 5%;
+  }
+
 .ano1vertical, .ano2vertical, .ano3vertical, .ano4vertical, .ano5vertical, .ano6vertical, .ano7vertical {
     flex: 0.1;
     background-color: #383838; /* Para visualizar a div */
