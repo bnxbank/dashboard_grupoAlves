@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import pandas as pd
 import graficos as gr
 import numpy as np
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -306,56 +307,106 @@ def dashboard_a():
                            percentual=percentual, percentual2=percentual2)
 
 
-@app.route('/faturamento')
-def faturamento():
-    #ano = request.form['ano']
-    ano = 2023
+
+def matriz_para_lista(matriz):
+    matriz_copia = np.copy(matriz)
+    matriz_copia[:,0] = matriz_copia[:,0] / 100
+    matriz_copia[:,1] = matriz_copia[:,1] / 100 
+    matriz = matriz_copia
+    lista = [[float("{:.2f}".format(item)) for item in row] for row in matriz]
+    return lista
+
+
+
+@app.route('/faturamento', defaults={'secao': 'GERAL', 'ano': datetime.now().year, 'loja': 'GERAL'}, methods=['GET'])
+@app.route('/faturamento/<secao>/<loja>/<ano>', methods=['GET'])
+def faturamento(secao, ano, loja):
+    if ano is None:
+        ano = datetime.now().year  # define o ano atual como padrão
+    else:
+        ano = int(ano)
+    secao='{}'.format(secao)
+    loja='{}'.format(loja)
     anos = [str(ano - i) for i in range(1, 7)]
-    #print(anos, ano)
+    print(secao,loja, ano)
 
-    allData3 = gr.consulta('GERAL', 'GERAL', anos[0],1) #valor correspondente a 2022
+    allData3 = gr.consulta(secao, loja, anos[0],1) #valor correspondente a 2022
     matriz = np.array(allData3)
-    soma_A10 = np.sum(matriz[:,0])
-    soma_A11 = np.mean(matriz[:,0])
-    soma_A12 = np.mean(matriz[:,1])
-    soma_A13 = np.mean(matriz[:,2])
-    print(soma_A10, soma_A11, soma_A12, soma_A13)
+    matrizr = matriz_para_lista(matriz)
+    allData3 = matrizr
+    #print(allData3)
 
-    allData4 = gr.consulta('GERAL', 'GERAL', anos[1],1) #valor correspondente a 2021
+    soma_A10 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A11 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A12 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A13 = "{:.2f}%".format(np.mean(matriz[:,2]))
+    #print(soma_A10, soma_A11, soma_A12, soma_A13)
+
+    allData4 = gr.consulta(secao, loja, anos[1],1) #valor correspondente a 2021
     matriz = np.array(allData4)
-    soma_A21 = np.sum(matriz[:,0])
-    soma_A22 = np.mean(matriz[:,1])
-    media_A23 = np.mean(matriz[:,2])
+    matrizr = matriz_para_lista(matriz)
+    allData4 = matrizr
+    #print(allData4)
 
-    allData5 = gr.consulta('GERAL', 'GERAL', anos[2],1) #valor correspondente a 2020
+    soma_A20 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A21 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A22 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A23 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData5 = gr.consulta(secao, loja, anos[2],1) #valor correspondente a 2020
     matriz = np.array(allData5)
-    soma_A31 = np.sum(matriz[:,0])
-    soma_A32 = np.sum(matriz[:,1])
-    media_A33 = np.mean(matriz[:,2])
+    matrizr = matriz_para_lista(matriz)
+    allData5 = matrizr
+    #print(allData5)
 
-    allData6 = gr.consulta('GERAL', 'GERAL', anos[3],1) #valor correspondente a 2019
+    soma_A30 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A31 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A32 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A33 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData6 = gr.consulta(secao, loja, anos[3],1) #valor correspondente a 2019
     matriz = np.array(allData6)
-    soma_A41 = np.sum(matriz[:,0])
-    soma_A42 = np.sum(matriz[:,1])
-    media_A43 = np.mean(matriz[:,2])
+    matrizr = matriz_para_lista(matriz)
+    allData6 = matrizr
+    #print(allData6)   
+    
+    soma_A30 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A31 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A32 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A33 = "{:.2f}%".format(np.mean(matriz[:,2]))
 
-    allData7 = gr.consulta('GERAL', 'GERAL', anos[4],1) #valor correspondente a 2018
+    allData7 = gr.consulta(secao, loja, anos[4],1) #valor correspondente a 2018
     matriz = np.array(allData7)
-    soma_A51 = np.sum(matriz[:,0])
-    soma_A52 = np.sum(matriz[:,1])
-    media_A53 = np.mean(matriz[:,2])
+    matrizr = matriz_para_lista(matriz)
+    allData7 = matrizr
+    #print(allData7)   
 
-    allData8 = gr.consulta('GERAL', 'GERAL', anos[5],1) #valor correspondente a 2017
+    soma_A40 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A41 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A42 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A43 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData8 = gr.consulta(secao, loja, anos[5],1) #valor correspondente a 2017
     matriz = np.array(allData8)
-    soma_A61 = np.sum(matriz[:,0])
-    soma_A62 = np.sum(matriz[:,1])
-    media_A63 = np.mean(matriz[:,2])
+    matrizr = matriz_para_lista(matriz)
+    allData8 = matrizr
+    #print(allData8)   
 
-    allData9 = gr.consulta('GERAL', 'GERAL', '2016',1) #valor correspondente a 2016
+    soma_A50 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A51 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A52 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A53 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData9 = gr.consulta(secao, loja, '2016',1) #valor correspondente a 2016
     matriz = np.array(allData9)
-    soma_A71 = np.sum(matriz[:,0])
-    soma_A72 = np.sum(matriz[:,1])
-    media_A73 = np.mean(matriz[:,2])
+    matrizr = matriz_para_lista(matriz)
+    allData9 = matrizr
+    #print(allData9)   
+
+    soma_A60 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A61 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A62 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A63 = "{:.2f}%".format(np.mean(matriz[:,2]))
 
     return render_template('faturamento.html',
                            allData9=allData9,
@@ -368,11 +419,20 @@ def faturamento():
                            evolucao3=evolucao3, evolucao4=evolucao4, evolucao5=evolucao5, 
                            evolucao6=evolucao6, evolucao7=evolucao7, evolucao8=evolucao8, 
                            evolucao9=evolucao9, soma3=soma3, soma4=soma4, soma5=soma5, 
-                           soma6=soma6, soma7=soma7, soma8=soma8, soma9=soma9, anos=anos, soma_A10=soma_A10, soma_A11=soma_A11, soma_A12=soma_A12, soma_A13=soma_A13,)
+                           soma6=soma6, soma7=soma7, soma8=soma8, soma9=soma9, anos=anos, soma_A10=soma_A10, soma_A11=soma_A11, soma_A12=soma_A12, soma_A13=soma_A13, soma_A20=soma_A20, soma_A21=soma_A21, soma_A22=soma_A22, soma_A23=soma_A23, soma_A30=soma_A30, soma_A31=soma_A31, soma_A32=soma_A32, soma_A33=soma_A33, soma_A40=soma_A40, soma_A41=soma_A41, soma_A42=soma_A42, soma_A43=soma_A43, soma_A50=soma_A50, soma_A51=soma_A51, soma_A52=soma_A52, soma_A53=soma_A53, soma_A60=soma_A60, soma_A61=soma_A61, soma_A62=soma_A62, soma_A63=soma_A63, )
 
+@app.route('/metarealizado', defaults={'secao': 'GERAL', 'ano': datetime.now().year, 'loja': 'GERAL'}, methods=['GET'])
+@app.route('/metarealizado/<secao>/<loja>/<ano>', methods=['GET'])
+def metarealizado(secao, ano, loja):
+    if ano is None:
+        ano = datetime.now().year  # define o ano atual como padrão
+    else:
+        ano = int(ano)
+    secao='{}'.format(secao)
+    loja='{}'.format(loja)
+    anos = [str(ano - i) for i in range(1, 7)]
+    print(secao,loja, ano)
 
-@app.route('/metarealizado')
-def metarealizado():
     return render_template('metarealizado.html',
                            allData16=allData16,
                            allData15=allData15,
@@ -380,10 +440,224 @@ def metarealizado():
                            allData13=allData13,
                            allData12=allData12,
                            allData11=allData11,
-                           allData10=allData10,
+                           allData10=allData10,                           
                            vendas=vendas, entradas=entradas, percentual=percentual,
                            evolucao=evolucao, vendas2=vendas2, entradas2=entradas2, percentual2=percentual2,
-                           evolucao2=evolucao2, )
+                           evolucao2=evolucao2,evolucao3=evolucao3, evolucao4=evolucao4, evolucao5=evolucao5, 
+                           evolucao6=evolucao6, evolucao7=evolucao7, evolucao8=evolucao8, 
+                           evolucao9=evolucao9, soma3=soma3, soma4=soma4, soma5=soma5, 
+                           soma6=soma6, soma7=soma7, soma8=soma8, soma9=soma9, anos=anos)     
+
+
+@app.route('/Estoqueruptura', defaults={'secao': 'GERAL', 'ano': datetime.now().year, 'loja': 'GERAL'}, methods=['GET'])
+@app.route('/Estoqueruptura/<secao>/<loja>/<ano>', methods=['GET'])
+def Estoqueruptura(secao, ano, loja):
+    if ano is None:
+        ano = datetime.now().year  # define o ano atual como padrão
+    else:
+        ano = int(ano)
+    secao='{}'.format(secao)
+    loja='{}'.format(loja)
+    anos = [str(ano - i) for i in range(1, 7)]
+    print(secao,loja, ano)
+
+    allData3 = gr.consulta(secao, loja, anos[0],2) #valor correspondente a 2022
+    matriz = np.array(allData3)
+    matrizr = matriz_para_lista(matriz)
+    allData3 = matrizr
+    #print(allData3)
+
+    soma_A10 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A11 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A12 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A13 = "{:.2f}%".format(np.mean(matriz[:,2]))
+    #print(soma_A10, soma_A11, soma_A12, soma_A13)
+
+    allData4 = gr.consulta(secao, loja, anos[1],2) #valor correspondente a 2021
+    matriz = np.array(allData4)
+    matrizr = matriz_para_lista(matriz)
+    allData4 = matrizr
+    #print(allData4)
+
+    soma_A20 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A21 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A22 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A23 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData5 = gr.consulta(secao, loja, anos[2],2) #valor correspondente a 2020
+    matriz = np.array(allData5)
+    matrizr = matriz_para_lista(matriz)
+    allData5 = matrizr
+    #print(allData5)
+
+    soma_A30 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A31 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A32 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A33 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData6 = gr.consulta(secao, loja, anos[3],2) #valor correspondente a 2019
+    matriz = np.array(allData6)
+    matrizr = matriz_para_lista(matriz)
+    allData6 = matrizr
+    #print(allData6)   
+    
+    soma_A30 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A31 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A32 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A33 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData7 = gr.consulta(secao, loja, anos[4],2) #valor correspondente a 2018
+    matriz = np.array(allData7)
+    matrizr = matriz_para_lista(matriz)
+    allData7 = matrizr
+    #print(allData7)   
+
+    soma_A40 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A41 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A42 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A43 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData8 = gr.consulta(secao, loja, anos[5],2) #valor correspondente a 2017
+    matriz = np.array(allData8)
+    matrizr = matriz_para_lista(matriz)
+    allData8 = matrizr
+    #print(allData8)   
+
+    soma_A50 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A51 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A52 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A53 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData9 = gr.consulta(secao, loja, '2016',2) #valor correspondente a 2016
+    matriz = np.array(allData9)
+    matrizr = matriz_para_lista(matriz)
+    allData9 = matrizr
+    #print(allData9)   
+
+    soma_A60 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A61 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A62 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A63 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    return render_template('estoqueruptura.html',
+                           allData9=allData9,
+                           allData8=allData8,
+                           allData7=allData7,
+                           allData6=allData6,                           
+                           allData5=allData5,
+                           allData4=allData4,
+                           allData3=allData3,
+                           evolucao3=evolucao3, evolucao4=evolucao4, evolucao5=evolucao5, 
+                           evolucao6=evolucao6, evolucao7=evolucao7, evolucao8=evolucao8, 
+                           evolucao9=evolucao9, soma3=soma3, soma4=soma4, soma5=soma5, 
+                           soma6=soma6, soma7=soma7, soma8=soma8, soma9=soma9, anos=anos, soma_A10=soma_A10, soma_A11=soma_A11, soma_A12=soma_A12, soma_A13=soma_A13, soma_A20=soma_A20, soma_A21=soma_A21, soma_A22=soma_A22, soma_A23=soma_A23, soma_A30=soma_A30, soma_A31=soma_A31, soma_A32=soma_A32, soma_A33=soma_A33, soma_A40=soma_A40, soma_A41=soma_A41, soma_A42=soma_A42, soma_A43=soma_A43, soma_A50=soma_A50, soma_A51=soma_A51, soma_A52=soma_A52, soma_A53=soma_A53, soma_A60=soma_A60, soma_A61=soma_A61, soma_A62=soma_A62, soma_A63=soma_A63, )
+
+
+
+@app.route('/quebras', defaults={'secao': 'GERAL', 'ano': datetime.now().year, 'loja': 'GERAL'}, methods=['GET'])
+@app.route('/quebras/<secao>/<loja>/<ano>', methods=['GET'])
+def quebras(secao, ano, loja):
+    if ano is None:
+        ano = datetime.now().year  # define o ano atual como padrão
+    else:
+        ano = int(ano)
+    secao='{}'.format(secao)
+    loja='{}'.format(loja)
+    anos = [str(ano - i) for i in range(1, 7)]
+    print(secao,loja, ano)
+
+    allData3 = gr.consulta(secao, loja, anos[0],1) #valor correspondente a 2022
+    matriz = np.array(allData3)
+    matrizr = matriz_para_lista(matriz)
+    allData3 = matrizr
+    #print(allData3)
+
+    soma_A10 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A11 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A12 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A13 = "{:.2f}%".format(np.mean(matriz[:,2]))
+    #print(soma_A10, soma_A11, soma_A12, soma_A13)
+
+    allData4 = gr.consulta(secao, loja, anos[1],1) #valor correspondente a 2021
+    matriz = np.array(allData4)
+    matrizr = matriz_para_lista(matriz)
+    allData4 = matrizr
+    #print(allData4)
+
+    soma_A20 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A21 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A22 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A23 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData5 = gr.consulta(secao, loja, anos[2],1) #valor correspondente a 2020
+    matriz = np.array(allData5)
+    matrizr = matriz_para_lista(matriz)
+    allData5 = matrizr
+    #print(allData5)
+
+    soma_A30 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A31 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A32 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A33 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData6 = gr.consulta(secao, loja, anos[3],1) #valor correspondente a 2019
+    matriz = np.array(allData6)
+    matrizr = matriz_para_lista(matriz)
+    allData6 = matrizr
+    #print(allData6)   
+    
+    soma_A30 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A31 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A32 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A33 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData7 = gr.consulta(secao, loja, anos[4],1) #valor correspondente a 2018
+    matriz = np.array(allData7)
+    matrizr = matriz_para_lista(matriz)
+    allData7 = matrizr
+    #print(allData7)   
+
+    soma_A40 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A41 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A42 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A43 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData8 = gr.consulta(secao, loja, anos[5],1) #valor correspondente a 2017
+    matriz = np.array(allData8)
+    matrizr = matriz_para_lista(matriz)
+    allData8 = matrizr
+    #print(allData8)   
+
+    soma_A50 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A51 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A52 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A53 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    allData9 = gr.consulta(secao, loja, '2016',1) #valor correspondente a 2016
+    matriz = np.array(allData9)
+    matrizr = matriz_para_lista(matriz)
+    allData9 = matrizr
+    #print(allData9)   
+
+    soma_A60 = "{:,.2f} ".format(np.sum(matriz[:,0]/100))
+    soma_A61 = "{:,.2f} ".format(np.mean(matriz[:,0]/100))
+    soma_A62 = "{:,.2f} ".format(np.mean(matriz[:,1]/100))
+    soma_A63 = "{:.2f}%".format(np.mean(matriz[:,2]))
+
+    return render_template('quebras.html',
+                           allData9=allData9,
+                           allData8=allData8,
+                           allData7=allData7,
+                           allData6=allData6,                           
+                           allData5=allData5,
+                           allData4=allData4,
+                           allData3=allData3,
+                           evolucao3=evolucao3, evolucao4=evolucao4, evolucao5=evolucao5, 
+                           evolucao6=evolucao6, evolucao7=evolucao7, evolucao8=evolucao8, 
+                           evolucao9=evolucao9, soma3=soma3, soma4=soma4, soma5=soma5, 
+                           soma6=soma6, soma7=soma7, soma8=soma8, soma9=soma9, anos=anos, soma_A10=soma_A10, soma_A11=soma_A11, soma_A12=soma_A12, soma_A13=soma_A13, soma_A20=soma_A20, soma_A21=soma_A21, soma_A22=soma_A22, soma_A23=soma_A23, soma_A30=soma_A30, soma_A31=soma_A31, soma_A32=soma_A32, soma_A33=soma_A33, soma_A40=soma_A40, soma_A41=soma_A41, soma_A42=soma_A42, soma_A43=soma_A43, soma_A50=soma_A50, soma_A51=soma_A51, soma_A52=soma_A52, soma_A53=soma_A53, soma_A60=soma_A60, soma_A61=soma_A61, soma_A62=soma_A62, soma_A63=soma_A63, )
+
+
 
 
 
