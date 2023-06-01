@@ -15,7 +15,7 @@ body {
     margin-right: 10px;
     width: 5%;
   }
-  
+
 .direita {
     flex: 3;
     display: flex;
@@ -148,19 +148,18 @@ body {
 }
 
 .table-soma td:nth-child(2) {
-    background-color: #749f74; /* Altera o fundo para verde */
+    background-color: #FF0000; /* Altera o fundo para verde */
 }
 
 .table-soma td:nth-child(4) {
-    background-color: #558bc9; /* Altera o fundo para azul */
+    background-color: #FF0000; /* Altera o fundo para azul */
 }
 
 .table-soma td:nth-child(5) {
-    background-color: yellow; /* Altera o fundo para amarelo */
+    background-color: #067237; /* Altera o fundo para amarelo */
 }
 
 .table-soma td:nth-child(6) {
-    background-color: #429142; /* Altera o fundo para verde escuro */
+    background-color: #3374dc; /* Altera o fundo para verde escuro */
 }
-
 
