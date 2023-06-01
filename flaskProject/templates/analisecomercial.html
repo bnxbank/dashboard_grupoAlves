@@ -166,12 +166,13 @@ google.charts.setOnLoadCallback(function () {
 });
 
     </script>
+
 </head>
 <body>
 
 <div class="direita">
             <div class="menu-central">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="imagem-esquerda"> 
                  {% include 'menus.html' %}
             </div>
     <div class="coluna-charts">
