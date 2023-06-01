@@ -114,9 +114,9 @@ function drawIndividualChart(chartIndex, columnTitle, dataSet, idSuffix) {
 function createLegend(dataSet, id) {
     var legendDiv = document.getElementById(id);
     var columnTitles = [
-        'FAT',
-        'RENT($)',
-        'RENT(%)',
+        'Quebras',
+        'INVENTARIADA',
+        'APONTADA',
     ];
      var legendHtml = '<ul style="display: flex; flex-wrap: wrap; padding: 0;">';
     for (var i = 0; i < columnTitles.length; i++) {
@@ -221,9 +221,9 @@ google.charts.setOnLoadCallback(function () {
                                                 <table>
                                                     <tr>
                                                         <td>EVOLUÇÃO</td>
-                                                        <td>FAT</td>
+                                                        <td>QUEBRA</td>
                                                         <td>{{ evolucao3.fat }}</td>
-                                                        <td>RENT $</td>
+                                                        <td>INV $</td>
                                                         <td>{{ evolucao3.rent }}</td>
                                                     </tr>
                                                 </table>
