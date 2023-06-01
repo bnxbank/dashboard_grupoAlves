@@ -6,6 +6,12 @@ body {
     flex-direction: row;
 }
 
+.imagem-esquerda {
+    float: left;
+    margin-right: 10px;
+    width: 5%;
+  }
+
 .coluna-esquerda {
     flex: 0.2;
 }

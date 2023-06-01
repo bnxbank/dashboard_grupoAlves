@@ -2,7 +2,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=0.25">
-    <title>Tatico Grafico</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
@@ -108,7 +107,7 @@ function drawIndividualChart(chartIndex, columnTitle, dataSet, idSuffix) {
             left: 0,
             right: 0
         },
-        curveType: 'function',
+        curveType: 'none',
         colors: [chartColors[chartIndex % chartColors.length]],
         pointSize: 10,
         vAxis: {
@@ -166,12 +165,16 @@ google.charts.setOnLoadCallback(function () {
 });
 
     </script>
+
+
 </head>
+<link rel="icon" type="image/png" href="/static/images/favicon.png">
+<title>NPresi - Gráficos - Tatico</title>
 <body>
 
 <div class="direita">
             <div class="menu-central">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="imagem-esquerda"> 
                  {% include 'menus.html' %}
             </div>
     <div class="coluna-charts">
