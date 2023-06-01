@@ -427,6 +427,7 @@ def faturamento(secao, ano, loja):
                            evolucao9=evolucao9, soma3=soma3, soma4=soma4, soma5=soma5, 
                            soma6=soma6, soma7=soma7, soma8=soma8, soma9=soma9, anos=anos, soma_A10=soma_A10, soma_A11=soma_A11, soma_A12=soma_A12, soma_A13=soma_A13, soma_A20=soma_A20, soma_A21=soma_A21, soma_A22=soma_A22, soma_A23=soma_A23, soma_A30=soma_A30, soma_A31=soma_A31, soma_A32=soma_A32, soma_A33=soma_A33, soma_A40=soma_A40, soma_A41=soma_A41, soma_A42=soma_A42, soma_A43=soma_A43, soma_A50=soma_A50, soma_A51=soma_A51, soma_A52=soma_A52, soma_A53=soma_A53, soma_A60=soma_A60, soma_A61=soma_A61, soma_A62=soma_A62, soma_A63=soma_A63, )
 
+
 @app.route('/metarealizado', defaults={'secao': 'GERAL', 'ano': datetime.now().year, 'loja': 'GERAL'}, methods=['GET'])
 @app.route('/metarealizado/<secao>/<loja>/<ano>', methods=['GET'])
 def metarealizado(secao, ano, loja):
